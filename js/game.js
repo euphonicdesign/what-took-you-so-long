@@ -129,7 +129,7 @@ function renderScene() {
 };
 
 function getInputValue(){
-    console.log("You clicked the button");
+    // console.log("You clicked the button");
     let inputs = document.querySelectorAll('input[type="radio"]');
     for(let i=0; i < inputs.length; i++){
         if(inputs[i].checked) {
@@ -139,7 +139,10 @@ function getInputValue(){
         }
     }
 
-    //in case nothing is selected go default destination
-    story.currentScene = story[story.currentScene].defaultDestination;
-    renderScene();
+    //in case nothing is selected go to a default destination, or do nothing
+    if(story[story.currentScene].defaultDestination){
+        story.currentScene = story[story.currentScene].defaultDestination;
+        renderScene();
+    }
+    
 }
