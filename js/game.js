@@ -29,6 +29,7 @@ function getStory(name) {
                     destination: "goHome",
                 },
             ],
+            image: "central.png",
         },
         tree: {
             title: "Chapter 1",
