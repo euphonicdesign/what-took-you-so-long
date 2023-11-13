@@ -2,8 +2,14 @@ function getStoryChapter1(name) {
 
     return {
         currentScene: "central",
+        currentChapter: "1",
+        player: {
+            inventory: [
+                "clothes",
+            ]
+        },
+        lastActionStory: ``,
         central: {
-            title: "Chapter 1",
             story: `The story begins here... Once upon a time...<br><br> 
             (Really?! Remember ${name} that you can 'restart' at any point. 
             Buena suerte!)<br><br>
@@ -12,27 +18,75 @@ function getStoryChapter1(name) {
             beautiful day outside and you feel ready to explore the
             surroundings. There are multiple directions where you can go.
             `,
+            story2flag: false,
+            story2:`
+            You are now in the central area. This place looks like a big
+            intersection with multiple roads coming in and out. It is a
+            beautiful day outside and you feel ready to explore the
+            surroundings. There are multiple directions where you can go.
+            `,
             choices: [
                 {
-                    choice: "tree",
-                    destination: "tree",
+                    choice: "attic",
+                    destination: "attic",
                 },
                 {
                     choice: "riverside",
                     destination: "riverside",
                 },
                 {
-                    choice: "goHome",
+                    choice: "tree",
                     destination: "goHome",
+                },
+                {
+                    choice: "cave",
+                    destination: "cave",
                 },
             ],
             items: [
-                "shield", "sword",
             ],
             image: "central.png",
         },
+        attic: {
+            story: `This place looks like the attic of an old building. Although,
+            there is only one window, the rays of the sun are sufficient to reveal most of
+            the area and you are able to make your way around. Little specks of dust
+             are flowing into the
+            air and create an interesting visual effect. There are a couple of
+            objects in this forgotten place. One of them is rather shiny and looks
+            interesting.
+            `,
+            story2flag: false,
+            story2:`
+            This place looks like the attic of an old building. Although,
+            there is only one window, the rays of the sun are sufficient to reveal most of
+            the area and you are able to make your way around. Little specks of dust
+            are flowing into the
+            air and create an interesting visual effect.
+            `,
+            choices: [
+                {
+                    choice: "central",
+                    destination: "central",
+                },
+            ],
+            items: [
+                {
+                    name: "shield",
+                    story: `
+                    You get closer to the shiny object and pick up the shield.
+                    `,
+                },
+                {
+                    name: "food",
+                    story: `
+                    You take with you some food.
+                    `,
+                },
+            ],
+            image: "attic.png",
+        },
         tree: {
-            title: "Chapter 1",
             story: `It is where the road has brought you. You would like to advance
             farther, but a giant tree and some luxurious vegetation are blocking
             your way. This natural barrier creates a large area of shade. It looks
@@ -48,7 +102,6 @@ function getStoryChapter1(name) {
             image: "tree.png",
         },
         riverside: {
-            title: "Chapter 1",
             story: `The road continues down south, and to the left side
             there is a narrow river flowing downstream. You are sitting on the
             right side of the road. From here, you can see green grass and
@@ -69,7 +122,6 @@ function getStoryChapter1(name) {
         },
 
         goHome: {
-            title: "Chapter 1",
             story: `Back at home...
             `,
             image: "attic.png",

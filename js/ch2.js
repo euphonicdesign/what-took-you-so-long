@@ -2,8 +2,13 @@ function getStoryChapter2(name) {
 
     return {
         currentScene: "central",
+        currentChapter: "2",
+        player: {
+            inventory: [
+                "food",
+            ]
+        },
         central: {
-            title: "Chapter 2",
             story: `The story begins here... Once upon a time...<br><br> 
             (Really?! Remember ${name} that you can 'restart' at any point. 
             Buena suerte!)<br><br>
@@ -33,7 +38,6 @@ function getStoryChapter2(name) {
             image: "central.png",
         },
         tree: {
-            title: "Chapter 2",
             story: `It is where the road has brought you. You would like to advance
             farther, but a giant tree and some luxurious vegetation are blocking
             your way. This natural barrier creates a large area of shade. It looks
@@ -49,7 +53,6 @@ function getStoryChapter2(name) {
             image: "tree.png",
         },
         riverside: {
-            title: "Chapter 2",
             story: `The road continues down south, and to the left side
             there is a narrow river flowing downstream. You are sitting on the
             right side of the road. From here, you can see green grass and
@@ -70,7 +73,6 @@ function getStoryChapter2(name) {
         },
 
         goHome: {
-            title: "Chapter 2",
             story: `Back at home...
             `,
             image: "attic.png",
