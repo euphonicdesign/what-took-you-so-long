@@ -130,7 +130,7 @@ function getStoryChapter1(name) {
                     },
                 },
                 {
-                    choice: "push",
+                    choice: "push ladder",
                     destination: "tree",
                     story: `
                     You push the ladder against the tree.
@@ -142,6 +142,22 @@ function getStoryChapter1(name) {
                         "conditionMet": false,
                         "itemsRequired": [],
                         "itemsReturned": ["_ladder",],
+                    },
+                },
+                {
+                    choice: "push branch",
+                    destination: "tree",
+                    story: `
+                    You cannot reach the branches...
+                    `,
+                    storyConditionMet:`
+                    Moving the branches, you find a mobile phone and a
+                    pair of zapatos por tango...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_branches"],
+                        "itemsReturned": ["zapatos","phone"],
                     },
                 },
             ],
@@ -364,11 +380,39 @@ function getStoryChapter1(name) {
         },
 
         castle: {
-            story: `The castle...
+            story: `Inside the room, there is a smooth shiny floor, which looks just perfect!\
+            Los zapatos son para bailar... At the end of the room there is a large window,\
+            through which you can see the view outside. Something is running in the \
+            garden outside the castle. It is a white bunny.
             `,
-            image: "attic.png",
-            defaultDestination: "central",
-            buttonText: "Let's try this again",
+            choices: [
+                {
+                    choice: "follow the bunny",
+                    destination: "theend",
+                    story: `
+                    You chose to follow the white\
+                    bunny and the princess comes with you. That's interesting...
+                    `,
+                },
+                {
+                    choice: "admire the view",
+                    destination: "castle",
+                    story: `
+                    You chose to admire the view. Nothing interesting though...
+                    `,
+                },
+            ],
+            image: "castle.png",
+        },
+
+        theend: {
+            story: `
+            Chapter 1 ends here ${name}... In the next chapters, we are going\
+            to meet some other interesting characters...
+            `,
+            choices: [
+            ],
+            image: "theend.png",
         },
     }
 }
