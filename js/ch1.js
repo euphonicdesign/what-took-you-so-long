@@ -5,7 +5,7 @@ function getStoryChapter1(name) {
         currentChapter: "1",
         player: {
             inventory: [
-                "clothes", "flower", "food", "water", "zapatos", "_smile",
+                "clothes", "flower", "food", "zapatos", "_smile", "shield",
             ]
         },
         lastActionStory: ``,
@@ -244,8 +244,65 @@ function getStoryChapter1(name) {
                         "itemsReturned": ["_smile1"],
                     },
                 },
+                {
+                    choice: "give phone",
+                    destination: "princess",
+                    story: `
+                    You don't have any phone...
+                    `,
+                    storyConditionMet:`
+                    The princess starts texting.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["phone",],
+                        "itemsReturned": [],
+                    },
+                },
             ],
             image: "princess.png",
+        },
+
+        cave: {
+            story: `You arrived here after a 20 minutes' walk to the
+            east side of the realm. To reach the cave, you had had to climb up a
+            steep hill covered with rocks and muddy terrain. After all this
+            effort, you are now inside the cave. It is rather dark and cold,
+            so you light up a lamp to look around. Looking deeper into the cave, you notice 
+            a mighty dragon. Long streams of smoke flow outside his nostrils and 
+            he does not look very friendly. You start to shiver.
+            `,
+            choices: [
+                {
+                    choice: "central",
+                    destination: "central",
+                },
+                {
+                    choice: "fight",
+                    destination: "cave",
+                    story: `
+                    You attack the dragon,
+                    but he is much more powerful and agile than you. To escape
+                    his dangerous blows, you throw yourself outside the cave and
+                    down the hill. You get a couple of bruises, but you survive.
+                    `,
+                    storyConditionMet:`
+                    You attack the dragon
+                    in a valiant attempt to defeat him. The dragon is much more
+                    powerful than you, and starts throwing balls of fire.
+                    Fortunately, you are protected by your shield, and he cannot hurt you.
+                    After 15 minutes, the dragon flies away 
+                    and you start searching through the rest of the cave. In one of the corners, 
+                    you find some wood and a bottle full of water."
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["shield",],
+                        "itemsReturned": ["water",],
+                    },
+                },
+            ],
+            image: "cave.png",
         },
 
         goHome: {

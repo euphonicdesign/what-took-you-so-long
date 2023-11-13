@@ -156,6 +156,40 @@ function getInputValue(){
                                 story[story.currentScene].choices[j].condition["itemsReturned"].splice(0,itemsReturned.length);
 
                             }
+                            else {
+                                //condition met false and items required
+                                //check if items in inventory
+                                let itemsRequired = story[story.currentScene].choices[j].condition["itemsRequired"];
+                                console.log(itemsRequired);
+                                
+                                let itemsArePresentInTheInventory = true;
+                                for(let i=0;i<itemsRequired.length;i++){
+                                    let itemPresent = false;
+                                    for (k=0;k<story.player.inventory.length;k++){
+                                        if(itemsRequired[i] == story.player.inventory[k]){
+                                            itemPresent = true;
+                                            break;
+                                        }
+                                    }
+                                    if(!itemPresent) {
+                                        itemsArePresentInTheInventory = false;
+                                    }
+                                }
+                                console.log(itemsArePresentInTheInventory);
+                                if(itemsArePresentInTheInventory){
+                                    console.log("items are present in the inventory")
+                                    //set conditionMet
+                                    story[story.currentScene].choices[j].condition["conditionMet"] = true;
+                                    //set last action
+                                    story.lastActionStory = story[story.currentScene].choices[j].storyConditionMet;
+                                    //retrieve itemsReturned
+                                    let itemsReturned = story[story.currentScene].choices[j].condition["itemsReturned"];
+                                    for(let i=0;i<itemsReturned.length;i++){
+                                        story.player.inventory.push(itemsReturned[i]);
+                                    }
+                                    itemsReturned.splice(0,itemsReturned.length);
+                                }
+                            }
 
                             //check conditionMet
                             story[story.currentScene].choices[j].condition["conditionMet"] = true;
@@ -253,6 +287,9 @@ function getInputValue(){
                 }
                 
             }
+
+
+
 
             story.currentScene = inputs[i].getAttribute("data-destination");
 
