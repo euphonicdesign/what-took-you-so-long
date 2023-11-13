@@ -40,7 +40,7 @@ function getStoryChapter1(name) {
                 },
                 {
                     choice: "tree",
-                    destination: "goHome",
+                    destination: "tree",
                 },
                 {
                     choice: "cave",
@@ -101,6 +101,33 @@ function getStoryChapter1(name) {
                 {
                     choice: "central",
                     destination: "central",
+                },
+                {
+                    choice: "talk to the ladder",
+                    destination: "tree",
+                    story: `
+                    You get closer to the ladder and start talking to her.
+                    Probably, not the most intelligent action you could do...
+                    `,
+                },
+                {
+                    choice: "climb",
+                    destination: "tree",
+                    story: `
+                    You try to climb the tree,
+                    but you slip and get to embrace mother Earth once again...
+                    There should be an easier way to get up there!
+                    `,
+                    storyConditionMet:`
+                    You climb the ladder and
+                    get up in the tree. The view is beautiful... You can see the
+                    entire realm from up here.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_ladder",],
+                        "itemsReturned": ["_branches",],
+                    },
                 },
             ],
             image: "tree.png",
@@ -293,13 +320,21 @@ function getStoryChapter1(name) {
                     Fortunately, you are protected by your shield, and he cannot hurt you.
                     After 15 minutes, the dragon flies away 
                     and you start searching through the rest of the cave. In one of the corners, 
-                    you find some wood and a bottle full of water."
+                    you find some wood and a bottle full of water.
                     `,
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": ["shield",],
                         "itemsReturned": ["water",],
                     },
+                },
+                {
+                    choice: "run",
+                    destination: "central",
+                    story: `
+                    You start running. The
+                    dragon chases you, but you manage to escape!
+                    `,
                 },
             ],
             image: "cave.png",

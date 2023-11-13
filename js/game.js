@@ -192,7 +192,7 @@ function getInputValue(){
                             }
 
                             //check conditionMet
-                            story[story.currentScene].choices[j].condition["conditionMet"] = true;
+                            //story[story.currentScene].choices[j].condition["conditionMet"] = true;
                         }
                     }
                     
