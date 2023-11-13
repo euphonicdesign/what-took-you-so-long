@@ -9,12 +9,10 @@ function getStoryChapter1(name) {
         },
         lastActionStory: ``,
         conditionsAchieved: [
-            "test1",
-            "test2",
         ],
         central: {
             story: `The story begins here... Once upon a time...<br><br> 
-            (Really?! Remember ${name} that you can 'restart' at any point. 
+            (Really?! Remember <strong>${name}</strong> that you can 'restart' at any point. 
             Buena suerte!)<br><br>
             You are now in the central area. This place looks like a big
             intersection with multiple roads coming in and out. It is a
@@ -414,6 +412,7 @@ function getStoryChapter1(name) {
             choices: [
             ],
             image: "theend.png",
+            buttonText: "Select the 2nd chapter from the top"
         },
     }
 }
