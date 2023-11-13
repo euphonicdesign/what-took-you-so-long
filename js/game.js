@@ -1,90 +1,21 @@
 console.log("The javascript file has been loaded.");
 
 let story;
-function getStory(name) {
 
-    return {
-        currentScene: "central",
-        central: {
-            title: "Chapter 1",
-            story: `The story begins here... Once upon a time...<br><br> 
-            (Really?! Remember ${name} that you can 'restart' at any point. 
-            Buena suerte!)<br><br>
-            You are now in the central area. This place looks like a big
-            intersection with multiple roads coming in and out. It is a
-            beautiful day outside and you feel ready to explore the
-            surroundings. There are multiple directions where you can go.
-            `,
-            choices: [
-                {
-                    choice: "tree",
-                    destination: "tree",
-                },
-                {
-                    choice: "riverside",
-                    destination: "riverside",
-                },
-                {
-                    choice: "goHome",
-                    destination: "goHome",
-                },
-            ],
-            image: "central.png",
-        },
-        tree: {
-            title: "Chapter 1",
-            story: `It is where the road has brought you. You would like to advance
-            farther, but a giant tree and some luxurious vegetation are blocking
-            your way. This natural barrier creates a large area of shade. It looks
-            rather impressive and you wonder if there is any way around it...
-            On the ground, you notice a sturdy ladder.
-            `,
-            choices: [
-                {
-                    choice: "central",
-                    destination: "central",
-                },
-            ],
-            image: "tree.png",
-        },
-        riverside: {
-            title: "Chapter 1",
-            story: `The road continues down south, and to the left side
-            there is a narrow river flowing downstream. You are sitting on the
-            right side of the road. From here, you can see green grass and
-            a deep forest looming into the background. You hear a strange noise
-            coming from nearby. A white unicorn is resting down on the ground.
-            He does not look very well...
-            `,
-            choices: [
-                {
-                    choice: "central",
-                    destination: "central",
-                },
-                {
-                    choice: "princess",
-                    destination: "princess",
-                },
-            ],
-        },
-
-        goHome: {
-            title: "Chapter 1",
-            story: `Back at home...
-            `,
-            image: "attic.png",
-            defaultDestination: "central",
-            buttonText: "Let's try this again",
-        },
+let npcs = {
+    player: {
+        inventory: [
+            "food", "clothes"
+        ]
     }
-}
+};
 
 const startButton = document.querySelector("#start-button");
 const content = document.querySelector("#content");
 
 startButton.addEventListener("click", function() {
     const nameInput = document.querySelector("#name-input");
-    story = getStory(nameInput.value);
+    story = getStoryChapter1(nameInput.value);
     renderScene();
 });
 
@@ -105,6 +36,56 @@ function getInputs(){
     return input;
 };
 
+function getPickInputs(){
+    let input = "";
+    if(!story[story.currentScene].items){
+        return "";
+    }
+    let numberOfChoices = story[story.currentScene].choices.length;
+    for(let i=0; i<story[story.currentScene].items.length; i++){
+        // console.log(story[story.currentScene].choices[i].choice);
+        input += `
+            <input 
+                data-destination=${story.currentScene}
+                data-action-type="pick"
+                data-item=${story[story.currentScene].items[i]} 
+                id="radio${(numberOfChoices+i+1)}" 
+                type="radio" 
+                name="choices">
+            <label for="radio${(numberOfChoices+i+1)}">pick ${story[story.currentScene].items[i]}</label>
+            <br>
+        `;
+    }
+
+    return input;
+};
+
+function getInventory(){
+    let input = "";
+
+    if(npcs.player.inventory){
+        for(let i=0; i<npcs.player.inventory.length; i++){
+            input += `${npcs.player.inventory[i]}, `;
+        }
+    }
+    input = input.slice(0,input.length-2);
+
+    return input;
+}
+
+function getItemsAroundYou(){
+    let input = "";
+
+    if(story[story.currentScene].items){
+        for(let i=0; i<story[story.currentScene].items.length; i++){
+            input += `${story[story.currentScene].items[i]}, `;
+        }
+    }
+
+    input = input.slice(0,input.length-2);
+    return input;
+}
+
 function renderScene() {
     let text = "Continue";
     let image = "";
@@ -115,10 +96,19 @@ function renderScene() {
         text = story[story.currentScene].buttonText;
     }
     content.innerHTML = `
+        <button id="chapter1-button" class="chapter-buttons">Chapter 1</button>
+        <button id="chapter2-button" class="chapter-buttons">Chapter 2</button>
+        <br>
         <h1>${story[story.currentScene].title}</h1>
         <p>${story[story.currentScene].story}</p>
         ${image}<br>
+        <p>
+            Inventory: ${getInventory()} <br>
+            Around you: ${getItemsAroundYou()}
+        <p>
+        
         ${getInputs()}
+        ${getPickInputs()}
         <br>
         <button id="submit-button">${text}</button>
         `;
@@ -127,6 +117,8 @@ function renderScene() {
     }
     let submitButton = document.querySelector("#submit-button");
     submitButton.addEventListener("click", getInputValue)
+
+    setChapterButtonsLogic();
 };
 
 function getInputValue(){
@@ -135,6 +127,23 @@ function getInputValue(){
     for(let i=0; i < inputs.length; i++){
         if(inputs[i].checked) {
             story.currentScene = inputs[i].getAttribute("data-destination");
+            
+            //check if action is of type pick
+            if(inputs[i].getAttribute("data-action-type")){
+                if(inputs[i].getAttribute("data-action-type")==="pick"){
+                    let array = story[story.currentScene].items;
+                    let item = inputs[i].getAttribute("data-item");
+
+                    //remove item from scene items
+                    let index = array.indexOf(item);
+                    if (index !== -1) {
+                        array.splice(index, 1);
+                    }
+                    //move item to player inventory
+                    npcs.player.inventory.push(item);
+                }
+            }
+            
             renderScene();
             return;
         }
@@ -146,4 +155,22 @@ function getInputValue(){
         renderScene();
     }
     
+}
+
+function setChapterButtonsLogic() {
+    const chapter1Button = document.querySelector("#chapter1-button");
+    chapter1Button.addEventListener("click",()=>{
+        console.log("Click");
+        //nameInput
+        story = getStoryChapter1("");
+        renderScene();
+    })
+
+    const chapter2Button = document.querySelector("#chapter2-button");
+    chapter2Button.addEventListener("click",()=>{
+        console.log("Click Chapter 2");
+        //nameInput
+        story = getStoryChapter2("");
+        renderScene();
+    })
 }
