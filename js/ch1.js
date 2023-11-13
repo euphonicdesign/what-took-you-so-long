@@ -9,6 +9,10 @@ function getStoryChapter1(name) {
             ]
         },
         lastActionStory: ``,
+        conditionsAchieved: [
+            "test1",
+            "test2",
+        ],
         central: {
             story: `The story begins here... Once upon a time...<br><br> 
             (Really?! Remember ${name} that you can 'restart' at any point. 
@@ -118,7 +122,93 @@ function getStoryChapter1(name) {
                     choice: "princess",
                     destination: "princess",
                 },
+                {
+                    choice: "talk",
+                    destination: "riverside",
+                    story: `
+                    You talk to the unicorn and you find out his story. He needs 
+                    your help.
+                    `,
+                    storyConditionMet:`
+                    Suddenly he feels rejuvenated, he gets up and
+                    runs into the deep forest. He leaves an interesting flower behind him
+                    and you pick it up.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                    },
+                },
+                {
+                    choice: "give food",
+                    destination: "riverside",
+                    story: `
+                    You don't have any food left...
+                    `,
+                    storyConditionMet:`
+                    The unicorn eats the little food you offer him. He gets
+                    additional strength back..
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["food",],
+                        "itemsReturned": ["unicorn strength"],
+                    },
+                },
+                {
+                    choice: "give water",
+                    destination: "riverside",
+                    story: `
+                    You don't have any water left...
+                    `,
+                    storyConditionMet:`
+                    The unicorn drinks the water you have brought him. He gets
+                    additional strength back...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["water",],
+                        "itemsReturned": ["unicorn hidratation"],
+                    },
+                },
             ],
+            image: "riverside.png",
+        },
+
+        princess: {
+            story: `You arrive at another house and choose to enter the main room. It is a
+            delightful place. There are some books spread on a nearby
+            table. In the middle of the table, there is a vase with some colourful
+            flowers, and at the table side there are two comfortable chairs.
+            Looking into the background, you see a window and a couple of plants
+            showering into the light. You also notice a beautiful princess that is
+            looking at you.
+            `,
+            choices: [
+                {
+                    choice: "riverside",
+                    destination: "riverside",
+                },
+                {
+                    choice: "talk to the princess",
+                    destination: "princess",
+                    story: `
+                    The princess offers you a 
+                    cup of coffee and tells you that she had a busy day. She had to
+                    leave her office at 3PM, and then run to the university to take an exam.
+                    She can now finally rest. You continue to talk. The
+                    conversation is nice and stimulating. She feels relaxed now.
+                    `,
+                    storyConditionMet:`
+                    The princess is relaxed now...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["coffee"],
+                    },
+                },
+            ],
+            image: "princess.png",
         },
 
         goHome: {

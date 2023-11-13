@@ -19,7 +19,11 @@ function getInputs(){
     for(let i=0; i<story[story.currentScene].choices.length; i++){
         // console.log(story[story.currentScene].choices[i].choice);
         input += `
-            <input data-destination=${story[story.currentScene].choices[i].destination} id="radio${(i+1)}" type="radio" name="choices">
+            <input 
+                data-destination=${story[story.currentScene].choices[i].destination} 
+                id="radio${(i+1)}" 
+                type="radio" 
+                name="choices">
             <label for="radio${(i+1)}">${story[story.currentScene].choices[i].choice}</label>
             <br>
         `;
@@ -96,6 +100,7 @@ function renderScene() {
         <p>${displayStoryText()}</p>
         ${image}<br>
         <p>
+            ${getConditionsAchieved()}<br>
             Inventory: ${getInventory()} <br>
             Around you: ${getItemsAroundYou()}
             <br>
@@ -119,10 +124,47 @@ function renderScene() {
 function getInputValue(){
     // console.log("You clicked the button");
     let inputs = document.querySelectorAll('input[type="radio"]');
+    let labelInputs = document.querySelectorAll('label');
     for(let i=0; i < inputs.length; i++){
         if(inputs[i].checked) {
+
+            //check if there is a story text for the action and 
+            for(let j=0;j<story[story.currentScene].choices.length;j++)
+                if(story[story.currentScene].choices[j].choice === labelInputs[i].textContent){
+                    
+                    story.lastActionStory = story[story.currentScene].choices[j].story;
+
+                    //check if the story condition has been met already
+                    if(story[story.currentScene].choices[j].condition){
+                        if(story[story.currentScene].choices[j].condition["conditionMet"]){
+                            story.lastActionStory = story[story.currentScene].choices[j].storyConditionMet;
+                        }
+                        else{
+                            //conditionMet = false
+                            //check if action returns items when items required are empty
+                            if(story[story.currentScene].choices[j].condition["itemsRequired"].length == 0){
+                                let itemsReturned = story[story.currentScene].choices[j].condition["itemsReturned"];
+
+                                //add returned items to player inventory
+                                for(let i=0;i<itemsReturned.length; i++){
+                                    story.player.inventory.push(itemsReturned[i]);
+                                }
+
+                                //remove returned items from action inventory
+                                story[story.currentScene].choices[j].condition["itemsReturned"].splice(0,itemsReturned.length);
+
+                            }
+
+                            //check conditionMet
+                            story[story.currentScene].choices[j].condition["conditionMet"] = true;
+                        }
+                    }
+                    
+                }
+
             story.currentScene = inputs[i].getAttribute("data-destination");
-            
+
+
             //check if action is of type pick
             if(inputs[i].getAttribute("data-action-type")){
                 if(inputs[i].getAttribute("data-action-type")==="pick"){
@@ -146,12 +188,64 @@ function getInputValue(){
                         array.splice(index, 1);
                     }
                     //move item to player inventory
-                    story.player.inventory.push(itemName);
-
-                    
+                    story.player.inventory.push(itemName);  
                 }
             }
-            
+
+            //check if action is of type give
+            let action = labelInputs[i].textContent;
+            console.log(action);
+            if(action.indexOf("give")==0){
+                //check if player inventory has action items required
+                let itemsRequired = "";
+                let indexChoice = -1;
+                for(let j=0;j<story[story.currentScene].choices.length;j++)
+                    if(story[story.currentScene].choices[j].choice === labelInputs[i].textContent){
+                        indexChoice = j;
+                        itemsRequired = story[story.currentScene].choices[j].condition["itemsRequired"];
+                    }
+                let playerHasItems = true;
+                for (let k=0; k<itemsRequired.length; k++){
+                    if(!story.player.inventory.includes(itemsRequired[0])){
+                        playerHasItems = false;
+                        break;
+                    }
+                }
+
+                if(playerHasItems){
+                    story.lastActionStory = story[story.currentScene].choices[indexChoice].storyConditionMet;
+                    story[story.currentScene].choices[indexChoice].condition["conditionMet"] = true;
+
+                    //return conditionsAchieved
+                    let itemsReturned = story[story.currentScene].choices[indexChoice].condition["itemsReturned"];
+                    for (let i=0;i<itemsReturned.length;i++){
+                        story.conditionsAchieved.push(itemsReturned[i]);
+                    }
+
+                    //remove items from player
+                    let array = story.player.inventory;
+                    for (let i=0; i<itemsRequired.length;i++){
+                        let itemName = itemsRequired[i];
+
+                        // find the index of the item and store it in j
+                        let index = -1;
+                        for(let j=0;j<array.length;j++){
+                            if(array[j] === itemName){
+                                index = j;
+                                break;
+                            } 
+                        }
+
+                        //remove item from player
+                        if (index !== -1) {
+                            array.splice(index, 1);
+                        }
+                    }
+                    
+                }
+                
+            }
+
             renderScene();
             return;
         }
@@ -207,4 +301,13 @@ function displayLastActionText(){
 
     return input;
 
+}
+
+function getConditionsAchieved(){
+    input = "Conditions achieved: ";
+    for(let j=0; j<story.conditionsAchieved.length; j++){
+        input += `${story.conditionsAchieved[j]} `;
+    }
+
+    return input;
 }
