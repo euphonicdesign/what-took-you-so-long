@@ -61,7 +61,9 @@ function getInventory(){
 
     if(story.player.inventory){
         for(let i=0; i<story.player.inventory.length; i++){
-            input += `${story.player.inventory[i]}, `;
+            //check if the item has an _ mark, then do not display
+            if(story.player.inventory[i].substring(0,1)!="_")
+                input += `${story.player.inventory[i]}, `;
         }
     }
     input = input.slice(0,input.length-2);
@@ -217,9 +219,11 @@ function getInputValue(){
                     story[story.currentScene].choices[indexChoice].condition["conditionMet"] = true;
 
                     //return conditionsAchieved
+                    //return into player inventory the action returned items
                     let itemsReturned = story[story.currentScene].choices[indexChoice].condition["itemsReturned"];
                     for (let i=0;i<itemsReturned.length;i++){
-                        story.conditionsAchieved.push(itemsReturned[i]);
+                        // story.conditionsAchieved.push(itemsReturned[i]);
+                        story.player.inventory.push(itemsReturned[i]);
                     }
 
                     //remove items from player
@@ -304,10 +308,16 @@ function displayLastActionText(){
 }
 
 function getConditionsAchieved(){
-    input = "Conditions achieved: ";
-    for(let j=0; j<story.conditionsAchieved.length; j++){
-        input += `${story.conditionsAchieved[j]} `;
+    let input = "Conditions achieved:  ";
+
+    if(story.player.inventory){
+        for(let i=0; i<story.player.inventory.length; i++){
+            //check if the item has an _ mark, then do display
+            if(story.player.inventory[i].substring(0,1)=="_")
+                input += `${story.player.inventory[i].slice(1,story.player.inventory[i].length)}, `;
+        }
     }
+    input = input.slice(0,input.length-2);
 
     return input;
 }

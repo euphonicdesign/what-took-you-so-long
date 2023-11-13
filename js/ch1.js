@@ -5,7 +5,7 @@ function getStoryChapter1(name) {
         currentChapter: "1",
         player: {
             inventory: [
-                "clothes",
+                "clothes", "flower", "food", "water", 
             ]
         },
         lastActionStory: ``,
@@ -151,7 +151,7 @@ function getStoryChapter1(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": ["food",],
-                        "itemsReturned": ["unicorn strength"],
+                        "itemsReturned": ["_unicorn strength"],
                     },
                 },
                 {
@@ -167,7 +167,7 @@ function getStoryChapter1(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": ["water",],
-                        "itemsReturned": ["unicorn hidratation"],
+                        "itemsReturned": ["_unicorn hidratation"],
                     },
                 },
             ],
@@ -199,12 +199,42 @@ function getStoryChapter1(name) {
                     conversation is nice and stimulating. She feels relaxed now.
                     `,
                     storyConditionMet:`
-                    The princess is relaxed now...
+                    The princess feels relaxed now...
                     `,
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
                         "itemsReturned": ["coffee"],
+                    },
+                },
+                {
+                    choice: "give flower",
+                    destination: "princess",
+                    story: `
+                    You don't have any flowers...
+                    `,
+                    storyConditionMet:`
+                    The princess has received your flower and starts smiling.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["flower"],
+                        "itemsReturned": ["smile"],
+                    },
+                },
+                {
+                    choice: "give zapatos",
+                    destination: "princess",
+                    story: `
+                    You don't have any flowers...
+                    `,
+                    storyConditionMet:`
+                    The princess has received your flower and starts smiling.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["zapatos","smile"],
+                        "itemsReturned": ["smile1"],
                     },
                 },
             ],
