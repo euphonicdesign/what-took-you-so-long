@@ -4,7 +4,7 @@ function getStoryChapter1(name) {
         currentScene: "central",
         currentChapter: "1",
         player: {
-            inventory: ["zapatos", "_smile",
+            inventory: [
             ]
         },
         lastActionStory: ``,
