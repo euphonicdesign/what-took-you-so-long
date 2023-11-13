@@ -25,7 +25,6 @@ function getInputs(){
                 type="radio" 
                 name="choices">
             <label for="radio${(i+1)}">${story[story.currentScene].choices[i].choice}</label>
-            <br>
         `;
     }
 
@@ -49,7 +48,6 @@ function getPickInputs(){
                 type="radio" 
                 name="choices">
             <label for="radio${(numberOfChoices+i+1)}">pick ${story[story.currentScene].items[i].name}</label>
-            <br>
         `;
     }
 
@@ -111,7 +109,7 @@ function renderScene() {
         
         ${getInputs()}
         ${getPickInputs()}
-        <br>
+        <br><br>
         <button id="submit-button">${text}</button>
         `;
     if(story[story.currentScene].image){
@@ -130,16 +128,20 @@ function getInputValue(){
     for(let i=0; i < inputs.length; i++){
         if(inputs[i].checked) {
 
+            let conditionMet = false;
             //check if there is a story text for the action and 
             for(let j=0;j<story[story.currentScene].choices.length;j++)
                 if(story[story.currentScene].choices[j].choice === labelInputs[i].textContent){
                     
                     story.lastActionStory = story[story.currentScene].choices[j].story;
+                    
 
+                    
                     //check if the story condition has been met already
                     if(story[story.currentScene].choices[j].condition){
                         if(story[story.currentScene].choices[j].condition["conditionMet"]){
                             story.lastActionStory = story[story.currentScene].choices[j].storyConditionMet;
+                            conditionMet = true;
                         }
                         else{
                             //conditionMet = false
@@ -177,7 +179,7 @@ function getInputValue(){
                                 }
                                 // console.log(itemsArePresentInTheInventory);
                                 if(itemsArePresentInTheInventory){
-                                    // console.log("items are present in the inventory")
+                                    console.log("items are present in the inventory")
                                     //set conditionMet
                                     story[story.currentScene].choices[j].condition["conditionMet"] = true;
                                     //set last action
@@ -193,10 +195,18 @@ function getInputValue(){
 
                             //check conditionMet
                             //story[story.currentScene].choices[j].condition["conditionMet"] = true;
+                        
+                            if(story[story.currentScene].choices[j].condition["conditionMet"]){
+                                story.currentScene = inputs[i].getAttribute("data-destination");
+                            }
+                            renderScene();
+                            return;
+                        
                         }
                     }
                     
                 }
+            renderScene();
 
 
             //check if action is of type pick
@@ -290,8 +300,10 @@ function getInputValue(){
 
 
 
-
-            story.currentScene = inputs[i].getAttribute("data-destination");
+            // if(conditionMet){
+                story.currentScene = inputs[i].getAttribute("data-destination");
+            // }
+            
 
             renderScene();
             return;

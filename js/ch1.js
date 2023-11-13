@@ -4,8 +4,7 @@ function getStoryChapter1(name) {
         currentScene: "central",
         currentChapter: "1",
         player: {
-            inventory: [
-                "clothes", "flower", "food", "zapatos", "_smile", "shield",
+            inventory: ["zapatos", "_smile",
             ]
         },
         lastActionStory: ``,
@@ -194,6 +193,8 @@ function getStoryChapter1(name) {
                     `,
                     condition: {
                         "conditionMet": false,
+                        "itemsRequired": ["_unicorn strength", "_unicorn hidratation"],
+                        "itemsReturned": ["flower"],
                     },
                 },
                 {
