@@ -1,83 +1,188 @@
 function getStoryChapter2(name) {
 
     return {
-        currentScene: "central",
+        currentScene: "starting_place",
         currentChapter: "2",
         player: {
-            inventory: [
-                "food",
+            inventory: [ "ideas",
             ]
         },
-        central: {
-            story: `The story begins here... Once upon a time...<br><br> 
-            (Really?! Remember ${name} that you can 'restart' at any point. 
-            Buena suerte!)<br><br>
-            You are now in the central area. This place looks like a big
-            intersection with multiple roads coming in and out. It is a
-            beautiful day outside and you feel ready to explore the
-            surroundings. There are multiple directions where you can go.
+        lastActionStory: ``,
+        conditionsAchieved: [
+        ],
+        starting_place: {
+            story: `
+            Continuing from last time...
+            As you follow the white bunny, you start feeling a mild warm sensation 
+            throughout  your body. Slowly, your senses give up on you, and you lose 
+            consciousness. When you wake up, you realize you are in a different place. 
+            There is something peculiar about it. Something has changed, but you can't 
+            put your finger on it. For sure, the air is different. It is fresh, and 
+            you can breathe easily.You look around for the princess, but she's gone.
+            What has happened?
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the starting place area. It is warm and sunny outside.The 
+            wind is blowing softly. There are several ways to go around.
             `,
             choices: [
                 {
-                    choice: "tree",
-                    destination: "tree",
+                    choice: "library",
+                    destination: "library",
                 },
                 {
-                    choice: "riverside",
-                    destination: "riverside",
+                    choice: "house",
+                    destination: "house",
                 },
                 {
-                    choice: "goHome",
-                    destination: "goHome",
-                },
-                {
-                    choice: "pick shield",
-                    destination: "goHome",
+                    choice: "bridge end",
+                    destination: "bridge_end",
                 },
             ],
-            image: "central.png",
+            items: [
+            ],
+            image: "starting_place.png",
         },
-        tree: {
-            story: `It is where the road has brought you. You would like to advance
-            farther, but a giant tree and some luxurious vegetation are blocking
-            your way. This natural barrier creates a large area of shade. It looks
-            rather impressive and you wonder if there is any way around it...
-            On the ground, you notice a sturdy ladder.
+        library: {
+            story: `
+            You pass by several house blocks and take several turns. The people you 
+            encounter along the way seem to be occupied with their daily activities. 
+            You realize you are in a small quiet town. It feels good to be away from 
+            the agitation of the big city. A couple more turns, and you reach what 
+            seems to be an ancient school. Curiosity drives you in, and you find a 
+            library that is open.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the library area. There are several bookcases standing 
+            against the wall. Books of all sizes and shapes fill the shelves.
             `,
             choices: [
                 {
-                    choice: "central",
-                    destination: "central",
+                    choice: "starting place",
+                    destination: "starting_place",
+                },
+                {
+                    choice: "research",
+                    destination: "library",
+                    story: `
+                    You go to the library to do some research, but you realize that now 
+                    may not be the best moment. You feel there are some other things to 
+                    attend first.
+                    `,
+                    storyConditionMet:`
+                    You start to research the French language. You find a couple of good 
+                    books, some old lectures, some tapes, and a few filmstrips. The grammar 
+                    and sounds seem so complicated and pretentious, but you stick with it. 
+                    After a few hours, you get the basics. You can now understand and also
+                    speak 'un peu de francais'.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_morning",],
+                        "itemsReturned": ["_Francais",],
+                    },
                 },
             ],
-            image: "tree.png",
+            items: [
+            ],
+            image: "library.png",
         },
-        riverside: {
-            story: `The road continues down south, and to the left side
-            there is a narrow river flowing downstream. You are sitting on the
-            right side of the road. From here, you can see green grass and
-            a deep forest looming into the background. You hear a strange noise
-            coming from nearby. A white unicorn is resting down on the ground.
-            He does not look very well...
+        house: {
+            image: "house.png",
+            story: `
+            As you walk, you find yourself in front of a small house and decide to
+            enter. Inside, you find a desk with a computer, a table, a bed, and a
+            very old bookshelf that has several books.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the house area. Everything looks fine. The room is well
+            lit and it has a desk with a computer, a table, a bed, and a very old
+            bookshelf.
             `,
             choices: [
                 {
-                    choice: "central",
-                    destination: "central",
+                    choice: "starting place",
+                    destination: "starting_place",
                 },
                 {
-                    choice: "princess",
-                    destination: "princess",
+                    choice: "read",
+                    destination: "house",
+                    story: `
+                    You go to the bookshelf to read something. Except a couple of fairy 
+                    tales, that stir your imagination, you find most of the books plain 
+                    boring, or it could be that you just don't understand them. In any 
+                    case, you decide to do something else.
+                    `,
+                },
+                {
+                    choice: "play",
+                    destination: "map",
+                    story: `
+                    You go to the desk and turn on the computer. While the computer boots 
+                    up, you notice a pair of keys next to the monitor. You start playing 
+                    some video games. One of them contains a colourful map that you 
+                    can visualize in full-screen mode.
+                    `,
+                    storyConditionMet:`
+                    You start playing some video games. One of them contains a colourful
+                    map that you can visualize in full-screen mode.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["ideas",],
+                        "itemsReturned": ["keys",],
+                    },
+                },
+                {
+                    choice: "eat",
+                    destination: "house",
+                    story: `
+                    You are not hungry at this time of the day.
+                    `,
+                    storyConditionMet:`
+                    You feel hungry so you grab the food you got from the sailor and
+                    prepare yourself a nice meal. You take a couple of bites. It's good,
+                    it's tasty, in fact, it's the best food you have had lately.
+                    Good mix of various nutrients.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["food","_morning"],
+                        "itemsReturned": ["_strength",],
+                    },
                 },
             ],
+            items: [
+            ],
+            
         },
 
-        goHome: {
-            story: `Back at home...
+        map: {
+            image: "map.jpg",
+            story: `
+            As you walk, you find yourself in front of a small house and decide to
+            enter. Inside, you find a desk with a computer, a table, a bed, and a
+            very old bookshelf that has several books.
             `,
-            image: "attic.png",
-            defaultDestination: "central",
-            buttonText: "Let's try this again",
+            story2flag: false,
+            story2:`
+            You are now in the house area. Everything looks fine. The room is well
+            lit and it has a desk with a computer, a table, a bed, and a very old
+            bookshelf.
+            `,
+            choices: [
+                {
+                    choice: "house",
+                    destination: "house",
+                },
+            ],
+            items: [
+            ],
+            
         },
+
     }
 }
