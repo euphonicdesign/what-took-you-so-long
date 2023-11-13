@@ -164,8 +164,6 @@ function getInputValue(){
                     
                 }
 
-            story.currentScene = inputs[i].getAttribute("data-destination");
-
 
             //check if action is of type pick
             if(inputs[i].getAttribute("data-action-type")){
@@ -194,6 +192,7 @@ function getInputValue(){
                 }
             }
 
+            
             //check if action is of type give
             let action = labelInputs[i].textContent;
             console.log(action);
@@ -201,11 +200,16 @@ function getInputValue(){
                 //check if player inventory has action items required
                 let itemsRequired = "";
                 let indexChoice = -1;
-                for(let j=0;j<story[story.currentScene].choices.length;j++)
+                
+                
+                for(let j=0;j<story[story.currentScene].choices.length;j++){
+                    console.log("Bingo!");
                     if(story[story.currentScene].choices[j].choice === labelInputs[i].textContent){
                         indexChoice = j;
                         itemsRequired = story[story.currentScene].choices[j].condition["itemsRequired"];
                     }
+                }
+                    
                 let playerHasItems = true;
                 for (let k=0; k<itemsRequired.length; k++){
                     if(!story.player.inventory.includes(itemsRequired[0])){
@@ -249,6 +253,8 @@ function getInputValue(){
                 }
                 
             }
+
+            story.currentScene = inputs[i].getAttribute("data-destination");
 
             renderScene();
             return;

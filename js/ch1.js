@@ -5,7 +5,7 @@ function getStoryChapter1(name) {
         currentChapter: "1",
         player: {
             inventory: [
-                "clothes", "flower", "food", "water", 
+                "clothes", "flower", "food", "water", "zapatos", "_smile",
             ]
         },
         lastActionStory: ``,
@@ -219,22 +219,29 @@ function getStoryChapter1(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": ["flower"],
-                        "itemsReturned": ["smile"],
+                        "itemsReturned": ["_smile"],
                     },
                 },
                 {
                     choice: "give zapatos",
-                    destination: "princess",
+                    destination: "castle",
                     story: `
-                    You don't have any flowers...
+                    You need a pair of zapatos and make sure the princess is happy...
                     `,
                     storyConditionMet:`
-                    The princess has received your flower and starts smiling.
+                    You show her the pair of zapatos you have found.
+                    They remind you of an Argentinian folk dance called Chacarera, where the man does
+                    this pattern with his feet, resembling the attitude of a wild horse. It may look a bit silly, but
+                    can be great fun. She finds the zapatos a little bit old fashioned, and shows you
+                    her pair of dance shoes. You find the heels just a bit too high and a little bit too
+                    sharp, and you ponder on the idea that they could be used as weapons. 
+                    She laughs. Everything is fine now and you got a big smile.
+                    You take the princess and you go to a new place.
                     `,
                     condition: {
                         "conditionMet": false,
-                        "itemsRequired": ["zapatos","smile"],
-                        "itemsReturned": ["smile1"],
+                        "itemsRequired": ["zapatos","_smile",],
+                        "itemsReturned": ["_smile1"],
                     },
                 },
             ],
@@ -243,6 +250,14 @@ function getStoryChapter1(name) {
 
         goHome: {
             story: `Back at home...
+            `,
+            image: "attic.png",
+            defaultDestination: "central",
+            buttonText: "Let's try this again",
+        },
+
+        castle: {
+            story: `The castle...
             `,
             image: "attic.png",
             defaultDestination: "central",
