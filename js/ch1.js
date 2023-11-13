@@ -129,6 +129,21 @@ function getStoryChapter1(name) {
                         "itemsReturned": ["_branches",],
                     },
                 },
+                {
+                    choice: "push",
+                    destination: "tree",
+                    story: `
+                    You push the ladder against the tree.
+                    `,
+                    storyConditionMet:`
+                    The ladder is now standing against the tree.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_ladder",],
+                    },
+                },
             ],
             image: "tree.png",
         },

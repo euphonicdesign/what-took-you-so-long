@@ -160,7 +160,7 @@ function getInputValue(){
                                 //condition met false and items required
                                 //check if items in inventory
                                 let itemsRequired = story[story.currentScene].choices[j].condition["itemsRequired"];
-                                console.log(itemsRequired);
+                                // console.log(itemsRequired);
                                 
                                 let itemsArePresentInTheInventory = true;
                                 for(let i=0;i<itemsRequired.length;i++){
@@ -175,9 +175,9 @@ function getInputValue(){
                                         itemsArePresentInTheInventory = false;
                                     }
                                 }
-                                console.log(itemsArePresentInTheInventory);
+                                // console.log(itemsArePresentInTheInventory);
                                 if(itemsArePresentInTheInventory){
-                                    console.log("items are present in the inventory")
+                                    // console.log("items are present in the inventory")
                                     //set conditionMet
                                     story[story.currentScene].choices[j].condition["conditionMet"] = true;
                                     //set last action
