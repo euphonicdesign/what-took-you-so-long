@@ -538,7 +538,7 @@ function getStoryChapter2(name) {
                     `,
                     condition: {
                         "conditionMet": false,
-                        "itemsRequired": ["_song", "_talked to exotic girl"],
+                        "itemsRequired": ["song", "_talked to exotic girl"],
                         "itemsReturned": ["_morning"],
                     },
                 },
