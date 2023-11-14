@@ -157,6 +157,9 @@ function getInputValue(){
                                 //remove returned items from action inventory
                                 story[story.currentScene].choices[j].condition["itemsReturned"].splice(0,itemsReturned.length);
 
+                                //conditionMet becomes true
+                                story[story.currentScene].choices[j].condition["conditionMet"] = true;
+
                             }
                             else {
                                 //condition met false and items required
