@@ -128,6 +128,10 @@ function getInputValue(){
     for(let i=0; i < inputs.length; i++){
         if(inputs[i].checked) {
 
+            
+
+
+
             let conditionMet = false;
             //check if there is a story text for the action and 
             for(let j=0;j<story[story.currentScene].choices.length;j++)
@@ -135,6 +139,18 @@ function getInputValue(){
                     
                     story.lastActionStory = story[story.currentScene].choices[j].story;
                     
+
+                    //check if action returns items
+                    if(story[story.currentScene].choices[j].returnedItems){
+                        console.log(story[story.currentScene].choices[j].returnedItems);
+                        let returnedItems = story[story.currentScene].choices[j].returnedItems;
+                        //if yes, push items into the inventory
+                        for(let s=0;s<returnedItems.length;s++){
+                            story.player.inventory.push(returnedItems[s]);
+                        }
+                        //and empty array
+                        story[story.currentScene].choices[j].returnedItems.splice(0,returnedItems.length);
+                    }
 
                     
                     //check if the story condition has been met already
@@ -300,6 +316,8 @@ function getInputValue(){
                 }
                 
             }
+
+            
 
 
 

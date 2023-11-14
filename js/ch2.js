@@ -286,6 +286,10 @@ function getStoryChapter2(name) {
                     choice: "sunny beach",
                     destination: "sunny_beach",
                 },
+                {
+                    choice: "dam",
+                    destination: "dam",
+                },
             ],
             items: [
             ],
@@ -399,6 +403,147 @@ function getStoryChapter2(name) {
                         "conditionMet": false,
                         "itemsRequired": [],
                         "itemsReturned": ["seashell",],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        dam: {
+            image: "dam.jpg",
+            story: `
+            You pass by a beautiful beach with golden sand dunes. In some places, 
+            the trees create areas of shade. The sea waves come and go. When you 
+            reach the dam, you notice that it advances far into the sea. You walk on 
+            it until you reach the middle. Behind the rocks, you notice the fishing 
+            rod of a fisherman. You go to his place. He looks calm and relaxed.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the dam area. Behind the rocks, you notice the fishing
+            rod of a fisherman. You go to his place. He looks calm and relaxed.
+            `,
+            choices: [
+                {
+                    choice: "alley split",
+                    destination: "alley_split",
+                },
+                {
+                    choice: "lighthouse",
+                    destination: "lighthouse",
+                },
+                {
+                    choice: "watch seahorses",
+                    destination: "dam",
+                    story: `
+                    You get close to the water level to observe the seahorses. They 
+                    swim peacefully in the proximity of the algae and rocky formations. 
+                    They move in rhythmical patterns with a lot of grace and elegance by 
+                    flapping their tiny little wings, and by moving their tails up and 
+                    down. They seem not to be bothered at all by the big face that is 
+                    looking at them. Although they don't speak much, they make an 
+                    impression on you. You take a pen and some paper and do a seahorse 
+                    drawing. Looking far into the distance, you notice the end of the dam.
+                    `,
+                    storyConditionMet:`
+                    The seahorses swim peacefully in the proximity of the algae and rocky
+                    formations.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["seahorse drawing",],
+                    },
+                },
+                {
+                    choice: "talk",
+                    destination: "dam",
+                    story: `
+                    You greet the fisherman and chat a bit about the weather and the 
+                    sea. It seems that the other day, there was a thunderstorm with big 
+                    lightning bolts, which stirred the sea. Now the sea is calm, but 
+                    there are no fish around, only a couple of seahorses.
+                    `,
+                    storyConditionMet:`
+                    You talk to the fisherman and he says there are plenty of fish. 
+                    They attract groups of dolphins.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_morning"],
+                        "itemsReturned": [],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        lighthouse: {
+            image: "lighthouse.png",
+            story: `
+            You continue your walk up the dam, and farther into the sea until you
+            reach a lighthouse. The lighthouse seems to be closed.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the lighthouse area. The lighthouse seems to be closed.
+            It is surrounded by rocks.
+            `,
+            choices: [
+                {
+                    choice: "dam",
+                    destination: "dam",
+                },
+                {
+                    choice: "climb",
+                    destination: "lighthouse",
+                    story: `
+                    You climb the rocks. From up here, you can see the open sea. The 
+                    wind blows softly and cools you off from the heat of the sun. The 
+                    sea waves hit the rocks and create big splashes. Some of the water 
+                    drips reach you; they are cold. Looking far away into the distance, 
+                    you notice a tiny dot floating above the horizon line. It must be a 
+                    ship sailing around.
+                    `,
+                    storyConditionMet:`
+                    You get closer to the water and immerse your feet \n\
+                    in it. The water is still cool after yesterday's thunderstorm, but \n\
+                    the sensation is nice, because it is contrasting with the heat outside.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_fisherman_talked"],
+                        "itemsReturned": [],
+                    },
+                    returnedItems: ["_lighthouse visited"],
+                },
+                {
+                    choice: "climb higher",
+                    destination: "house",
+                    story: `
+                    Perhaps you should return here later to watch the sunset.
+                    `,
+                    storyConditionMet:`
+                    You climb the rocks. From up here, you can see the open sea. The wind is 
+                    almost totally absent. You look far into the distance. At the horizon line, 
+                    you notice many ships that are sailing towards the sunset. They have goldish/reddish 
+                    colours and they come in various shapes and sizes. The sunset rays create a warm 
+                    wonderful atmosphere. The strong heat of the day has resided and now it feels just 
+                    perfect. There are a few clouds close to the horizon. They are back-lit by the big 
+                    red ball of the sun, which is dissolving slowly into the sea. You realize it's evening 
+                    now and it's been a very long day. As you feel a bit tired, you decide to head home to 
+                    get some rest. You go inside the house and fall asleep in an instant. When you wake up 
+                    in the morning, you realize the mermaids song language is a known one. It's French! 
+                    Perhaps you should study it a little bit.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_song", "_talked to exotic girl"],
+                        "itemsReturned": ["_morning"],
                     },
                 },
             ],
