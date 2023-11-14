@@ -512,7 +512,7 @@ function getStoryChapter2(name) {
                     `,
                     condition: {
                         "conditionMet": false,
-                        "itemsRequired": ["_fisherman_talked"],
+                        "itemsRequired": ["_fisherman talked"],
                         "itemsReturned": [],
                     },
                     returnedItems: ["_lighthouse visited"],
@@ -599,7 +599,334 @@ function getStoryChapter2(name) {
             
         },
 
+        trees: {
+            image: "trees.png",
+            story: `
+            You choose to go near the trees. The branches of the trees are adorned
+            with small yellow flowers that smell nice.
+            `,
+            story2flag: false,
+            story2:`
+            The branches of the trees are adorned with small yellow flowers that \n\
+            smell nice.
+            `,
+            choices: [
+                {
+                    choice: "drive stop",
+                    destination: "drive_stop",
+                },
+                {
+                    choice: "listen",
+                    destination: "palm_beach",
+                    story: `
+                    Something's missing...
+                    `,
+                    storyConditionMet:`
+                    As you listen, you hear a low sound that seems to repeat itself. The sound 
+                    seems to originate from the area behind the trees. You realize it is the same 
+                    sound as the one you have heard in the seashell - the sea waves and sea wind 
+                    concerting together. For sure there must be a hidden beach behind this dense 
+                    vegetation. You start moving branches and make your way through until you reach 
+                    a marvellous beach. You catch your breath under the shade of a palm tree and start 
+                    noticing the surroundings. Seagulls are flying above the sea, making calls from 
+                    time to time. On the beach, there is a group of mermaids giggling. 
+                    Close to the water, you notice several sand castles. Altough fragile, 
+                    they seem to resist the sea waves that are hitting them incessantly.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["seashell",],
+                        "itemsReturned": [],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
 
+        palm_beach: {
+            image: "palm_beach.png",
+            story: `
+            You are now in the palm beach area. Seagulls are flying above the sea, 
+            making calls from time to time. On the beach, there is a group of mermaids 
+            giggling. Close to the water, you notice several sand castles that seem 
+            to resist all the coming waves.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the palm beach area. Seagulls are flying above the sea, 
+            making calls from time to time. On the beach, there is a group of 
+            mermaids giggling. Close to the water, you notice several sand castles 
+            that seem to resist all the coming waves.
+            `,
+            choices: [
+                {
+                    choice: "trees",
+                    destination: "trees",
+                },
+                {
+                    choice: "watch seagulls",
+                    destination: "palm_beach",
+                    story: `
+                    The seagulls seem to enjoy themselves. They make big circles in the 
+                    air followed by sharp drops into the sea to catch small fish. They go 
+                    with the flow and navigate the sea winds effortlessly. The small ones 
+                    have white feathers and grey beaks; they tend to be very fast in their 
+                    aerial manoeuvres. The big ones have large wings and orange beaks; 
+                    they glide high up in the air supervising the entire shore. The 
+                    seagulls' activity makes an impression on you and you create a drawing.
+                    `,
+                    storyConditionMet:`
+                    The seagulls seem to enjoy themselves. They make big circles in the 
+                    air followed by sharp drops into the sea to catch small fish. They go 
+                    with the flow and navigate the sea winds effortlessly. The small ones 
+                    have white feathers and grey beaks; they tend to be very fast in their 
+                    aerial manoeuvres. The big ones have large wings and orange beaks; 
+                    they glide high up in the air supervising the entire shore. The 
+                    seagulls' activity makes an impression on you.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["seagull drawing"],
+                    },
+                },
+                {
+                    choice: "give ideas",
+                    destination: "palm_beach",
+                    story: `
+                    The mermaids look confused and start laughing.
+                    `,
+                    storyConditionMet:`
+                    The mermaids continue to look confused and start laughing.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "give seashell",
+                    destination: "palm_beach",
+                    story: `
+                    You need to get a seashell first and need to speak to more people.
+                    `,
+                    storyConditionMet:`
+                    The mermaids take the seashell and start singing a beautiful song 
+                    in a language you don't understand. You are a bit disappointed that 
+                    you cannot grasp any of the words. You may need to explore and meet 
+                    more people.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["seashell", "_talked to exotic girl", "_lighthouse visited"],
+                        "itemsReturned": ["song"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        city_intersection: {
+            image: "city_intersection.jpg",
+            story: `
+            You drive to the right until you reach the outskirts of another city. 
+            The city seems to expand on a large area of land, and you wonder what you 
+            will find here. You enter a road intersection, which has a big artisanal 
+            fountain in the middle. From here, you can go into several directions.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the city intersection area. There is a big artisanal
+            fountain in the middle. From here, you can go into several directions.
+            `,
+            choices: [
+                {
+                    choice: "drive stop",
+                    destination: "drive_stop",
+                },
+                {
+                    choice: "east city",
+                    destination: "east_city",
+                },
+                {
+                    choice: "port",
+                    destination: "port",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        east_city: {
+            image: "east_city.jpg",
+            story: `
+            You drive to the right until you reach the east side of the city. You 
+            stop the car and go for a stroll on the side walk. You encounter a girl 
+            that is dressed in a white dress, and who is looking at you.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the east city area. A girl dressed in a white dress is 
+            standing in front of you.
+            `,
+            choices: [
+                {
+                    choice: "city intersection",
+                    destination: "city_intersection",
+                },
+                {
+                    choice: "talk",
+                    destination: "city_intersection",
+                    story: `
+                    The girl has an exotic look and she is staring at you with her 
+                    beautiful light-blue eyes. She tries to tell you something in a 
+                    language that you don't understand. You are confused. Perhaps now 
+                    it would be a good time to return to the lighthouse.
+                    `,
+                    storyConditionMet:`
+                    You talk to her, and find out that her name is Alice. She's looking 
+                    for her pet. You cannot do much in that respect. After her departure, 
+                    just a few meters down the sidewalk, you find a basketball and you take 
+                    it with you.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_Francais", "_lighthouse visited", "song"],
+                        "itemsReturned": ["basketball"],
+                    },
+                    returnedItems: ["_talked to exotic girl"],
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        port: {
+            image: "port.png",
+            story: `
+            You take the up route and drive along the coastline until you \n\
+            reach the port. To the east, you see lines of ships and big naval cranes \n\
+            moving cargo around. In your area, there are mainly light vessels used by \n\
+            tourists and sailing enthusiasts. You get closer to one of the ships. This \n\
+            one has a tall mast and long white sails. On one of its sides there is a \n\
+            shiny inscription. It says 'Princess'. You go aboard and you encounter a \n\
+            sailor, who is looking far into the sea. He has a couple of drawings on his \n\
+            table.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the port area. To the east, you see lines of ships and \n\
+            big naval cranes moving cargo around. In your area, there are mainly \n\
+            light vessels used by tourists and sailing enthusiasts. You get aboard \n\
+            one of the ships and notice that the sailor is looking far into the sea. \n\
+            He has a couple of drawings on his table.
+            `,
+            choices: [
+                {
+                    choice: "city intersection",
+                    destination: "city_intersection",
+                },
+                {
+                    choice: "talk",
+                    destination: "theend",
+                    story: `
+                    You talk to the sailor. He has interesting stories to tell. You ask 
+                    him whether he has any food aboard and he kindly offers you some. He 
+                    has a riddle for you. He asks you 'What is freedom?' You are a bit 
+                    surprised, and don't know how to answer that. What does he mean?
+                    `,
+                    storyConditionMet:`
+                    You talk to the sailor. The sailor looks at the 3 drawings he got 
+                    from you: the one with the seagull, the one with the seahorse, and 
+                    the one with the dolphin. He smiles knowingly at you, and you smile, 
+                    because now... you know what freedom is...
+                    You are now at the end of the chapter. Suddenly another thought 
+                    crosses your mind: 'Ou est la princesse?' You must find her! Another 
+                    journey is about to start! 
+                    To be continued...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_understanding", "_smile1", "_smile2", "_smile3"],
+                        "itemsReturned": [],
+                    },
+                    returnedItems: ["food", "_fisherman talked"],
+                },
+                {
+                    choice: "give seahorse drawing",
+                    destination: "port",
+                    story: `
+                    You don't have any seahorse drawings...
+                    `,
+                    storyConditionMet:`
+                    The sailor takes the drawing and smiles at you. He puts it down, on 
+                    the table next to him.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["seahorse drawing"],
+                        "itemsReturned": ["_smile1"],
+                    },
+                },
+                {
+                    choice: "give seagull drawing",
+                    destination: "port",
+                    story: `
+                    You don't have any seagull drawings...
+                    `,
+                    storyConditionMet:`
+                    The sailor takes the drawing and smiles at you. He puts it down, on 
+                    the table next to him.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["seagull drawing"],
+                        "itemsReturned": ["_smile2"],
+                    },
+                },
+                {
+                    choice: "give dolphin drawing",
+                    destination: "port",
+                    story: `
+                    You don't have any dolphin drawings...
+                    `,
+                    storyConditionMet:`
+                    The sailor takes the drawing and smiles at you. He puts it down, on 
+                    the table next to him.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["dolphin drawing"],
+                        "itemsReturned": ["_smile3"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        theend: {
+            image: "theend.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+            ],
+            items: [
+            ],
+            buttonText: "Select the 3rd chapter from the top"
+            
+        },
 
     }
 }
