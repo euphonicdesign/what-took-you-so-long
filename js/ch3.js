@@ -278,7 +278,7 @@ function getStoryChapter3(name) {
                 },
                 {
                     choice: "use torch",
-                    destination: "forest clearing",
+                    destination: "forest_clearing",
                     story: `
                     You need to find a torch.
                     `,
@@ -297,6 +297,134 @@ function getStoryChapter3(name) {
                         "itemsRequired": ["torch"],
                         "itemsReturned": ["_web melted"],
                     },
+                },
+                
+            ],
+            items: [
+            ],
+            
+        },
+
+        fireplace: {
+            image: "fireplace1.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            You get closer to the fireplace. A circle of rocks surrounds some ashes and wood
+            leftovers.
+            `,
+            choices: [
+                {
+                    choice: "camping",
+                    destination: "camping1",
+                },
+                {
+                    choice: "watch",
+                    destination: "fireplace",
+                    story: `
+                    `,
+                    storyConditionMet:`
+                    You watch the campfire. There are a couple of rocks arranged
+                    in a circle, and in the middle of it, there is a small fire burning
+                    lightly. From time to time you hear some pops and cracks, and you see
+                    small red dots raising up into the air and then vanishing
+                    away. Unless you add more dry leafs, the fire is going to
+                    fade away pretty soon.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_fire started"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "use rock",
+                    destination: "fireplace",
+                    story: `
+                    You need a rock and make sure the fireplace is prepared.
+                    `,
+                    storyConditionMet:`
+                    You take your rock and then you pick a second one from the circle
+                    of stones. You pick the one that shines the most,
+                    and then you strike the two of them to create a
+                    spark... Unfortunately, it doesn't work like in the movies,
+                    and there is one more detail you might have overlooked -
+                    these are not flint stones! Fortunately, there was a box of
+                    matches next to the shiny rock you have picked up, and you
+                    use it to light up
+                    the fire. You are as happy as a child with the result!
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["rock","_fireplace prepared"],
+                        "itemsReturned": ["_fire started"],
+                    },
+                },
+                {
+                    choice: "use leafs",
+                    destination: "fireplace",
+                    story: `
+                    You need to find a some leafs first.
+                    `,
+                    storyConditionMet:`
+                    You remove the ashes and other wood leftovers, you take the
+                    dry leafs you have
+                    collected, and then you spread them inside the circle of rocks.
+                    You make sure sure they are distributed evenly, and there is
+                    enough air in between.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["leafs"],
+                        "itemsReturned": ["_fireplace prepared"],
+                    },
+                },
+                {
+                    choice: "use stick",
+                    destination: "fireplace",
+                    story: `
+                    You need a stick and make sure the fire is started.
+                    `,
+                    storyConditionMet:`
+                    You push the end of the stick into the fire and then you
+                    pull it out. You have just created an olympic torch.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["stick", "_fire started"],
+                        "itemsReturned": ["torch"],
+                    },
+                },
+                
+            ],
+            items: [
+                {
+                    name: "rock",
+                    story: `
+                    You have picked up a rock.
+                    `,
+                },
+            ],
+            
+        },
+
+        forest_clearing: {
+            image: "forest clearing.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            This place is surrounded by trees and there are
+            many flowers growing around, with colors ranging from
+            bright red to full white. The flowers are large and fragrant. They
+            seem to be wild peonies. At the edge of the
+            area, next to the forest trees, you notice some mushrooms.
+            `,
+            choices: [
+                {
+                    choice: "squirell",
+                    destination: "squirell",
                 },
                 
             ],
