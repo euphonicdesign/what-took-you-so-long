@@ -426,11 +426,479 @@ function getStoryChapter3(name) {
                     choice: "squirell",
                     destination: "squirell",
                 },
+                {
+                    choice: "mushrooms",
+                    destination: "mushrooms",
+                    story: `
+                    You get closer to the mushrooms area. There is a big tree in front
+                    of you that looks quite old, with a very large crown, and a wide trunk.
+                    The branches seem heavy and leaning a bit towards the ground. It is
+                    adorned with beautiful blooming flowers.
+                    At its base grow multiple groups of mushrooms. You can distinguish two kinds.
+                    There are the colourful mushrooms, which almost look like candies.
+                    Unfortunately, they have a high level of toxicity, and generally
+                    speaking, they are not edible.
+                    There are also the simple mushrooms. They have a white/brownish shade,
+                    and look very plain. These are the types that are healthy and edible.
+                    Which one would you choose?
+                    `,
+                },
+                {
+                    choice: "peonies",
+                    destination: "peonies",
+                    story: `
+                    You move closer to the flowers. The peonies are blooming and have
+                    white and bright red colors.
+                    This place has a nice fragrance. You avail yourself of the opportunity
+                    and lie
+                    back down on the grass. Birds are chirping. The sun is warm. Life is good.
+                    While laying down on your back, you notice a butterfly flying
+                    around.
+                    `,
+                },
+                {
+                    choice: "whistle",
+                    destination: "waterfall",
+                    story: `
+                    You start whistling... Nothing happens.
+                    `,
+                    storyConditionMet:`
+                    A little skeptical at first, you decide to give it a try.
+                    You hold your hands together, creating a hollow space
+                    between your thumbs. Then, you make  a little opening close
+                    to the thumbs, and start blowing air into it, just
+                    like you were doing when you were a child. This creates a
+                    particular sound that resembles the sound made by
+                    deers. Nothing happens.
+                    You try whistling again, this time blowing more air and for 
+                    a longer period of time.
+                    Still, no response.
+                    You blow air again. This time, after a pause of 3 seconds, you
+                    hear back the sound of the deers. They must be getting closer...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_deers sound"],
+                        "itemsReturned": [],
+                    },
+                },
                 
             ],
             items: [
             ],
             
+        },
+
+        mushrooms: {
+            image: "mushrooms.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "forest clearing",
+                    destination: "forest_clearing",
+                },
+                {
+                    choice: "pick colourful",
+                    destination: "mushrooms",
+                    story: `
+                    You cannot help it, and go for the colourful mushrooms.\
+                    As you touch them, you get some sort of allergic reaction,\
+                    and you start feeling bad. This sensation lasts for about\
+                    half an hour.
+                    `,
+                    storyConditionMet:`
+                    You would rather not do that again. It may have side effects.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "pick simple",
+                    destination: "mushrooms",
+                    story: `
+                    You start inspecting the mushrooms. They look the right
+                    kind, the type that can be eaten. They are rich in vitamin D.
+                    You take a bite and your energy level goes up. You feel good!
+                    You take a couple of them as food reserve.
+                    `,
+                    storyConditionMet:`
+                    You already have some.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["mushrooms"],
+                    },
+                },
+                
+            ],
+            items: [
+            ],
+            
+        },
+
+        peonies: {
+            image: "peonies.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "forest clearing",
+                    destination: "forest_clearing",
+                },
+                {
+                    choice: "follow butterfly",
+                    destination: "peonies",
+                    story: `
+                    You go after the butterfly as he graciously flies from
+                    flower to flower. At some point, he lands on a flower and stays longer
+                    than usual. You get closer, and notice the rainbow on its
+                    flaping wings, as well as its long and curved antennas. Suddenly, you hear a long
+                    sound coming from the woods, and the butterfly flies away. The
+                    sound has a mysterious tone, but at the same time it has a familiar touch.
+                    Yes, you remember clearly now, it is the sound that
+                    deers make when roaming around the forest. Your father used to
+                    teach you when you were a child how to attract them.
+                    `,
+                    storyConditionMet:`
+                    You go after the butterfly as he graciously flies from
+                    flower to flower. At some point, he lands on a flower and stays longer
+                    than usual. You get closer, and notice the rainbow on its
+                    flaping wings, as well as its long and curved antennas. Suddenly, you hear a long
+                    sound coming from the woods, and the butterfly flies away. The
+                    sound has a mysterious tone, but at the same time it has a familiar touch.
+                    Yes, you remember clearly now, it is the sound that
+                    deers make when roaming around the forest. Your father used to
+                    teach you when you were a child how to attract them.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_deers sound"],
+                    },
+                },
+                
+            ],
+            items: [
+            ],
+        },
+
+        squirell: {
+            image: "squirell.jpg",
+            story: `
+            You go right and arrive at a place where there are a couple of trees spread
+            around, and some low grass that is growing and covering the ground.
+            While you look at the trees and how the sunlight falling through their branches
+            creates
+            patches of golden areas on the grass, with the corner of the eye, you
+            catch some movement in the grass, and then nothing. You thought
+            it was just an illusion, but then the same thing happens again!
+            Something like a small ball of brownish/reddish color is moving around
+            with quick, but light steps. It is a lovely squirrel! It has a lot of
+            energy, moving around, going up in the trees, and then jumping from branch
+            to branch. Then coming down, then coming to you, then leaving and
+            moving around once more.
+            `,
+            story2flag: false,
+            story2:`
+            Here, there are a couple of trees spread around, and some low grass
+            that is growing and covering the ground. The sunlight falling through the branches
+            of the trees creates
+            patches of golden areas on the grass. The super agile squirrel is still
+            around. It has a lot of
+            energy, moving around, going up in the trees, and then jumping from branch
+            to branch. Then coming down, then coming to you, then leaving and
+            moving around once more.
+            `,
+            choices: [
+                {
+                    choice: "forest clearing",
+                    destination: "forest_clearing",
+                },
+                {
+                    choice: "give walnut",
+                    destination: "shrubs",
+                    story: `
+                    You don't have any walnuts that you can give to the squirell...
+                    `,
+                    storyConditionMet:`
+                    As soon as you take out the walnut, the squirrel
+                    stops wandering around, raises on two of its feet and looks
+                    at you holding its tail up in the air. In an instant she is next
+                    to you. You give her the walnut. She picks it and then runs
+                    up towards the tallest tree, climbing to the top.
+                    You lose the squirrel from sight but you notice another
+                    peculiar inhabitant of the forest.<br>
+                    It is a bird with a very long beak. Must be a woodpecker.
+                    The woodpecker flies away to another tree and you can no
+                    longer see it. However you hear it starting to hit the wood.
+                    You go in the direction of the sound. When you reach it,
+                    the woodpecker flies away to a different tree and start
+                    pecking at the tree. You go towards it.
+                    After a couple more times. You reach another area.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["walnut"],
+                        "itemsReturned": [],
+                    },
+                },
+                
+            ],
+            items: [
+            ],
+        },
+        waterfall: {
+            image: "waterfall.jpg",
+            story: `
+            Now that you have mastered the technique, you call the deers
+            once more. The next moment, you hear some tree leaves
+            swishing, and a couple of sparkling eyes appearing from
+            behind the shrubs. A little cautious at first, they get
+            closer to you, revealing their big antlers and strong bodies.
+            They are now in front of you, within an arm's length distance.
+            You could almost touch them. They look at you straight into the
+            eyes for
+            a few moments, and then they turn and go into the woods.
+            You follow them until you reach an
+            impressive scene. The waterfall that reveals in front of you
+            is making a soothing noise. At its base, the
+            water is calm and clear. The deers go to drink some water.
+            There are some walnuts on the ground, just below the trees.
+            `,
+            story2flag: false,
+            story2:`
+            The waterfal that reveals in front of you
+            is making a soothing noise. At its base, the
+            water is calm and clear.
+            `,
+            choices: [
+                {
+                    choice: "forest clearing",
+                    destination: "forest_clearing",
+                },
+                {
+                    choice: "watch deers",
+                    destination: "waterfall",
+                    story: `
+                    You watch the deers drinking water...
+                    `,
+                },
+                {
+                    choice: "pick walnut",
+                    destination: "waterfall",
+                    story: `
+                    You have picked up a walnut.
+                    `,
+                    storyConditionMet:`
+                    You already have one.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["walnut"],
+                    },
+                },
+                {
+                    choice: "drink",
+                    destination: "waterfall",
+                    story: `
+                    As you are getting closer to the water to drink some,
+                    in the reflection,
+                    you notice the head of a white unicorn,
+                    which is standing right behind you.
+                    This makes you thrill for one second... The unicorn then
+                    raises one of his legs and
+                    touches you lightly, pushing you slightly towards the water,
+                    and then he stops. For a split of a second you thought you were
+                    going to fall into the water... Funny unicorn...
+                    `,
+                    storyConditionMet:`
+                    You are not thirsty anymore...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_water"],
+                    },
+                },
+                {
+                    choice: "talk",
+                    destination: "waterfall",
+                    story: `
+                    Talking by yourself is not considered the most wise thing to do...
+                    `,
+                    storyConditionMet:`
+                    You talk to the unicorn. He seems to be having a good time...
+                    The unicorn tells you that due to the fact that he knows
+                    you, he is
+                    going to tell you a little secret. It is about the
+                    symbiosis between moss and trees. Yes, you remember,
+                    you learned about it in school. Moss tends to grow on a
+                    particular side of the tree - the north side.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_water", "_blueberries received"],
+                        "itemsReturned": ["_moss knowledge"],
+                    },
+                },
+                {
+                    choice: "give blueberries",
+                    destination: "waterfall",
+                    story: `
+                    Who would you give the blueberries to?...Do you have any?...
+                    `,
+                    storyConditionMet:`
+                    The unicorn looks at you and raises one of its eyebrows. He asks
+                    you whether you think he looks like a bear? Unicorns don't
+                    eat blueberries... That's why they are called white
+                    unicorns, and NOT blue unicorns... You don't know what to
+                    say... He then adds, that he was just pulling your leg,
+                    and he eats the blueberries in an instant... Indeed, very
+                    funny unicorn...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_water", "blueberries"],
+                        "itemsReturned": ["_blueberries received"],
+                    },
+                },
+                
+            ],
+            items: [
+            ],
+        },
+
+        shrubs: {
+            image: "shrubs.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            You notice a couple of shrubs and a distinctive tree that is growing in a very an uncommon form.
+            `,
+            choices: [
+                {
+                    choice: "forest clearing",
+                    destination: "forest_clearing",
+                },
+                {
+                    choice: "get blueberries",
+                    destination: "shrubs",
+                    story: `
+                    You get some blueberries.
+                    `,
+                    storyConditionMet:`
+                    You already have some...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["blueberries"],
+                    },
+                },
+                {
+                    choice: "observe tree",
+                    destination: "lianas",
+                    story: `
+                    You look at the tree. Seem to be covered with different shades of green and brown.
+                    `,
+                    storyConditionMet:`
+                    You look closer. Part of the tree is covered with green moss.
+                    Moss grows on that part because of the way the sun rises
+                    and sunsets. There is more humidity towards the north side.
+                    Since you now know where north is, you choose to go into
+                    that direction. You walk until you reach
+                    the banks of a river that is flowing rapidly. You try the water
+                    and it seems to be rather cold and deep. How could you cross onto the
+                    other side?
+                    There are a couple of rocks in the middle of the river, but they are too far to jump on, and
+                    too small to hold ones equilibrium. The trees on your side might
+                    be the key. There are some lianas growing up. If you could only
+                    grab one of their ends.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_moss knowledge"],
+                        "itemsReturned": [],
+                    },
+                },
+                
+            ],
+            items: [
+            ],
+        },
+
+        lianas: {
+            image: "lianas.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            There is a river in front of you that is flowing very rapidly.
+            There are a couple of rocks in the middle of it, but they are too far away to jump on,
+            and
+            too small to hold ones equilibrium. The trees on your side might
+            be the key. There are some lianas growing up... If you could only
+            grab one of their ends....
+            `,
+            choices: [
+                {
+                    choice: "grab lianas",
+                    destination: "train",
+                    story: `
+                    You get some blueberries.
+                    `,
+                    storyConditionMet:`
+                    You already have some...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["blueberries"],
+                    },
+                },
+                {
+                    choice: "observe tree",
+                    destination: "lianas",
+                    story: `
+                    You look at the tree. Seem to be covered with different shades of green and brown.
+                    `,
+                    storyConditionMet:`
+                    You look closer. Part of the tree is covered with green moss.
+                    Moss grows on that part because of the way the sun rises
+                    and sunsets. There is more humidity towards the north side.
+                    Since you now know where north is, you choose to go into
+                    that direction. You walk until you reach
+                    the banks of a river that is flowing rapidly. You try the water
+                    and it seems to be rather cold and deep. How could you cross onto the
+                    other side?
+                    There are a couple of rocks in the middle of the river, but they are too far to jump on, and
+                    too small to hold ones equilibrium. The trees on your side might
+                    be the key. There are some lianas growing up. If you could only
+                    grab one of their ends.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_moss knowledge"],
+                    },
+                },
+                
+            ],
+            items: [
+            ],
         },
 
     }
