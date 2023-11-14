@@ -211,10 +211,6 @@ function getStoryChapter2(name) {
                     destination: "alley_split",
                 },
                 {
-                    choice: "drive stop",
-                    destination: "drive_stop",
-                },
-                {
                     choice: "starting place",
                     destination: "starting_place",
                 },
@@ -231,7 +227,7 @@ function getStoryChapter2(name) {
                 },
                 {
                     choice: "drive car",
-                    destination: "bridge_end",
+                    destination: "drive_stop",
                     story: `
                     You try the door of the car, but it's locked. \
                     You try to force it, to no avail.
@@ -545,6 +541,57 @@ function getStoryChapter2(name) {
                         "itemsRequired": ["_song", "_talked to exotic girl"],
                         "itemsReturned": ["_morning"],
                     },
+                },
+                {
+                    choice: "climb highest",
+                    destination: "lighthouse",
+                    story: `
+                    Perhaps you should return here some other time.
+                    `,
+                    storyConditionMet:`
+                    You climb the rocks and... something amazing is undergoing in \n\
+                    front of your eyes. A large group of dolphins are swimming together \n\
+                    making noises, jumping up in the air, and making big splashes when \n\
+                    diving back into the water. They seem happy and friendly, and make \n\
+                    a big impression on you. You create a drawing.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_morning", "_strength"],
+                        "itemsReturned": ["dolphin drawing"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        drive_stop: {
+            image: "drive_stop.jpg",
+            story: `
+            You drive to the right. After a ten minutes' ride, you notice on the 
+            left side of the road some trees and some dense vegetation. You can stop 
+            near the trees, continue driving to the right side, or return to the left 
+            side.
+            `,
+            story2flag: false,
+            story2:`
+            You are now in the drive stop area. You can stop near the trees, or 
+            continue driving in the desired direction.
+            `,
+            choices: [
+                {
+                    choice: "bridge end",
+                    destination: "bridge_end",
+                },
+                {
+                    choice: "trees",
+                    destination: "trees",
+                },
+                {
+                    choice: "city intersection",
+                    destination: "city_intersection",
                 },
             ],
             items: [
