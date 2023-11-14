@@ -1,8 +1,8 @@
-function getStoryChapter3(name) {
+function getStoryChapter4(name) {
 
     return {
         currentScene: "port",
-        currentChapter: "3",
+        currentChapter: "4",
         player: {
             inventory: [
             ]

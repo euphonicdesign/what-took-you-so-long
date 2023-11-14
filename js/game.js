@@ -95,6 +95,7 @@ function renderScene() {
         <button id="chapter1-button" class="chapter-buttons">Chapter 1</button>
         <button id="chapter2-button" class="chapter-buttons">Chapter 2</button>
         <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
+        <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
         <br>
         <h1>Chapter ${story.currentChapter}</h1>
         <p>${displayLastActionText()}</p>
@@ -363,7 +364,15 @@ function setChapterButtonsLogic() {
         //nameInput
         story = getStoryChapter3("");
         renderScene();
-    })
+    });
+
+    const chapter4Button = document.querySelector("#chapter4-button");
+    chapter4Button.addEventListener("click",()=>{
+        console.log("Click Chapter 4");
+        //nameInput
+        story = getStoryChapter4("");
+        renderScene();
+    });
 }
 
 function displayStoryText() {
