@@ -94,6 +94,7 @@ function renderScene() {
     content.innerHTML = `
         <button id="chapter1-button" class="chapter-buttons">Chapter 1</button>
         <button id="chapter2-button" class="chapter-buttons">Chapter 2</button>
+        <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
         <br>
         <h1>Chapter ${story.currentChapter}</h1>
         <p>${displayLastActionText()}</p>
@@ -353,6 +354,14 @@ function setChapterButtonsLogic() {
         console.log("Click Chapter 2");
         //nameInput
         story = getStoryChapter2("");
+        renderScene();
+    })
+
+    const chapter3Button = document.querySelector("#chapter3-button");
+    chapter3Button.addEventListener("click",()=>{
+        console.log("Click Chapter 3");
+        //nameInput
+        story = getStoryChapter3("");
         renderScene();
     })
 }
