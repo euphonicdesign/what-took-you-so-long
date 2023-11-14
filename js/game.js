@@ -143,7 +143,7 @@ function getInputValue(){
 
                     //check if action returns items
                     if(story[story.currentScene].choices[j].returnedItems){
-                        console.log(story[story.currentScene].choices[j].returnedItems);
+                        // console.log(story[story.currentScene].choices[j].returnedItems);
                         let returnedItems = story[story.currentScene].choices[j].returnedItems;
                         //if yes, push items into the inventory
                         for(let s=0;s<returnedItems.length;s++){
@@ -199,7 +199,7 @@ function getInputValue(){
                                 }
                                 // console.log(itemsArePresentInTheInventory);
                                 if(itemsArePresentInTheInventory){
-                                    console.log("items are present in the inventory")
+                                    // console.log("items are present in the inventory")
                                     //set conditionMet
                                     story[story.currentScene].choices[j].condition["conditionMet"] = true;
                                     //set last action
