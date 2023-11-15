@@ -28,17 +28,19 @@ function getStoryChapter2(name) {
             `,
             choices: [
                 {
-                    choice: "library",
-                    destination: "library",
+                    choice: "bridge end",
+                    destination: "bridge_end",
                 },
                 {
                     choice: "house",
                     destination: "house",
                 },
                 {
-                    choice: "bridge end",
-                    destination: "bridge_end",
+                    choice: "library",
+                    destination: "library",
                 },
+                
+                
             ],
             items: [
             ],
@@ -144,7 +146,7 @@ function getStoryChapter2(name) {
                     destination: "house",
                     story: `
                     You are not hungry at this time of the day. 
-                    <em>Morning would be a good time to grab something to eat...</em>
+                    <em>Morning would be a good time to grab something to eat... If you have any food left...</em>
                     `,
                     storyConditionMet:`
                     You feel hungry so you grab the food you got from the sailor and
@@ -220,11 +222,11 @@ function getStoryChapter2(name) {
                     choice: "contemplate mural",
                     destination: "bridge_end",
                     story: `
-                    "You get closer to the mural. The carvings seem to depict young 
+                    You get closer to the mural. The carvings seem to depict young 
                     people playing different sports on the beach. Some of them are 
                     swimming, some others are playing various other games. There are a
                     couple of seagulls flying above in the air. Several fish schools 
-                    swim in the sea, and a group of dolphins are having fun.",
+                    swim in the sea, and a group of dolphins are having fun.
                     `,
                 },
                 {
@@ -278,16 +280,16 @@ function getStoryChapter2(name) {
                     destination: "bridge_end",
                 },
                 {
+                    choice: "dam",
+                    destination: "dam",
+                },
+                {
                     choice: "summer games",
                     destination: "summer_games",
                 },
                 {
                     choice: "sunny beach",
                     destination: "sunny_beach",
-                },
-                {
-                    choice: "dam",
-                    destination: "dam",
                 },
             ],
             items: [
