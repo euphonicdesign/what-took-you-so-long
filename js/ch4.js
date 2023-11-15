@@ -552,8 +552,6 @@ function getStoryChapter4(name) {
                     choice: "study",
                     destination: "library_interior",
                     story: `
-                    `,
-                    storyConditionMet:`
                     You start reading every single
                     book you can find on train design.
                     You do some in-depth research and complete a couple of
@@ -568,6 +566,8 @@ function getStoryChapter4(name) {
                     night, taking notes after notes, and sketching dozens of images.
                     The result is quite impressive. You know fully understand
                     how that train works!
+                    `,
+                    storyConditionMet:`
                     `,
                     condition: {
                         "conditionMet": false,
@@ -825,7 +825,7 @@ function getStoryChapter4(name) {
         },
 
         signpost: {
-            image: "signpost.jpg",
+            image: "signpost 2.jpg",
             story: `
             You walk up on a small alley until you encounter a signpost.
             `,
@@ -835,8 +835,8 @@ function getStoryChapter4(name) {
             `,
             choices: [
                 {
-                    choice: "library",
-                    destination: "library",
+                    choice: "open space",
+                    destination: "open_space",
                 },
                 {
                     choice: "university",
@@ -881,6 +881,899 @@ function getStoryChapter4(name) {
             items: [
             ],
             
+        },
+
+        spiral_stairs: {
+            image: "spiral stairs.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "large building",
+                    destination: "large_building",
+                },
+                {
+                    choice: "watch dashboard",
+                    destination: "spiral_stairs",
+                    story: `
+                    You go near the dashboard and scan through the contents.
+                    A couple of announcements, some time tables, nothing
+                    particularly interesting.
+                    `,
+                    storyConditionMet:`
+                    There is a new poster on it. You take a closer look at it.
+                    It talks about some dancing classes for begginers, taking
+                    place somewhere
+                    downtown. This might actually work...
+                    You take note of the place and time.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_activator poster"],
+                        "itemsReturned": ["_dance classes unlocked"],
+                    },
+                },
+                {
+                    choice: "enter door",
+                    destination: "spiral_stairs",
+                    story: `
+                    You try the door. It seems to be locked.
+                    `,
+                    storyConditionMet:`
+                    You open the door and enter a very large and bright room.
+                    Apparently there is some big event organized by some
+                    important students organization. You attend a couple of
+                    interesting trainings and listen to some speakers from
+                    the non-academical environment. They are amazing!
+                    You like what they do and how they speak...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_activator poster"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "climb stairs",
+                    destination: "spiral_stairs",
+                    story: `
+                    It's always fun to climb and descend on these spiral stairs...
+                    `,
+                },
+
+            ],
+            items: [
+            ],
+            
+        },
+
+        university: {
+            image: "university.jpg",
+            story: `
+            You go up towards the hill and climb some steps.
+            On your way up, you encounter a couple of
+            people and ask them if you are heading correctly. They say yes.
+            You reach the distinctive building at the top. There are many young people
+            around. Must be university students attending classes and lectures.
+            `,
+            story2flag: false,
+            story2:`
+            There are many young people
+            around. Must be university students attending classes and lectures.
+            `,
+            choices: [
+                {
+                    choice: "signpost",
+                    destination: "signpost",
+                },
+                {
+                    choice: "attend",
+                    destination: "attend",
+                    story: `
+                    Since you are here, why not start studying a little bit?
+                    The classes look more than interesting, and the students
+                    are friendly and resourceful. You get a couple of ideas
+                    on what you could do.
+                    Interesting lectures... As you attend more and more classes
+                    and learn about the different subjects, you realize that
+                    figuring out how the train works is just a matter of time.
+                    You have everything you need. You take the class notes with you.
+                    During the breaks, you start explaining your colleagues
+                    how the different subjects could be combined.
+                    During the classes, you start debating with your proffessors
+                    difficult topics. At times, you challenge
+                    the status-quo and some over-sized egos get a bit shaken.
+                    But let's not digress... You get some extra
+                    homework...
+                    `,
+                    storyConditionMet:`
+                    Since you are here, why not start studying a little bit?
+                    The classes look more than interesting, and the students
+                    are friendly and resourceful. You get a couple of ideas
+                    on what you could do.
+                    Interesting lectures... As you attend more and more classes
+                    and learn about the different subjects, you realize that
+                    figuring out how the train works is just a matter of time.
+                    You have everything you need. You take the class notes with you.
+                    During the breaks, you start explaining your colleagues
+                    how the different subjects could be combined.
+                    During the classes, you start debating with your proffessors
+                    difficult topics. At times, you challenge
+                    the status-quo and some over-sized egos get a bit shaken.
+                    But let's not digress... You get some extra
+                    homework...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_lectures attended", "notes"],
+                    },
+                },
+                {
+                    choice: "attend classes",
+                    destination: "attend",
+                    story: `
+                    There are other things to do first...like for example doing your homework and relaxing a bit...
+                    `,
+                    storyConditionMet:`
+                    Class is starting in about 2 hours. Your homework 
+                    is not ready yet. You have one extra hour, and decide to invite your 
+                    colleagues for a drink. You could finish some homework there. Unless,
+                    you did that already...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["homework", "_game played"],
+                        "itemsReturned": ["_train idea"],
+                    },
+                },
+                {
+                    choice: "attend advanced classes",
+                    destination: "attend",
+                    story: `
+                    There are other things to do first...like for example having a drink...
+                    `,
+                    storyConditionMet:`
+                    Class is starting in about 2 hours. Your homework 
+                    is not ready yet. You have one extra hour, and decide to invite your 
+                    colleagues for a drink. You could finish some homework there. Unless,
+                    you did that already...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["drink"],
+                        "itemsReturned": ["_library open"],
+                    },
+                },
+                {
+                    choice: "read results",
+                    destination: "read_results",
+                    story: `
+                    No results being shown yet... Have you met the misterious student yet?
+                    `,
+                    storyConditionMet:`
+                    The results look promising so far. Among the top 10%...
+                    Close to yours, you notice some other interesting names...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_student met"],
+                        "itemsReturned": ["_results read"],
+                    },
+                },
+
+            ],
+            items: [
+            ],
+            
+        },
+
+        read_results: {
+            image: "read results.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "back",
+                    destination: "university",
+                },
+
+            ],
+            items: [
+            ],
+            
+        },
+
+        attend: {
+            image: "attend.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "university",
+                    destination: "university",
+                },
+
+            ],
+            items: [
+            ],
+            
+        },
+
+        watch_desk_2: {
+            image: "watch desk 2.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "room",
+                    destination: "room",
+                },
+                {
+                    choice: "watch desk",
+                    destination: "part_2",
+                    story: `
+                    There are some lecture notes on it... <em>Do you have the train design with you?</em>
+                    `,
+                    storyConditionMet:`
+                    You watch the desk and then start working on the train.
+                    You now have a
+                    complete blueprint of the
+                    train. All subsystems are described in detail and fully explained how
+                    they interact with each other.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["train design"],
+                        "itemsReturned": ["train blueprint"],
+                    },
+                },
+
+            ],
+            items: [
+            ],
+            
+        },
+
+        central_train_station_2: {
+            image: "central train station.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            The train has not changed position.
+            `,
+            choices: [
+                {
+                    choice: "bridge",
+                    destination: "bridge",
+                },
+                {
+                    choice: "watch train",
+                    destination: "central_train_station_2",
+                    story: `
+                    You inspect the train once more. Seems to be deactivated now.
+                    The more you watch it from the outside, the more curios
+                    you become... You continue to
+                    remain impressed with the technology that makes it work.
+                    What powers the train?
+                    `,
+                    storyConditionMet:`
+                    The train is activated. You continue to remain
+                    impressed with technology behind it.  It is a marvel of
+                    modern engineering...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_train activated"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "start train",
+                    destination: "central_train_station_2",
+                    story: `
+                    You still need to find a way to activate the train.
+                    `,
+                    storyConditionMet:`
+                    The train is activated, but there is one more place you need
+                    to visit
+                    and one more thing you need to do there before leaving.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_train activated"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "board train",
+                    destination: "theend",
+                    story: `
+                    Not until you activate the train, <em>plant the seeds, and take some photos of the park and of the river</em>...
+                    `,
+                    storyConditionMet:`
+                    Good, so the train is now working. You are set to go.
+                    You can operate it yourself
+                    and choose to go to a couple of locations.
+                    After all, you still have to find what you have been
+                    looking for... The end of chapter 4. Hope you've enjoyed it! :)
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_seeds planted", "park photos", "river photos"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "use blueprint",
+                    destination: "central_train_station_2",
+                    story: `
+                    You need to find the blueprint first...
+                    `,
+                    storyConditionMet:`
+                    You take a closer look at the train and at the
+                    blueprint.
+                    You now understand how it works... It is a marvel of modern
+                    engineering.
+                    You leverage the schematics and you activate the train.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["train blueprint"],
+                        "itemsReturned": ["_train activated"],
+                    },
+                },
+                {
+                    choice: "use seeds",
+                    destination: "central_train_station_2",
+                    story: `
+                    You don't have any...
+                    `,
+                    storyConditionMet:`
+                    Nope... You need to come up with a better idea.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["seeds"],
+                        "itemsReturned": [],
+                    },
+                },
+
+            ],
+            items: [
+            ],
+        },
+
+        part_2: {
+            image: "part 2.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            Part Two.
+            `,
+            choices: [
+                {
+                    choice: "continue",
+                    destination: "room",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        library_interior: {
+            image: "library interior.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "back",
+                    destination: "library",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        map: {
+            image: "map.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "back",
+                    destination: "signpost",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        downtown_square: {
+            image: "downtown square.jpg",
+            story: `
+            You are in a big city square. Not far away from the artisanal
+            fountain, there is a block of buildings. One of them has a large
+            door facing the street.
+            `,
+            story2flag: false,
+            story2:`
+            You are in a big city square. Not far away from the artisanal
+            fountain, there is a block of buildings. One of them has a large
+            door facing the street.
+            `,
+            choices: [
+                {
+                    choice: "bridge",
+                    destination: "bridge",
+                },
+                {
+                    choice: "dance floor",
+                    destination: "dance_floor",
+                },
+                {
+                    choice: "park",
+                    destination: "park",
+                    story: `
+                    Not now. Maybe later...<em>Do you happen to have a camera with you?</em>
+                    `,
+                    storyConditionMet:`
+                    One day you decide to go for a stroll around a nearby park.
+                    It is a bright sunny day. You have never been to this one before,
+                    and it looks very nice.
+                    When you arrive at the entrance,
+                    you notice a big classical clock and two large areas covered with
+                    colorful flowers. The flowers are aranged in layers. There is one
+                    one layer of tulips at the top, and one layer of chamomile underneath.
+                    In the middle, there is a big lake and some wild birds that are
+                    either flying above or swimming in it.
+                    The surroundings are nice as well - many trees
+                    and vegetation, small alleys and bridges, rocky formations, and
+                    many other
+                    interesting spots. The area is teeming with life. You encounter
+                    bees, small animals, and various birds.
+                    It is a very nice location... Quite close to the dance floor
+                    as well.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["camera"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "join group",
+                    destination: "artizanal_fountain",
+                    story: `
+                    Not now. Maybe later...<em>You may need some advanced dance level skills</em>
+                    `,
+                    storyConditionMet:`
+                    You join the group of dancers. The video spot involves a
+                    flashmob. That's why it takes place in a public
+                    square area. Definitely, not something you would be
+                    very comfortably doing...
+                    The music starts playing and people cheer up. The song sounds
+                    good! It is an old one from the 70's. It's about this
+                    important human emotion being in the air.
+                    The camera is turned on and you are now supposed to start
+                    dancing.
+                    Andrenaline rushes through your body, and you start moving
+                    on the music. Very much to your
+                    surprize you make it! It is a different style of music than
+                    what you have been dancing to until now, but it has a similar
+                    musical pattern underneath. The steps you know work well on
+                    it because the song has enough dynamic and energy!
+                    It becomes super fun, and you have a great time during and
+                    after
+                    the rehearsal! Something you would definitely
+                    remember...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_dance skill 3"],
+                        "itemsReturned": [],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        park: {
+            image: "park.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "downtown square",
+                    destination: "downtown_square",
+                },
+                {
+                    choice: "use camera",
+                    destination: "park",
+                    story: `
+                    You need a camera...
+                    `,
+                    storyConditionMet:`
+                    You take several pictures as you walk throughout the park.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["camera"],
+                        "itemsReturned": ["park photos"],
+                    },
+                },
+                {
+                    choice: "use seeds",
+                    destination: "park",
+                    story: `
+                    You don't have any seeds...
+                    `,
+                    storyConditionMet:`
+                    You choose to plant the seeds.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["seeds"],
+                        "itemsReturned": ["_seeds planted"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        dance_floor: {
+            image: "dance floor.jpg",
+            story: `
+            You go right towards the large metal door that is facing the street.
+            You wonder if this is the right place to be.
+            You are a bit nervous, but you take a deep breath and you
+            step inside.
+            At the entrance, the light is nice and warm and you notice a
+            the small reception desk and a cozy couch. Nobody to ask around though.
+            On the walls, there
+            are a few large posters, in which you can see different groups
+            of people. From the way they pose, they must be dancers.
+            They look nice.
+            You hear some nice music in the background. It is coming from downstairs.
+            There must be a floor below.
+            A little shy at first, you take a couple of steps in the direction
+            of the music.
+            When you reach the last step, you take a look at the room in front of
+            you and you remain in total awe.
+            You are facing a big and shiny dance floor illuminated by colorful
+            spotlights. Beautifull happy music is playing, giving an overall
+            good vibe. There are many young people dancing
+            on the floor in a most beautiful and elegant manner. They are
+            holding each other's hands and forming an open type of embrace.
+            This is simply amazing! If you only knew
+            how to dance the way they do...
+            `,
+            story2flag: false,
+            story2:`
+            You are facing a big and shiny dance floor illuminated by colorful
+            spotlights. Beautifull happy music is playing, giving an overall
+            good vibe. There are many young people dancing
+            on the floor in a most beautiful and elegant manner. They are
+            holding each other's hands and forming an open type of embrace.
+            This is simply amazing! If you only knew
+            how to dance the way they do...
+            `,
+            choices: [
+                {
+                    choice: "downtown square",
+                    destination: "downtown_square",
+                },
+                {
+                    choice: "dance",
+                    destination: "dance_floor",
+                    story: `
+                    You get on the dancefloor and try to mimick what the others
+                    are doing. You try a couple of steps, but it proves to be
+                    too much... It feels so awkward and cumbersome...
+                    It is so difficult to step in a pre-defined
+                    pattern and follow the music at the same time. Until now
+                    you have not even been aware that movement follows
+                    the music. There is hope though...
+                    There are a couple of nice ladies brave enough to help.
+                    They seem to be experienced dancers.
+                    One of them shows you how to properly embrace. The steps
+                    continue to be a pain, but the embrace feels really nice...
+                    You get to know a couple of friendly people from your
+                    dancing class.
+                    They have started dancing only 2 months ago, and they are
+                    already dancing so well! Such a nice community!
+                    You end up with a big smile on your face.
+                    `,
+                    storyConditionMet:`
+                    While still outside your confort zone, you continue to
+                    practice until you get reasonably good at it.
+                    Movements get more fluid and the tension in your body
+                    starts to diminish. At some point, you start to actually
+                    enjoy this.
+                    The songs seem to be in a foreign language. You do not
+                    understand the lyrics, but the music has nice rhythm and
+                    melody.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_dance skill 1"],
+                        "itemsReturned": ["_dance skill 2"],
+                    },
+                },
+                {
+                    choice: "dance more",
+                    destination: "dance_floor",
+                    story: `
+                    You are not prepared enough...
+                    `,
+                    storyConditionMet:`
+                    After your class, you decide to remain longer for some more
+                    dancing. You meet with your friends from the dance floor and
+                    between songs you chat a bit.
+                    One of them shows you some cool concept drawings. He seems
+                    to be studying a branch of architecture you had no idea it
+                    existed.
+                    The music is great as usual, and people are having a great
+                    time.
+                    Tonight, you also notice one of your
+                    dance instructors showing off on the dance floor. He does some
+                    cool moves and patterns. He has a lot of energy and is quite
+                    good!
+                    After the song ends, he comes close to your group and tells
+                    you about this commercial happening during the weekend.
+                    There will be some dancing, and he would like all of you to
+                    join.
+                    Afterwards, you will be going to the beach. There
+                    is some big event at the seaside...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_dance skill 2"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "practice steps",
+                    destination: "dance_floor",
+                    story: `
+                    Despite the fact that you are looking like you are trying
+                    to solve triple integrals, things start to work. By the end
+                    of your practice session, your body learns the
+                    basic sequence of steps.
+                    `,
+                    storyConditionMet:`
+                    Despite the fact that you are looking like you are trying
+                    to solve triple integrals, things start to work. By the end
+                    of your practice session, your body learns the
+                    basic sequence of steps.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_dance skill 1"],
+                    },
+                },
+                {
+                    choice: "practice even more steps",
+                    destination: "dance_floor",
+                    story: `
+                    You are not ready yet...
+                    `,
+                    storyConditionMet:`
+                    You practice some more dance steps. Looks much better now.
+                    You can do even clean pirouettes without getting dizzy.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_dance skill 2"],
+                        "itemsReturned": ["_dance skill 3"],
+                    },
+                },
+                {
+                    choice: "free dance",
+                    destination: "dance_2",
+                    story: `
+                    You are not prepared for this yet... 
+                    <em>You may need to travel a bit before...</em>
+                    `,
+                    storyConditionMet:`
+                    You go dancing and meet some girls from your dance classes.
+                    They are good dancers, and you enjoy dancing with them.
+                    They have started taking classes at a similar time.
+                    While sitting, you observe the feet of one lady.
+                    She has an interesting pair of dance shoes and she looks
+                    cool in her pair of jeans.
+                    Could be an interesting photo, albeit difficult to take
+                    in such low-light conditions. You get a
+                    camera and a small tripoid, and ask her to hold steady
+                    for one moment, until you can take the
+                    picture. You are happy with the result... The girls start
+                    laughing, and they invite you on the dance floor.
+                    At the end of one dance, one of them tells
+                    you something that you don't know how to take.
+                    She tells you that you would
+                    be good for this other type of dance. Is this a compliment,
+                    or a rather more realistic assessment of your current
+                    dancing skills level? :)
+                    You thought you were reasonably good.
+                    Now you are not so sure anymore...
+                    Perhaps this other type of dance might suit you better after
+                    all... Tal vez... Something to keep in mind!
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_travel"],
+                        "itemsReturned": ["camera"],
+                    },
+                },
+
+            ],
+            items: [
+            ],
+            
+        },
+
+        artizanal_fountain: {
+            image: "artizanal fountain.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "travel",
+                    destination: "palm_beach",
+                    story: `
+                    You are now in the palm beach area. Feels good
+                    to be back home! The sun, the sand, the waves, the trees,
+                    the seagulls, even the sand castles are still there!
+                    One of the evenings, you decide to join your friends
+                    from the dance school. They are here as well. You go to this open
+                    bar on the
+                    beach. Everyone is there and the music is playing. There are also a
+                    couple of tourists having some drinks and enjoying their holidays.
+                    You break the ice and invite one of the dancers. Soon
+                    after, everyone is on the floor and the atmosphere becomes magical.
+                    At some point during the night, you leave the bar and start walking
+                    on the beach towards the sea. Feels good to breath fresh air and
+                    experience the light sea wind. You are now near the water.
+                    The sea is so calm and smooth tonight. You hear only the sound of
+                    the water and the echo of some distant musical notes coming from
+                    the bar on the beach...
+                    Something is still missing... You return to your friends, and enjoy
+                    the rest of the night.
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["travel"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        palm_beach: {
+            image: "palm beach.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "downtown square",
+                    destination: "downtown_square",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        watch_river: {
+            image: "palm beach.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "bridge",
+                    destination: "bridge",
+                },
+                {
+                    choice: "use camera",
+                    destination: "watch_river",
+                    story: `
+                    You need a camera... <em>Where could you find one?</em>
+                    `,
+                    storyConditionMet:`
+                    So you did remember... Nice!
+                    Coming back to the story... Since you have already learnt
+                    how to use your
+                    camera in low light conditions, you take a picture of the
+                    river. The street lights on the sides make the entire scene very
+                    interesting at night.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["camera"],
+                        "itemsReturned": ["river photos"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        dance_2: {
+            image: "dance 2.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "dance floor",
+                    destination: "dance_floor",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        theend: {
+            image: "theend.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+            ],
+            items: [
+            ],
+            buttonText: "Select the 5th chapter from the top"
         },
 
     }
