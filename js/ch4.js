@@ -1221,7 +1221,7 @@ function getStoryChapter4(name) {
                     and choose to go to a couple of locations.
                     After all, you still have to find what you have been
                     looking for... <br><br>
-                    This is the end of Chapter 4. <br>
+                    This is the end of Chapter 4 ${name}. <br>
                     Hope you've enjoyed it! :)
                     `,
                     condition: {

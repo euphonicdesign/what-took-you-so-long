@@ -69,7 +69,8 @@ function getStoryChapter2(name) {
                     story: `
                     You go to the library to do some research, but you realize that now 
                     may not be the best moment. You feel there are some other things to 
-                    attend first.
+                    attend first.<br>
+                    <em>Morning would be a good time...</em>
                     `,
                     storyConditionMet:`
                     You start to research the French language. You find a couple of good 
@@ -142,7 +143,8 @@ function getStoryChapter2(name) {
                     choice: "eat",
                     destination: "house",
                     story: `
-                    You are not hungry at this time of the day.
+                    You are not hungry at this time of the day. 
+                    <em>Morning would be a good time to grab something to eat...</em>
                     `,
                     storyConditionMet:`
                     You feel hungry so you grab the food you got from the sailor and
@@ -231,6 +233,7 @@ function getStoryChapter2(name) {
                     story: `
                     You try the door of the car, but it's locked. \
                     You try to force it, to no avail.
+                    <em>You need some keys.</em>
                     `,
                     storyConditionMet:`
                     You get closer to the car and start inspecting it. From the 
@@ -316,8 +319,8 @@ function getStoryChapter2(name) {
                     It's been awhile since you played a game, so 
                     you decide to take a couple of shots with a makeshift ball. It seems 
                     your accuracy is not as good as it used to be, and you miss good form. 
-                    Perhaps you should 
-                    train a bit before trying again.
+                    <em>Perhaps you should 
+                    swim a bit before trying again and make sure you have a proper basketball...</em>
                     `,
                     storyConditionMet:`
                     You missed playing a good game, so you decide to take a couple \n\
@@ -460,7 +463,8 @@ function getStoryChapter2(name) {
                     You greet the fisherman and chat a bit about the weather and the 
                     sea. It seems that the other day, there was a thunderstorm with big 
                     lightning bolts, which stirred the sea. Now the sea is calm, but 
-                    there are no fish around, only a couple of seahorses.
+                    there are no fish around, only a couple of seahorses. 
+                    <em>Try coming also during the morning...</em>
                     `,
                     storyConditionMet:`
                     You talk to the fisherman and he says there are plenty of fish. 
@@ -504,6 +508,8 @@ function getStoryChapter2(name) {
                     drips reach you; they are cold. Looking far away into the distance, 
                     you notice a tiny dot floating above the horizon line. It must be a 
                     ship sailing around.
+                    <br>
+                    <em>Have you talked to the fisherman?</em>
                     `,
                     storyConditionMet:`
                     You get closer to the water and immerse your feet \n\
@@ -522,6 +528,8 @@ function getStoryChapter2(name) {
                     destination: "house",
                     story: `
                     Perhaps you should return here later to watch the sunset.
+                    <br>
+                    <em>Make sure you know the tune of the song and that you have talked to an exotic girl.</em>
                     `,
                     storyConditionMet:`
                     You climb the rocks. From up here, you can see the open sea. The wind is 
@@ -546,7 +554,8 @@ function getStoryChapter2(name) {
                     choice: "climb highest",
                     destination: "lighthouse",
                     story: `
-                    Perhaps you should return here some other time.
+                    Perhaps you should return here some other time. 
+                    <em>Morning would be a good time for it, while you have additional strength...</em>
                     `,
                     storyConditionMet:`
                     You climb the rocks and... something amazing is undergoing in \n\
@@ -619,7 +628,8 @@ function getStoryChapter2(name) {
                     choice: "listen",
                     destination: "palm_beach",
                     story: `
-                    Something's missing...
+                    Something's missing... 
+                    <em>Hmmmm, have you found any seashells lately?</em>
                     `,
                     storyConditionMet:`
                     As you listen, you hear a low sound that seems to repeat itself. The sound 
@@ -711,7 +721,8 @@ function getStoryChapter2(name) {
                     choice: "give seashell",
                     destination: "palm_beach",
                     story: `
-                    You need to get a seashell first and need to speak to more people.
+                    You need to get a seashell first and need to speak to more people. <br></br>
+                    <em>Did you visit the lighthouse lately? Have you talked to the exotic girl?</em>
                     `,
                     storyConditionMet:`
                     The mermaids take the seashell and start singing a beautiful song 
@@ -786,8 +797,10 @@ function getStoryChapter2(name) {
                     story: `
                     The girl has an exotic look and she is staring at you with her 
                     beautiful light-blue eyes. She tries to tell you something in a 
-                    language that you don't understand. You are confused. Perhaps now 
-                    it would be a good time to return to the lighthouse.
+                    language that you don't understand. You are confused. <br><br>
+                    
+                    <em>Perhaps now it would be a good time to return to the lighthouse.
+                    Make sure you know how to speak the girl's language and you have the tune of the song.</em>
                     `,
                     storyConditionMet:`
                     You talk to her, and find out that her name is Alice. She's looking 
@@ -841,6 +854,9 @@ function getStoryChapter2(name) {
                     him whether he has any food aboard and he kindly offers you some. He 
                     has a riddle for you. He asks you 'What is freedom?' You are a bit 
                     surprised, and don't know how to answer that. What does he mean?
+
+                    <em>A solid understanding of what freedom is and a couple of drawings offered 
+                    may help here...</em>
                     `,
                     storyConditionMet:`
                     You talk to the sailor. The sailor looks at the 3 drawings he got 
