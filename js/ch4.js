@@ -297,12 +297,30 @@ function getStoryChapter4(name) {
                     destination: "room",
                 },
                 {
+                    choice: "long alley",
+                    destination: "long_alley",
+                },
+                {
                     choice: "central train station",
                     destination: "central_train_station_2",
                 },
                 {
-                    choice: "long alley",
-                    destination: "long_alley",
+                    choice: "downtown",
+                    destination: "downtown_square",
+                    story: `
+                    Seems to go downtown. No time for that now. Maybe later...
+                    `,
+                    storyConditionMet:`
+                    You go downtown. You have never been to this area before.
+                    You are in a big city square. Not far away from the artisanal
+                    fountain, there is a block of buildings. One of them has a large
+                    door facing the street.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_dance classes unlocked"],
+                        "itemsReturned": [],
+                    },
                 },
                 {
                     choice: "watch river",
@@ -338,24 +356,6 @@ function getStoryChapter4(name) {
                         "itemsReturned": [],
                     },
                 },
-                {
-                    choice: "downtown",
-                    destination: "downtown_square",
-                    story: `
-                    Seems to go downtown. No time for that now. Maybe later...
-                    `,
-                    storyConditionMet:`
-                    You go downtown. You have never been to this area before.
-                    You are in a big city square. Not far away from the artisanal
-                    fountain, there is a block of buildings. One of them has a large
-                    door facing the street.
-                    `,
-                    condition: {
-                        "conditionMet": false,
-                        "itemsRequired": ["_dance classes unlocked"],
-                        "itemsReturned": [],
-                    },
-                },
             ],
             items: [
             ],
@@ -387,7 +387,7 @@ function getStoryChapter4(name) {
                     choice: "watch desk",
                     destination: "watch_desk_2",
                     story: `
-                    It looks empty...
+                    It looks empty... <em>You have no ideas yet...</em>
                     `,
                     storyConditionMet:`
                     You watch your desk. There are several items on it, including a list of ideas.
@@ -402,7 +402,7 @@ function getStoryChapter4(name) {
                     choice: "use ideas",
                     destination: "room",
                     story: `
-                    You don't have any good ideas yet...
+                    You don't have any good ideas yet... <em>Attending some lectures may help.</em>
                     `,
                     storyConditionMet:`
                     You write down a list of ideas.
@@ -417,7 +417,7 @@ function getStoryChapter4(name) {
                     choice: "use notes",
                     destination: "room",
                     story: `
-                    You don't have any...
+                    You don't have any notes yet...
                     `,
                     storyConditionMet:`
                     You review your class notes.
@@ -432,7 +432,7 @@ function getStoryChapter4(name) {
                     choice: "do homework",
                     destination: "room",
                     story: `
-                    You don't have any...
+                    You don't have any notes yet...
                     `,
                     storyConditionMet:`
                     You review your homework project. In order to complete\
@@ -497,20 +497,20 @@ function getStoryChapter4(name) {
             `,
             choices: [
                 {
-                    choice: "large building",
-                    destination: "large_building",
-                },
-                {
-                    choice: "pub",
-                    destination: "pub",
+                    choice: "long alley",
+                    destination: "long_alley",
                 },
                 {
                     choice: "signpost",
                     destination: "signpost",
                 },
                 {
-                    choice: "long alley",
-                    destination: "long_alley",
+                    choice: "large building",
+                    destination: "large_building",
+                },
+                {
+                    choice: "pub",
+                    destination: "pub",
                 },
                 {
                     choice: "library",
@@ -537,6 +537,8 @@ function getStoryChapter4(name) {
         library: {
             image: "library.jpg",
             story: `
+            Seems to be open now. Plenty of interesting books around. At one of the tables, you
+            notice the lady student you have met before.
             `,
             story2flag: false,
             story2:`
@@ -564,7 +566,7 @@ function getStoryChapter4(name) {
                     the subject.
                     You work on it for the entire weekend with little sleep at
                     night, taking notes after notes, and sketching dozens of images.
-                    The result is quite impressive. You know fully understand
+                    The result is quite impressive. You now fully understand
                     how that train works!
                     `,
                     storyConditionMet:`
@@ -579,7 +581,7 @@ function getStoryChapter4(name) {
                     choice: "talk",
                     destination: "library_interior",
                     story: `
-                    Perhaps later...
+                    Perhaps later... <em>after you get your results</em>
                     `,
                     storyConditionMet:`
                     As you still need to pass some final exams and finish a
@@ -636,7 +638,7 @@ function getStoryChapter4(name) {
                     choice: "have a drink",
                     destination: "pub",
                     story: `
-                    No time for that now. Perhaps later.
+                    No time for that now. Perhaps later... <em>after you get your train idea</em>
                     `,
                     storyConditionMet:`
                     You talk to your colleagues about the train idea.
@@ -684,7 +686,7 @@ function getStoryChapter4(name) {
                     `,
                     condition: {
                         "conditionMet": false,
-                        "itemsRequired": ["homework ready"],
+                        "itemsRequired": ["drink"],
                         "itemsReturned": [],
                     },
                 },
@@ -750,7 +752,7 @@ function getStoryChapter4(name) {
                     choice: "enter",
                     destination: "spiral_stairs",
                     story: `
-                    You cannot enter. Seems to be closed now...
+                    You cannot enter. Seems to be closed now... <em>You may try again after attending some lectures</em>
                     `,
                     storyConditionMet:`
                     You enter the large building. The first thing you notice is that there
@@ -800,7 +802,8 @@ function getStoryChapter4(name) {
                     story: `
                     As much as you would like to do it, you have to postpone. There
                     is no time for that now. You have other pending priorities.
-                    The court looks amazing though...
+                    The court looks amazing though... 
+                    <em>you may need to have some written notes first</em>
                     `,
                     storyConditionMet:`
                     You find some spare time and go play a game. Your vertical
@@ -850,7 +853,8 @@ function getStoryChapter4(name) {
                     One of them points towards the stairs going up the hill.
                     At the top of the hill, you can see the university building.
                     Looks slightly different than all the others you have
-                    encountered so far.
+                    encountered so far. 
+                    <em>Have you activated the train yet?</em>
                     `,
                     storyConditionMet:`
                     Time flies...
@@ -901,7 +905,8 @@ function getStoryChapter4(name) {
                     story: `
                     You go near the dashboard and scan through the contents.
                     A couple of announcements, some time tables, nothing
-                    particularly interesting.
+                    particularly interesting.  
+                    <em>You may want to keep an eye on this though...</em>
                     `,
                     storyConditionMet:`
                     There is a new poster on it. You take a closer look at it.
@@ -920,7 +925,8 @@ function getStoryChapter4(name) {
                     choice: "enter door",
                     destination: "spiral_stairs",
                     story: `
-                    You try the door. It seems to be locked.
+                    You try the door. It seems to be locked. 
+                    <em>No announcements on the dashboard though...</em>
                     `,
                     storyConditionMet:`
                     You open the door and enter a very large and bright room.
@@ -1016,7 +1022,7 @@ function getStoryChapter4(name) {
                     choice: "attend classes",
                     destination: "attend",
                     story: `
-                    There are other things to do first...like for example doing your homework and relaxing a bit...
+                    There are other things to do first... <em>like for example doing your homework and relaxing a bit at a basketball game...</em>
                     `,
                     storyConditionMet:`
                     Class is starting in about 2 hours. Your homework 
@@ -1034,13 +1040,17 @@ function getStoryChapter4(name) {
                     choice: "attend advanced classes",
                     destination: "attend",
                     story: `
-                    There are other things to do first...like for example having a drink...
+                    There are other things to do first... 
+                    <em>like for example having a drink with your colleagues...</em>
                     `,
                     storyConditionMet:`
-                    Class is starting in about 2 hours. Your homework 
-                    is not ready yet. You have one extra hour, and decide to invite your 
-                    colleagues for a drink. You could finish some homework there. Unless,
-                    you did that already...
+                    You arrive just in time for your class. It happens 
+                    to be an advanced calculus class. You present your homework, and start 
+                    filling up the blackboard. After that drink, the task at hand suddenly 
+                    becomes much more difficult than it should be. It's not your best 
+                    performance, but you make it through and your proffessor gives you a 
+                    good rating. 
+                    <em>You may also want to do some research at the library...</em>
                     `,
                     condition: {
                         "conditionMet": false,
@@ -1052,7 +1062,8 @@ function getStoryChapter4(name) {
                     choice: "read results",
                     destination: "read_results",
                     story: `
-                    No results being shown yet... Have you met the misterious student yet?
+                    No results being shown yet...  
+                    <em>Have you met the misterious student yet?</em>
                     `,
                     storyConditionMet:`
                     The results look promising so far. Among the top 10%...
@@ -1209,7 +1220,9 @@ function getStoryChapter4(name) {
                     You can operate it yourself
                     and choose to go to a couple of locations.
                     After all, you still have to find what you have been
-                    looking for... The end of chapter 4. Hope you've enjoyed it! :)
+                    looking for... <br><br>
+                    This is the end of Chapter 4. <br>
+                    Hope you've enjoyed it! :)
                     `,
                     condition: {
                         "conditionMet": false,
@@ -1679,7 +1692,7 @@ function getStoryChapter4(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["travel"],
+                        "itemsReturned": ["_travel"],
                     },
                 },
             ],
@@ -1707,7 +1720,7 @@ function getStoryChapter4(name) {
         },
 
         watch_river: {
-            image: "palm beach.jpg",
+            image: "whatch river.jpg",
             story: `
             `,
             story2flag: false,
