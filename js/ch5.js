@@ -5,7 +5,6 @@ function getStoryChapter5(name) {
         currentChapter: "5",
         player: {
             inventory: [
-                "_look","_hear","_move","_feel","_touch",
             ]
         },
         lastActionStory: ``,
