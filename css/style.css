@@ -23,3 +23,9 @@ body {
 .chapter-buttons:hover {
     background-color: lightgreen;
 }
+
+img {
+    width: 100%;
+    /* max-width: 400px; */
+    height: auto;
+}
