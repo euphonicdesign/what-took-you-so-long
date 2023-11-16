@@ -82,6 +82,8 @@ function getItemsAroundYou(){
     return input;
 }
 
+
+
 function renderScene() {
     let text = "Continue";
     let image = "";
@@ -96,7 +98,9 @@ function renderScene() {
         <button id="chapter2-button" class="chapter-buttons">Chapter 2</button>
         <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
         <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
-        <button id="chapter5-button" class="chapter-buttons">Chapter 5</button>
+        
+        <button id="save-button">Save</button>
+        <button id="load-button">Load</button>
         <br>
         <h1>Chapter ${story.currentChapter}</h1>
         <p>${displayLastActionText()}</p>
@@ -122,6 +126,7 @@ function renderScene() {
     submitButton.addEventListener("click", getInputValue)
 
     setChapterButtonsLogic();
+    setLoadSaveButtonsLogic();
 };
 
 function getInputValue(){
@@ -340,6 +345,28 @@ function getInputValue(){
         renderScene();
     }
     
+}
+
+function salvareStare() {
+    console.log("se salveaza starea: ", story);
+    localStorage.setItem('stare', JSON.stringify(story));
+}
+
+
+function setLoadSaveButtonsLogic(){
+    const saveButton = document.querySelector("#save-button");
+    saveButton.addEventListener("click",()=>{
+        //console.log("Se salveaza starea: ", story);
+        localStorage.setItem('story', JSON.stringify(story));
+    })
+
+    const loadButton = document.querySelector("#load-button");
+    loadButton.addEventListener("click",()=>{
+        //console.log("Se incarca starea: ");
+        //nameInput
+        story = JSON.parse(localStorage.getItem('story'));
+        renderScene();
+    })
 }
 
 function setChapterButtonsLogic() {
