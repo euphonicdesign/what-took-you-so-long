@@ -317,7 +317,7 @@ function getStoryChapter5(name) {
                     `,
                     storyConditionMet:`
                     You feel hungry. You find some snacks in your backpack and start eating. <br>
-                    You need to hurry now. You don't know how much time the train wil wait for you...
+                    You need to hurry now. You don't know how much time the train will wait for you...
                     `,
                     condition: {
                         "conditionMet": false,
