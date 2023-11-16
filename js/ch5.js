@@ -127,7 +127,7 @@ function getStoryChapter5(name) {
                     choice: "continue",
                     destination: "train_car2",
                     story: `
-                    Continuing from last time... <br><br>
+                    Continuing from last time...
                     But where should you go now? There are so many ways and so many alternative courses... 
                     `,
                     storyConditionMet:`
@@ -440,6 +440,158 @@ function getStoryChapter5(name) {
                 {
                     choice: "continue",
                     destination: "city_edge",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        city_edge: {
+            image: "city edge.jpg",
+            story: `
+            You continue walking until you reach the edge of the city, the nearby hill or 
+            mountain. You are on higher ground here and you have a better view over the 
+            city. You notice some tennis fields and some running tracks nearby. The ground 
+            of the fields has that brick-like specific color, which matches the roofs of 
+            the buildings. Overall the aesthetics of the city resemble that classy medieval 
+            town look. There are also a couple of tower structures connected by fortified 
+            walls. It must have been an important city erected  between the mountains centuries 
+            ago and preserved quite well.
+            `,
+            story2flag: false,
+            story2:`
+            You are at the edge of the city. You are on higher ground here and you have a better 
+            view over the city. 
+            Overall the aesthetics of the city resemble that classy medieval 
+            town look. There are also a couple of tower structures connected by fortified 
+            walls. It must have been an important city erected between the mountains centuries 
+            ago and preserved quite well.
+            `,
+            choices: [
+                {
+                    choice: "forest",
+                    destination: "forest",
+                    story: `
+                    Not before taking a photo...
+                    `,
+                    storyConditionMet:`
+                    You return to your way up the hill, and enter the forest. There is 
+                    so much light greenery around you. The trees are tall.
+                    The vegetation is luxuriant. The air is so clean... You hear the music of the forest. 
+                    The leafs moving, the birds singing, the steps you take, all of 
+                    these creates an atmospshere that feels peaceful and relaxing... 
+                    
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["paraglider photo"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "check backpack",
+                    destination: "city_edge",
+                    story: `
+                    You check your backpack. While looking inside you find your good old camera.
+                    `,
+                    storyConditionMet:`
+                    You got what you want already.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["camera"],
+                    },
+                },
+                {
+                    choice: "check camera",
+                    destination: "city_edge",
+                    story: `
+                    Seems you have lost your camera. You can't find it anymore...
+                    `,
+                    storyConditionMet:`
+                    While checking your camera, you discover its zoom levels. Might come handy later.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["camera"],
+                        "itemsReturned": ["_zoom levels"],
+                    },
+                },
+                {
+                    choice: "use camera",
+                    destination: "paraglider",
+                    story: `
+                    You don't have one or you don't know how to use it...
+                    `,
+                    storyConditionMet:`
+                    As you look across towards the other end of the city and 
+                    across rooftops, you notice another smaller hill covered 
+                    by the forest. There is a floating dot above the trees. 
+                    That's interesting.
+                    You leverage the lens of your camera to zoom in. The floating 
+                    dot seems to be a man doing paragliding above the trees of 
+                    the hill just above the horizon line. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["camera", "_zoom levels"],
+                        "itemsReturned": [],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        paraglider: {
+            image: "paraglider.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "continue",
+                    destination: "city_edge",
+                },
+                {
+                    choice: "take paraglider photo",
+                    destination: "paraglider",
+                    story: `
+                    You take a photo of the paraglider...
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["paraglider photo"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        forest: {
+            image: "forest.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            You are in the forest. You can hear its music.  
+            The leafs moving, the birds singing, the steps you take, all of 
+            these creates an atmospshere that feels peaceful and relaxing... 
+            `,
+            choices: [
+                {
+                    choice: "continue",
+                    destination: "forest",
                 },
             ],
             items: [
