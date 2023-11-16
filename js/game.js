@@ -402,13 +402,13 @@ function setChapterButtonsLogic() {
         renderScene();
     });
 
-    const chapter5Button = document.querySelector("#chapter5-button");
-    chapter5Button.addEventListener("click",()=>{
-        console.log("Click Chapter 5");
-        //nameInput
-        story = getStoryChapter5("");
-        renderScene();
-    });
+    // const chapter5Button = document.querySelector("#chapter5-button");
+    // chapter5Button.addEventListener("click",()=>{
+    //     console.log("Click Chapter 5");
+    //     //nameInput
+    //     story = getStoryChapter5("");
+    //     renderScene();
+    // });
 }
 
 function displayStoryText() {
