@@ -590,12 +590,256 @@ function getStoryChapter5(name) {
             `,
             choices: [
                 {
-                    choice: "continue",
-                    destination: "forest",
+                    choice: "continue climbing",
+                    destination: "fallen_trees",
                 },
             ],
             items: [
             ],
+            
+        },
+
+        fallen_trees: {
+            image: "fallen trees.jpg",
+            story: `
+            As you go up you reach a point where the way is blocked by some tall trees fallen down to the ground.
+            `,
+            story2flag: false,
+            story2:`
+            As you go up you reach a point where the way is blocked by some tall trees fallen down to the ground.  
+            `,
+            choices: [
+                {
+                    choice: "go down",
+                    destination: "forest",
+                },
+                {
+                    choice: "move branches",
+                    destination: "fallen_trees",
+                    story: `
+                    They won't move... Too heavy... It's not like you have Hercule's power...
+                    `,
+                    storyConditionMet:`
+                    They won't move... Too heavy... It's not like you have Hercule's power...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_move branches"],
+                    },
+                },
+                {
+                    choice: "jump branches",
+                    destination: "fallen_trees",
+                    story: `
+                    You don't recall doing that lately... This is not a jumping contest... 
+                    `,
+                    storyConditionMet:`
+                    You don't recall doing that lately... This is not a jumping contest... 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_jump branches"],
+                    },
+                },
+                {
+                    choice: "find a way around",
+                    destination: "uphill_slalom",
+                    story: `
+                    Did you try to do anything about it? 
+                    `,
+                    storyConditionMet:`
+                    You continue climbing along the narrow way through the forest up the hill. 
+                    There are many turns and the hill is quite steep. You feel the muscles of 
+                    your legs working hard as you advance, but you continue. At some point 
+                    you stop to catch your breath and look down. You can see a group of people 
+                    climbing the "s" curves behind you. In theory, you could climb faster by 
+                    shortcutting the serpentines and climb directly up.  However the sign on the 
+                    tree clearly indicates you are not allowed to shortcut for safety reasons. 
+                    Besides... where would be all the fun of slaloming uphill, or downhill 
+                    through the trees?
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_move branches", "_jump branches"],
+                        "itemsReturned": [],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        uphill_slalom: {
+            image: "uphill slalom.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:` 
+            `,
+            choices: [
+                {
+                    choice: "uphill",
+                    destination: "uphill",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        uphill: {
+            image: "uphill.jpg",
+            story: `
+            You continue to go up. The steepness of the hill increases. 
+            Red triangles on the trees indicate difficult forest way. 
+            When you look down from your position, you almost get dizzy. 
+            Better focus on reaching the top. Through the trees you notice 
+            the city at the bottom of the hill. The buildings look so small 
+            from this position. You must be at a high altitude.
+            `,
+            story2flag: false,
+            story2:` 
+            You must be at a high altitude. Better not to look down from here...
+            `,
+            choices: [
+                {
+                    choice: "downhill",
+                    destination: "uphill_slalom",
+                },
+                {
+                    choice: "keep climbing",
+                    destination: "telecabina",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        telecabina: {
+            image: "telecabina.jpg",
+            story: `
+            While walking on the parrallel "s" curve you reach an area cleared of 
+            trees. You can see the cable car lines. You stop for a moment to catch 
+            your breath.
+            `,
+            story2flag: false,
+            story2:` 
+            From this spot you can see the cable car lines. You stop for a moment to catch 
+            your breath.
+            `,
+            choices: [
+                {
+                    choice: "downhill",
+                    destination: "uphill",
+                },
+                {
+                    choice: "keep going up",
+                    destination: "top",
+                    story: `
+                    Are you sure you are not forgetting something? :)
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["impressive photo"],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "contemplate view",
+                    destination: "telecabina",
+                    story: `
+                    The view is trully impresive. You can imagine the locals going up, just like you would go to the seaside in the summer.  
+                    `,
+                },
+                {
+                    choice: "take photo",
+                    destination: "telecabina",
+                    story: `
+                    You take a photo of the surrounding area and as you do that your camera runs out of batteries.
+                    `,
+                    storyConditionMet:`
+                    Your camera ran out of batteries... 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["impressive photo"],
+                    },
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        top: {
+            // image: "top.jpg",
+            story: `
+            You have reached the top of the mountain. <em>You should congratulate yourself for it...</em>
+            Descending should be much faster...
+            `,
+            story2flag: false,
+            story2:` 
+            `,
+            choices: [
+                {
+                    choice: "descend",
+                    destination: "train",
+                    story: `
+                    It was a nice trip. You really enjoyed it. Time to return to the train 
+                    station. You have to catch the train. You rush a bit while droping a note 
+                    to yourself: "This chapter seems to be much easier than the previous ones..." 
+                    `,
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        train: {
+            image: "train.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+                {
+                    choice: "board the train",
+                    destination: "theend",
+                    story: `
+                    You take your seat and relax. It was an exciting journey. Soon, you hear the train signal 
+                    and the train starts moving. Although you have left the station you are certain the wheels 
+                    of the train are still there. You can definitely feel them. The alternative would make no 
+                    sense. Common sense should be sought more often nowadays. It would simplify things a lot.
+                    `,
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        theend: {
+            image: "train car.jpg",
+            story: `
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+            ],
+            items: [
+            ],
+
+            buttonText: "Select the 6th chapter from the top"
             
         },
 

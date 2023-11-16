@@ -98,7 +98,7 @@ function renderScene() {
         <button id="chapter2-button" class="chapter-buttons">Chapter 2</button>
         <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
         <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
-        
+        <button id="chapter5-button" class="chapter-buttons">Chapter 5</button>
         <button id="save-button">Save</button>
         <button id="load-button">Load</button>
         <br>
@@ -402,13 +402,13 @@ function setChapterButtonsLogic() {
         renderScene();
     });
 
-    // const chapter5Button = document.querySelector("#chapter5-button");
-    // chapter5Button.addEventListener("click",()=>{
-    //     console.log("Click Chapter 5");
-    //     //nameInput
-    //     story = getStoryChapter5("");
-    //     renderScene();
-    // });
+    const chapter5Button = document.querySelector("#chapter5-button");
+    chapter5Button.addEventListener("click",()=>{
+        console.log("Click Chapter 5");
+        //nameInput
+        story = getStoryChapter5("");
+        renderScene();
+    });
 }
 
 function displayStoryText() {
