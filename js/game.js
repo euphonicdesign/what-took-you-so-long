@@ -408,13 +408,13 @@ function setChapterButtonsLogic() {
         renderScene();
     });
 
-    const chapter6Button = document.querySelector("#chapter6-button");
-    chapter6Button.addEventListener("click",()=>{
-        console.log("Click Chapter 6");
-        //nameInput
-        story = getStoryChapter6("");
-        renderScene();
-    });
+    // const chapter6Button = document.querySelector("#chapter6-button");
+    // chapter6Button.addEventListener("click",()=>{
+    //     console.log("Click Chapter 6");
+    //     //nameInput
+    //     story = getStoryChapter6("");
+    //     renderScene();
+    // });
 }
 
 function displayStoryText() {
