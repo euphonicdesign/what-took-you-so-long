@@ -60,6 +60,101 @@ function getStoryChapter6(name) {
                     choice: "predeal",
                     destination: "predeal",
                 },
+                {
+                    choice: "explore",
+                    destination: "breaza2",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+        breaza2: {
+            image: "breaza2.jpg",
+            story: `
+            You are in Breaza 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Breaza 2.
+            `,
+            choices: [
+                {
+                    choice: "breaza",
+                    destination: "breaza",
+                },
+                {
+                    choice: "breaza 3",
+                    destination: "breaza3",
+                },
+                {
+                    choice: "breaza 4",
+                    destination: "breaza4",
+                },
+                {
+                    choice: "breaza 5",
+                    destination: "breaza5",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        breaza3: {
+            image: "breaza3.jpg",
+            story: `
+            You are in Breaza 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Breaza 3.
+            `,
+            choices: [
+                {
+                    choice: "breaza 2",
+                    destination: "breaza2",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        breaza4: {
+            image: "breaza4.jpg",
+            story: `
+            You are in Breaza 4.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Breaza 4.
+            `,
+            choices: [
+                {
+                    choice: "breaza 2",
+                    destination: "breaza2",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        breaza5: {
+            image: "breaza5.jpg",
+            story: `
+            You are in Breaza 5.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Breaza 5.
+            `,
+            choices: [
+                {
+                    choice: "breaza 2",
+                    destination: "breaza2",
+                },
             ],
             items: [
             ],
@@ -105,8 +200,44 @@ function getStoryChapter6(name) {
                     destination: "breaza",
                 },
                 {
-                    choice: "continue",
-                    destination: "iasi_continue",
+                    choice: "explore",
+                    destination: "sinaia2",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        sinaia2: {
+            image: "sinaia2.jpg",
+            story: `
+            You are in Sinaia 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sinaia 2.
+            `,
+            choices: [
+                {
+                    choice: "sinaia",
+                    destination: "sinaia",
+                },
+                {
+                    choice: "sinaia 3",
+                    destination: "sinaia3",
+                },
+                {
+                    choice: "sinaia 4",
+                    destination: "sinaia3",
+                },
+                {
+                    choice: "sinaia 5",
+                    destination: "sinaia3",
+                },
+                {
+                    choice: "sinaia 6",
+                    destination: "sinaia3",
                 },
             ],
             items: [

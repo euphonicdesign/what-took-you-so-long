@@ -7,7 +7,7 @@ const content = document.querySelector("#content");
 
 startButton.addEventListener("click", function() {
     const nameInput = document.querySelector("#name-input");
-    story = getStoryChapter1(nameInput.value);
+    story = getStoryChapter6(nameInput.value);
     renderScene();
 });
 
@@ -99,7 +99,7 @@ function renderScene() {
         <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
         <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
         <button id="chapter5-button" class="chapter-buttons">Chapter 5</button>
-        <button id="chapter6-button" class="chapter-buttons">Chapter 6</button>
+        
         <button id="save-button">Save</button>
         <button id="load-button">Load</button>
         <br>
