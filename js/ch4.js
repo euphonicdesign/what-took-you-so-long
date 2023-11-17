@@ -1720,7 +1720,7 @@ function getStoryChapter4(name) {
         },
 
         watch_river: {
-            image: "whatch river.jpg",
+            image: "watch river.jpg",
             story: `
             `,
             story2flag: false,

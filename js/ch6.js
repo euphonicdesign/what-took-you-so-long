@@ -45,6 +45,10 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
+                    choice: "explore breaza",
+                    destination: "breaza2",
+                },
+                {
                     choice: "central station",
                     destination: "central_train_station",
                 },
@@ -60,10 +64,7 @@ function getStoryChapter6(name) {
                     choice: "predeal",
                     destination: "predeal",
                 },
-                {
-                    choice: "explore breaza",
-                    destination: "breaza2",
-                },
+                
             ],
             items: [
             ],
@@ -196,13 +197,14 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "breaza",
-                    destination: "breaza",
-                },
-                {
                     choice: "explore sinaia",
                     destination: "sinaia2",
                 },
+                {
+                    choice: "breaza",
+                    destination: "breaza",
+                },
+                
             ],
             items: [
             ],
@@ -332,12 +334,12 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "azuga",
-                    destination: "azuga",
-                },
-                {
                     choice: "explore moeciu",
                     destination: "moeciu2",
+                },
+                {
+                    choice: "azuga",
+                    destination: "azuga",
                 },
             ],
             items: [
@@ -397,6 +399,10 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
+                    choice: "explore predeal",
+                    destination: "predeal2",
+                },
+                {
                     choice: "breaza",
                     destination: "breaza",
                 },
@@ -408,10 +414,7 @@ function getStoryChapter6(name) {
                     choice: "sibiu",
                     destination: "sibiu",
                 },
-                {
-                    choice: "explore predeal",
-                    destination: "predeal2",
-                },
+                
             ],
             items: [
             ], 
@@ -492,8 +495,55 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
+                    choice: "explore brasov",
+                    destination: "brasov2",
+                },
+                {
                     choice: "predeal",
                     destination: "predeal",
+                },
+                
+            ],
+            items: [
+            ], 
+        },
+
+        brasov2: {
+            image: "brasov2.jpg",
+            story: `
+            You are in Brasov 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Brasov 2.
+            `,
+            choices: [
+                {
+                    choice: "brasov station",
+                    destination: "brasov",
+                },
+                {
+                    choice: "brasov 3",
+                    destination: "brasov3",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        brasov3: {
+            image: "brasov3.jpg",
+            story: `
+            You are in Brasov 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Brasov 3.
+            `,
+            choices: [
+                {
+                    choice: "brasov 2",
+                    destination: "brasov2",
                 },
             ],
             items: [
@@ -511,6 +561,10 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
+                    choice: "explore sibiu",
+                    destination: "sibiu2",
+                },
+                {
                     choice: "predeal",
                     destination: "predeal",
                 },
@@ -522,10 +576,7 @@ function getStoryChapter6(name) {
                     choice: "timisoara",
                     destination: "timisoara",
                 },
-                {
-                    choice: "explore sibiu",
-                    destination: "sibiu2",
-                },
+                
             ],
             items: [
             ], 
@@ -630,8 +681,100 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
+                    choice: "explore cluj",
+                    destination: "cluj2",
+                },
+                {
                     choice: "sibiu",
                     destination: "sibiu",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        cluj2: {
+            image: "cluj2.jpg",
+            story: `
+            You are in Cluj 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Cluj 2.
+            `,
+            choices: [
+                {
+                    choice: "cluj station",
+                    destination: "cluj",
+                },
+                {
+                    choice: "cluj 3",
+                    destination: "cluj3",
+                },
+                {
+                    choice: "cluj 4",
+                    destination: "cluj4",
+                },
+                {
+                    choice: "cluj 5",
+                    destination: "cluj5",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        cluj3: {
+            image: "cluj3.jpg",
+            story: `
+            You are in Cluj 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Cluj 3.
+            `,
+            choices: [
+                {
+                    choice: "cluj 2",
+                    destination: "cluj2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        cluj4: {
+            image: "cluj4.jpg",
+            story: `
+            You are in Cluj 4.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Cluj 4.
+            `,
+            choices: [
+                {
+                    choice: "cluj 2",
+                    destination: "cluj2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        cluj5: {
+            image: "cluj5.jpg",
+            story: `
+            You are in Cluj 5.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Cluj 5.
+            `,
+            choices: [
+                {
+                    choice: "cluj 2",
+                    destination: "cluj2",
                 },
             ],
             items: [
