@@ -99,6 +99,7 @@ function renderScene() {
         <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
         <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
         <button id="chapter5-button" class="chapter-buttons">Chapter 5</button>
+        <button id="chapter6-button" class="chapter-buttons">Chapter 6</button>
         <button id="save-button">Save</button>
         <button id="load-button">Load</button>
         <br>
@@ -325,9 +326,6 @@ function getInputValue(){
                 
             }
 
-            
-
-
 
             // if(conditionMet){
                 story.currentScene = inputs[i].getAttribute("data-destination");
@@ -407,6 +405,14 @@ function setChapterButtonsLogic() {
         console.log("Click Chapter 5");
         //nameInput
         story = getStoryChapter5("");
+        renderScene();
+    });
+
+    const chapter6Button = document.querySelector("#chapter6-button");
+    chapter6Button.addEventListener("click",()=>{
+        console.log("Click Chapter 6");
+        //nameInput
+        story = getStoryChapter6("");
         renderScene();
     });
 }
