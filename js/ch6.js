@@ -173,12 +173,130 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
+                    choice: "explore iasi",
+                    destination: "iasi2",
+                },
+                {
                     choice: "central station",
                     destination: "central_train_station",
                 },
+                
+            ],
+            items: [
+            ],
+            
+        },
+
+        iasi2: {
+            image: "iasi2.jpg",
+            story: `
+            You are in Iasi 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Iasi 2.
+            `,
+            choices: [
                 {
-                    choice: "continue",
-                    destination: "iasi_continue",
+                    choice: "iasi station",
+                    destination: "iasi",
+                },
+                {
+                    choice: "iasi 3",
+                    destination: "iasi3",
+                },
+                {
+                    choice: "iasi 4",
+                    destination: "iasi4",
+                },
+                {
+                    choice: "iasi 5",
+                    destination: "iasi5",
+                },
+                {
+                    choice: "iasi 6",
+                    destination: "iasi6",
+                },
+                
+            ],
+            items: [
+            ],
+            
+        },
+
+        iasi3: {
+            image: "iasi3.jpg",
+            story: `
+            You are in Iasi 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Iasi 3.
+            `,
+            choices: [
+                {
+                    choice: "iasi 2",
+                    destination: "iasi2",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        iasi4: {
+            image: "iasi4.jpg",
+            story: `
+            You are in Iasi 4.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Iasi 4.
+            `,
+            choices: [
+                {
+                    choice: "iasi 2",
+                    destination: "iasi2",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        iasi5: {
+            image: "iasi5.jpg",
+            story: `
+            You are in Iasi 5.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Iasi 5.
+            `,
+            choices: [
+                {
+                    choice: "iasi 2",
+                    destination: "iasi2",
+                },
+            ],
+            items: [
+            ],
+            
+        },
+
+        iasi6: {
+            image: "iasi6.jpg",
+            story: `
+            You are in Iasi 6.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Iasi 6.
+            `,
+            choices: [
+                {
+                    choice: "iasi 2",
+                    destination: "iasi2",
                 },
             ],
             items: [
@@ -792,8 +910,123 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
+                    choice: "explore timisoara",
+                    destination: "timisoara2",
+                },
+                {
                     choice: "sibiu",
                     destination: "sibiu",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        timisoara2: {
+            image: "timisoara2.jpg",
+            story: `
+            You are in Timisoara 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Timisoara 2.
+            `,
+            choices: [
+                {
+                    choice: "timisoara station",
+                    destination: "timisoara",
+                },
+                {
+                    choice: "timisoara 3",
+                    destination: "timisoara3",
+                },
+                {
+                    choice: "timisoara 4",
+                    destination: "timisoara4",
+                },
+                {
+                    choice: "timisoara 5",
+                    destination: "timisoara5",
+                },
+                {
+                    choice: "timisoara 6",
+                    destination: "timisoara6",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        timisoara3: {
+            image: "timisoara3.jpg",
+            story: `
+            You are in Timisoara 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Timisoara 3.
+            `,
+            choices: [
+                {
+                    choice: "timisoara 2",
+                    destination: "timisoara2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        timisoara4: {
+            image: "timisoara4.jpg",
+            story: `
+            You are in Timisoara 4.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Timisoara 4.
+            `,
+            choices: [
+                {
+                    choice: "timisoara 2",
+                    destination: "timisoara2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        timisoara5: {
+            image: "timisoara5.jpg",
+            story: `
+            You are in Timisoara 5.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Timisoara 5.
+            `,
+            choices: [
+                {
+                    choice: "timisoara 2",
+                    destination: "timisoara2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        timisoara6: {
+            image: "timisoara6.jpg",
+            story: `
+            You are in Timisoara 6.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Timisoara 6.
+            `,
+            choices: [
+                {
+                    choice: "timisoara 2",
+                    destination: "timisoara2",
                 },
             ],
             items: [
