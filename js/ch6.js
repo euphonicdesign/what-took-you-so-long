@@ -21,11 +21,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "breaza",
+                    choice: "Breaza",
                     destination: "breaza",
                 },
                 {
-                    choice: "iasi",
+                    choice: "Iasi",
                     destination: "iasi",
                 },
             ],
@@ -45,23 +45,23 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore breaza",
+                    choice: "explore Breaza",
                     destination: "breaza2",
                 },
                 {
-                    choice: "central station",
+                    choice: "return to central station",
                     destination: "central_train_station",
                 },
                 {
-                    choice: "sinaia",
+                    choice: "Sinaia",
                     destination: "sinaia",
                 },
                 {
-                    choice: "azuga",
+                    choice: "Azuga",
                     destination: "azuga",
                 },
                 {
-                    choice: "predeal",
+                    choice: "Predeal",
                     destination: "predeal",
                 },
                 
@@ -81,7 +81,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "breaza station",
+                    choice: "Breaza station",
                     destination: "breaza",
                 },
                 {
@@ -173,11 +173,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore iasi",
+                    choice: "explore Iasi",
                     destination: "iasi2",
                 },
                 {
-                    choice: "central station",
+                    choice: "return to central station",
                     destination: "central_train_station",
                 },
                 
@@ -198,7 +198,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "iasi station",
+                    choice: "Iasi station",
                     destination: "iasi",
                 },
                 {
@@ -315,11 +315,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore sinaia",
+                    choice: "explore Sinaia",
                     destination: "sinaia2",
                 },
                 {
-                    choice: "breaza",
+                    choice: "return to Breaza",
                     destination: "breaza",
                 },
                 
@@ -340,7 +340,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "sinaia station",
+                    choice: "Sinaia station",
                     destination: "sinaia",
                 },
                 {
@@ -429,11 +429,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "breaza",
+                    choice: "return to Breaza",
                     destination: "breaza",
                 },
                 {
-                    choice: "moeciu",
+                    choice: "Moeciu",
                     destination: "moeciu",
                 },
             ],
@@ -452,11 +452,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore moeciu",
+                    choice: "explore Moeciu",
                     destination: "moeciu2",
                 },
                 {
-                    choice: "azuga",
+                    choice: "return to Azuga",
                     destination: "azuga",
                 },
             ],
@@ -475,7 +475,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "moeciu station",
+                    choice: "Moeciu station",
                     destination: "moeciu",
                 },
                 {
@@ -517,19 +517,19 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore predeal",
+                    choice: "explore Predeal",
                     destination: "predeal2",
                 },
                 {
-                    choice: "breaza",
+                    choice: "return to Breaza",
                     destination: "breaza",
                 },
                 {
-                    choice: "brasov",
+                    choice: "Brasov",
                     destination: "brasov",
                 },
                 {
-                    choice: "sibiu",
+                    choice: "Sibiu",
                     destination: "sibiu",
                 },
                 
@@ -549,7 +549,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "predeal station",
+                    choice: "Predeal station",
                     destination: "predeal",
                 },
                 {
@@ -613,11 +613,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore brasov",
+                    choice: "explore Brasov",
                     destination: "brasov2",
                 },
                 {
-                    choice: "predeal",
+                    choice: "return to Predeal",
                     destination: "predeal",
                 },
                 
@@ -637,7 +637,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "brasov station",
+                    choice: "Brasov station",
                     destination: "brasov",
                 },
                 {
@@ -679,19 +679,19 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore sibiu",
+                    choice: "explore Sibiu",
                     destination: "sibiu2",
                 },
                 {
-                    choice: "predeal",
+                    choice: "return to Predeal",
                     destination: "predeal",
                 },
                 {
-                    choice: "cluj",
+                    choice: "Cluj",
                     destination: "cluj",
                 },
                 {
-                    choice: "timisoara",
+                    choice: "Timisoara",
                     destination: "timisoara",
                 },
                 
@@ -711,7 +711,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "sibiu station",
+                    choice: "Sibiu station",
                     destination: "sibiu",
                 },
                 {
@@ -799,11 +799,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore cluj",
+                    choice: "explore Cluj",
                     destination: "cluj2",
                 },
                 {
-                    choice: "sibiu",
+                    choice: "return to Sibiu",
                     destination: "sibiu",
                 },
             ],
@@ -822,7 +822,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "cluj station",
+                    choice: "Cluj station",
                     destination: "cluj",
                 },
                 {
@@ -910,11 +910,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore timisoara",
+                    choice: "explore Timisoara",
                     destination: "timisoara2",
                 },
                 {
-                    choice: "sibiu",
+                    choice: "return to Sibiu",
                     destination: "sibiu",
                 },
             ],
@@ -933,7 +933,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "timisoara station",
+                    choice: "Timisoara station",
                     destination: "timisoara",
                 },
                 {
