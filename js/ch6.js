@@ -61,7 +61,7 @@ function getStoryChapter6(name) {
                     destination: "predeal",
                 },
                 {
-                    choice: "explore",
+                    choice: "explore breaza",
                     destination: "breaza2",
                 },
             ],
@@ -80,7 +80,7 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "breaza",
+                    choice: "breaza station",
                     destination: "breaza",
                 },
                 {
@@ -200,7 +200,7 @@ function getStoryChapter6(name) {
                     destination: "breaza",
                 },
                 {
-                    choice: "explore",
+                    choice: "explore sinaia",
                     destination: "sinaia2",
                 },
             ],
@@ -220,29 +220,82 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "sinaia",
+                    choice: "sinaia station",
                     destination: "sinaia",
                 },
                 {
-                    choice: "sinaia 3",
-                    destination: "sinaia3",
-                },
-                {
                     choice: "sinaia 4",
-                    destination: "sinaia3",
+                    destination: "sinaia4",
                 },
                 {
                     choice: "sinaia 5",
-                    destination: "sinaia3",
+                    destination: "sinaia5",
                 },
                 {
                     choice: "sinaia 6",
-                    destination: "sinaia3",
+                    destination: "sinaia6",
                 },
             ],
             items: [
             ],
             
+        },
+
+        sinaia4: {
+            image: "sinaia4.jpg",
+            story: `
+            You are in Sinaia 4.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sinaia 4.
+            `,
+            choices: [
+                {
+                    choice: "sinaia 2",
+                    destination: "sinaia2",
+                },
+            ],
+            items: [
+            ],
+        },
+
+        sinaia5: {
+            image: "sinaia5.jpg",
+            story: `
+            You are in Sinaia 5.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sinaia 5.
+            `,
+            choices: [
+                {
+                    choice: "sinaia 2",
+                    destination: "sinaia2",
+                },
+            ],
+            items: [
+            ],
+        },
+
+        sinaia6: {
+            image: "sinaia6.jpg",
+            story: `
+            You are in Sinaia 6.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sinaia 6.
+            `,
+            choices: [
+                {
+                    choice: "sinaia 2",
+                    destination: "sinaia2",
+                },
+            ],
+            items: [
+            ],
         },
 
         azuga: {
@@ -262,6 +315,71 @@ function getStoryChapter6(name) {
                 {
                     choice: "moeciu",
                     destination: "moeciu",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        moeciu: {
+            image: "moeciu.jpg",
+            story: `
+            You are in Moeciu.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Moeciu.
+            `,
+            choices: [
+                {
+                    choice: "azuga",
+                    destination: "azuga",
+                },
+                {
+                    choice: "explore moeciu",
+                    destination: "moeciu2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        moeciu2: {
+            image: "moeciu2.jpg",
+            story: `
+            You are in Moeciu 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Moeciu 2.
+            `,
+            choices: [
+                {
+                    choice: "moeciu station",
+                    destination: "moeciu",
+                },
+                {
+                    choice: "moeciu 3",
+                    destination: "moeciu3",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        moeciu3: {
+            image: "moeciu3.jpg",
+            story: `
+            You are in Moeciu 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Moeciu 3.
+            `,
+            choices: [
+                {
+                    choice: "moeciu 2",
+                    destination: "moeciu2",
                 },
             ],
             items: [
@@ -289,6 +407,74 @@ function getStoryChapter6(name) {
                 {
                     choice: "sibiu",
                     destination: "sibiu",
+                },
+                {
+                    choice: "explore predeal",
+                    destination: "predeal2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        predeal2: {
+            image: "predeal2.jpg",
+            story: `
+            You are in Predeal 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Predeal 2.
+            `,
+            choices: [
+                {
+                    choice: "predeal station",
+                    destination: "predeal",
+                },
+                {
+                    choice: "predeal 3",
+                    destination: "predeal3",
+                },
+                {
+                    choice: "predeal 4",
+                    destination: "predeal4",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        predeal3: {
+            image: "predeal3.jpg",
+            story: `
+            You are in Predeal 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Predeal 3.
+            `,
+            choices: [
+                {
+                    choice: "predeal 2",
+                    destination: "predeal2",
+                },
+            ],
+            items: [
+            ], 
+        },
+        predeal4: {
+            image: "predeal4.jpg",
+            story: `
+            You are in Predeal 4.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Predeal 4.
+            `,
+            choices: [
+                {
+                    choice: "predeal 2",
+                    destination: "predeal2",
                 },
             ],
             items: [
@@ -335,6 +521,98 @@ function getStoryChapter6(name) {
                 {
                     choice: "timisoara",
                     destination: "timisoara",
+                },
+                {
+                    choice: "explore sibiu",
+                    destination: "sibiu2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        sibiu2: {
+            image: "sibiu2.jpg",
+            story: `
+            You are in Sibiu 2.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sibiu 2.
+            `,
+            choices: [
+                {
+                    choice: "sibiu station",
+                    destination: "sibiu",
+                },
+                {
+                    choice: "sibiu 3",
+                    destination: "sibiu3",
+                },
+                {
+                    choice: "sibiu 4",
+                    destination: "sibiu4",
+                },
+                {
+                    choice: "sibiu 5",
+                    destination: "sibiu5",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        sibiu3: {
+            image: "sibiu3.jpg",
+            story: `
+            You are in Sibiu 3.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sibiu 3.
+            `,
+            choices: [
+                {
+                    choice: "sibiu 2",
+                    destination: "sibiu2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        sibiu4: {
+            image: "sibiu4.jpg",
+            story: `
+            You are in Sibiu 4.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sibiu 4.
+            `,
+            choices: [
+                {
+                    choice: "sibiu 2",
+                    destination: "sibiu2",
+                },
+            ],
+            items: [
+            ], 
+        },
+
+        sibiu5: {
+            image: "sibiu5.jpg",
+            story: `
+            You are in Sibiu 5.
+            `,
+            story2flag: false,
+            story2:`
+            You are in Sibiu 5.
+            `,
+            choices: [
+                {
+                    choice: "sibiu 2",
+                    destination: "sibiu2",
                 },
             ],
             items: [
