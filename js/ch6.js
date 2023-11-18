@@ -64,12 +64,12 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Breaza",
-                    destination: "breaza2",
-                },
-                {
                     choice: "return to Central Station",
                     destination: "central_train_station",
+                },
+                {
+                    choice: "explore Breaza",
+                    destination: "breaza2",
                 },
                 {
                     choice: "Sinaia",
@@ -379,14 +379,13 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Iasi",
-                    destination: "iasi2",
-                },
-                {
                     choice: "return to Central Station",
                     destination: "central_train_station",
                 },
-                
+                {
+                    choice: "explore Iasi",
+                    destination: "iasi2",
+                },
             ],
             items: [
             ],
@@ -734,13 +733,14 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Sinaia",
-                    destination: "sinaia2",
-                },
-                {
                     choice: "return to Breaza",
                     destination: "breaza",
                 },
+                {
+                    choice: "explore Sinaia",
+                    destination: "sinaia2",
+                },
+                
                 
             ],
             items: [
@@ -958,7 +958,7 @@ function getStoryChapter6(name) {
                     You try to awake the guard, but fail to do so...
                     `,
                     storyConditionMet:`
-                    The guard is awake now. He recommends that you visit Sibiu...
+                    The guard is awake now. Apparently some loud noise disturbed his sleep. He recommends that you visit Sibiu...
                     `,
                     condition: {
                         "conditionMet": false,
@@ -1039,13 +1039,14 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Moeciu",
-                    destination: "moeciu2",
-                },
-                {
                     choice: "return to Azuga",
                     destination: "azuga",
                 },
+                {
+                    choice: "explore Moeciu",
+                    destination: "moeciu2",
+                },
+                
             ],
             items: [
             ], 
@@ -1104,12 +1105,12 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Predeal",
-                    destination: "predeal2",
-                },
-                {
                     choice: "return to Breaza",
                     destination: "breaza",
+                },
+                {
+                    choice: "explore Predeal",
+                    destination: "predeal2",
                 },
                 {
                     choice: "Brasov",
@@ -1210,14 +1211,13 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Brasov",
-                    destination: "brasov2",
-                },
-                {
                     choice: "return to Predeal",
                     destination: "predeal",
                 },
-                
+                {
+                    choice: "explore Brasov",
+                    destination: "brasov2",
+                },
             ],
             items: [
             ], 
@@ -1276,12 +1276,12 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Sibiu",
-                    destination: "sibiu2",
-                },
-                {
                     choice: "return to Predeal",
                     destination: "predeal",
+                },
+                {
+                    choice: "explore Sibiu",
+                    destination: "sibiu2",
                 },
                 {
                     choice: "Cluj",
@@ -1400,12 +1400,12 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Cluj",
-                    destination: "cluj2",
-                },
-                {
                     choice: "return to Sibiu",
                     destination: "sibiu",
+                },
+                {
+                    choice: "explore Cluj",
+                    destination: "cluj2",
                 },
             ],
             items: [
@@ -1511,12 +1511,12 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "explore Timisoara",
-                    destination: "timisoara2",
-                },
-                {
                     choice: "return to Sibiu",
                     destination: "sibiu",
+                },
+                {
+                    choice: "explore Timisoara",
+                    destination: "timisoara2",
                 },
             ],
             items: [
