@@ -4,7 +4,7 @@ function getStoryChapter6(name) {
         currentScene: "central_train_station",
         currentChapter: "6",
         player: {
-            inventory: [
+            inventory: ["camera",
             ]
         },
         lastActionStory: ``,
@@ -165,7 +165,7 @@ function getStoryChapter6(name) {
         iasi: {
             image: "iasi.jpg",
             story: `
-            You are in Iasi.
+            You arrive at Iasi. 
             `,
             story2flag: false,
             story2:`
@@ -190,11 +190,11 @@ function getStoryChapter6(name) {
         iasi2: {
             image: "iasi2.jpg",
             story: `
-            You are in Iasi 2.
+            You are exploring Iasi. It is a beautiful city and the people are friendly. There are many universities around, beautiful parks and a big palace. 
             `,
             story2flag: false,
             story2:`
-            You are in Iasi 2.
+            You are exploring Iasi. It is a beautiful city and the people are friendly. There are many universities around, beautiful parks and a big palace.
             `,
             choices: [
                 {
@@ -202,19 +202,19 @@ function getStoryChapter6(name) {
                     destination: "iasi",
                 },
                 {
-                    choice: "iasi 3",
+                    choice: "park",
                     destination: "iasi3",
                 },
                 {
-                    choice: "iasi 4",
+                    choice: "artizanal fountain",
                     destination: "iasi4",
                 },
                 {
-                    choice: "iasi 5",
+                    choice: "botanical garden",
                     destination: "iasi5",
                 },
                 {
-                    choice: "iasi 6",
+                    choice: "palace",
                     destination: "iasi6",
                 },
                 
@@ -224,19 +224,89 @@ function getStoryChapter6(name) {
             
         },
 
+        //iasi park
         iasi3: {
             image: "iasi3.jpg",
             story: `
-            You are in Iasi 3.
+            You are in the park.
             `,
             story2flag: false,
             story2:`
-            You are in Iasi 3.
+            You are in the park.
             `,
             choices: [
                 {
-                    choice: "iasi 2",
+                    choice: "explore Iasi",
                     destination: "iasi2",
+                },
+                {
+                    choice: "watch king statue",
+                    destination: "iasi3",
+                    story: `
+                    Numerous statues of past kings are spread throughout the city. You take note of their names.
+                    `,
+                    storyConditionMet:`
+                    Numerous statues of past kings are spread throughout the city. You take note of their names.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_king names"],
+                    },
+                },
+                {
+                    choice: "attend university classes",
+                    destination: "iasi3",
+                    story: `
+                    It is true that there are so many universities around, however you don't need to do that anymore. 
+                    You've had your fair share of class attendance in the past. You can just relax now.
+                    `,
+                },
+                {
+                    choice: "watch lion statue",
+                    destination: "iasi3",
+                    story: `
+                    Another thing that you notice is the lion statues.
+                    `,
+                    storyConditionMet:`
+                    Another thing that you notice is the lion statues.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_lion encoutered"],
+                    },
+                },
+                {
+                    choice: "observe sparrow",
+                    destination: "iasi3",
+                    story: `
+                    Down the ground there a couple of chalk drawings. A sparrow is hopping around.
+                    `,
+                    storyConditionMet:`
+                    Down the ground there a couple of chalk drawings. A sparrow is hopping around.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+
+                {
+                    choice: "stump flowers",
+                    destination: "iasi3",
+                    story: `
+                    From one of the tree stumps inside the park, multicolored flowers have grown up.
+                    `,
+                    storyConditionMet:`
+                    From one of the tree stumps inside the park, multicolored flowers have grown up.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
@@ -244,19 +314,67 @@ function getStoryChapter6(name) {
             
         },
 
+        //artizanal fountain
         iasi4: {
             image: "iasi4.jpg",
             story: `
-            You are in Iasi 4.
+            You are in the artizanal fountain area.
             `,
             story2flag: false,
             story2:`
-            You are in Iasi 4.
+            You are in the artizanal fountain area.
             `,
             choices: [
                 {
-                    choice: "iasi 2",
+                    choice: "explore Iasi",
                     destination: "iasi2",
+                },
+                {
+                    choice: "fight dragon",
+                    destination: "iasi4",
+                    story: `
+                    In the middle of the artizanal fountain there is a mighty dragon head rising up. A nearby kid is playing with a stick near the fountain. 
+                    Should you attack the dragon? Maybe not this time around... The kid might have a better go at it.  
+                    `,
+                    storyConditionMet:`
+                    Will let the kid have a go at it.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_dragon encountered"],
+                    },
+                },
+                {
+                    choice: "observe tree",
+                    destination: "iasi4",
+                    story: `
+                    There's a tree in the middle of the pavement... The tree is more important than the pedestrians' way. 
+                    `,
+                    storyConditionMet:`
+                    There's a tree in the middle of the pavement...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+
+                {
+                    choice: "pigeon",
+                    destination: "iasi4",
+                    story: `
+                    There's a pigeon. 
+                    `,
+                    storyConditionMet:`
+                    There's a pigeon. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
@@ -264,19 +382,81 @@ function getStoryChapter6(name) {
             
         },
 
+        //botanical garden
         iasi5: {
             image: "iasi5.jpg",
             story: `
-            You are in Iasi 5.
+            You head up towards the botanical garden.
             `,
             story2flag: false,
             story2:`
-            You are in Iasi 5.
+            You are at the botanical garden.
             `,
             choices: [
                 {
-                    choice: "iasi 2",
+                    choice: "explore Iasi",
                     destination: "iasi2",
+                },
+                {
+                    choice: "bicycles",
+                    destination: "iasi5",
+                    story: `
+                    Not this time. Walking is better.
+                    `,
+                    storyConditionMet:`
+                    Not this time. Walking is better.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_Iasi bicycle"],
+                    },
+                },
+                {
+                    choice: "water lilies",
+                    destination: "iasi5",
+                    story: `
+                    You watch the water lilies.
+                    `,
+                    storyConditionMet:`
+                    You watch the water lilies.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "give bait",
+                    destination: "iasi5",
+                    story: `
+                    There's someone fishing in one of the ponds. He needs some bait to attract the fish. 
+                    `,
+                    storyConditionMet:`
+                    You offer the fisherman the cherry you have picked up from Breaza. What kind of bait is this? 
+                    What kind of fish will it attract? Nevertheless the fisherman offers you his thanks.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["cherry"],
+                        "itemsReturned": ["_bait offered"],
+                    },
+                },
+                {
+                    choice: "green house",
+                    destination: "iasi5",
+                    story: `
+                    You enter the green house. Marvellous plants appear in front of you. 
+                    `,
+                    storyConditionMet:`
+                    You enter the green house. Marvellous plants appear in front of you. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
@@ -284,19 +464,36 @@ function getStoryChapter6(name) {
             
         },
 
+        //palace
         iasi6: {
             image: "iasi6.jpg",
             story: `
-            You are in Iasi 6.
+            You are near the palace. 
             `,
             story2flag: false,
             story2:`
-            You are in Iasi 6.
+            You are near the palace.
             `,
             choices: [
                 {
-                    choice: "iasi 2",
+                    choice: "explore Iasi",
                     destination: "iasi2",
+                },
+                {
+                    choice: "watch palace",
+                    destination: "iasi6",
+                    story: `
+                    Unfortunatelly, there's a big barrier that is blocking the passage to it. The palace is still under construction.
+                    Nevertheless, you can still grab a photo of it from the distance.
+                    `,
+                    storyConditionMet:`
+                    Unfortunatelly, there's a big barrier that is blocking the passage to it. The palace is still under construction.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["Iasi palace photo"],
+                    },
                 },
             ],
             items: [
