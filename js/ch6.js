@@ -4,7 +4,7 @@ function getStoryChapter6(name) {
         currentScene: "central_train_station",
         currentChapter: "6",
         player: {
-            inventory: ["camera",
+            inventory: ["camera","_docile dog"
             ]
         },
         lastActionStory: ``,
@@ -28,6 +28,25 @@ function getStoryChapter6(name) {
                     choice: "Iasi",
                     destination: "iasi",
                 },
+                {
+                    choice: "return home",
+                    destination: "theend",
+                    story: `
+                    You need a couple more photos and make someone smile before you return home.
+                    `,
+                    storyConditionMet:`
+                    The train returns to the city with the big campus. You return to your place 
+                    and lie down on your bed. You feel tired, but happy that You have travelled 
+                    quite a lot, seen many beautiful places, and encountered many interesting people. 
+                    Then  you become pensative and get lost in your own thoughts... Still no sign 
+                    from the princess...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["rose photo", "palace photo"],
+                        "itemsReturned": [],
+                    },
+                },
             ],
             items: [
             ],
@@ -49,7 +68,7 @@ function getStoryChapter6(name) {
                     destination: "breaza2",
                 },
                 {
-                    choice: "return to central station",
+                    choice: "return to Central Station",
                     destination: "central_train_station",
                 },
                 {
@@ -59,6 +78,17 @@ function getStoryChapter6(name) {
                 {
                     choice: "Azuga",
                     destination: "azuga",
+                    story: `
+                    Not before you get a recommendation of some sort...
+                    `,
+                    storyConditionMet:`
+                    As you walk through the streets you find an interesting white flower.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_fisherman recommendation"],
+                        "itemsReturned": [],
+                    },
                 },
                 {
                     choice: "Predeal",
@@ -73,11 +103,11 @@ function getStoryChapter6(name) {
         breaza2: {
             image: "breaza2.jpg",
             story: `
-            You are in Breaza 2.
+            Breaza is situated atop of a hilly area covered by trees. There are numerous houses around having beautiful gardens with colored flowers.
             `,
             story2flag: false,
             story2:`
-            You are in Breaza 2.
+            Breaza is situated atop of a hilly area covered by trees. There are numerous houses around having beautiful gardens with colored flowers.
             `,
             choices: [
                 {
@@ -85,16 +115,37 @@ function getStoryChapter6(name) {
                     destination: "breaza",
                 },
                 {
-                    choice: "breaza 3",
+                    choice: "old bench",
                     destination: "breaza3",
                 },
                 {
-                    choice: "breaza 4",
+                    choice: "garden",
                     destination: "breaza4",
+                    story: `
+                    You cannot pass... A big dog is guarding the way.
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_docile dog"],
+                        "itemsReturned": [],
+                    },
                 },
+
                 {
-                    choice: "breaza 5",
+                    choice: "spruce tree",
                     destination: "breaza5",
+                    story: `
+                    You cannot pass... A big dog is guarding the way.
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_docile dog"],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
@@ -102,19 +153,80 @@ function getStoryChapter6(name) {
             
         },
 
+        //old bench
         breaza3: {
             image: "breaza3.jpg",
             story: `
-            You are in Breaza 3.
+            You find an old bench.
             `,
             story2flag: false,
             story2:`
-            You are in Breaza 3.
+            You find an old bench.
             `,
             choices: [
                 {
-                    choice: "breaza 2",
+                    choice: "explore Breaza",
                     destination: "breaza2",
+                },
+                {
+                    choice: "white flower",
+                    destination: "breaza3",
+                    story: `
+                    As you walk through the streets you find an interesting white flower.
+                    `,
+                    storyConditionMet:`
+                    As you walk through the streets you find an interesting white flower.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["white flower"],
+                    },
+                },
+                {
+                    choice: "big dog",
+                    destination: "breaza3",
+                    story: `
+                    A big dog is guarding the way forward... <em>A lion might help here...</em>
+                    `,
+                    storyConditionMet:`
+                    You show the dog a picture of the lion statue you have encountered in Iasi. The dog becomes docile and let you pass along.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_lion encountered"],
+                        "itemsReturned": ["_docile dog"],
+                    },
+                },
+                {
+                    choice: "pick cherry",
+                    destination: "breaza3",
+                    story: `
+                    A cherry tree! How lovely! You would love to pick up one of the cherries, but the big dog does not let you pass.
+                    `,
+                    storyConditionMet:`
+                    You pick up a cherry.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_docile dog"],
+                        "itemsReturned": ["cherry"],
+                    },
+                },
+                {
+                    choice: "pick fir cone",
+                    destination: "breaza3",
+                    story: `
+                    Several fir cones are lying on the ground. You pick one of them.
+                    `,
+                    storyConditionMet:`
+                    You already have one.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["fir cone"],
+                    },
                 },
             ],
             items: [
@@ -122,19 +234,81 @@ function getStoryChapter6(name) {
             
         },
 
+        //garden
         breaza4: {
             image: "breaza4.jpg",
             story: `
-            You are in Breaza 4.
+            You continue to stroll along Breaza's streets encountering several things along the way.
             `,
             story2flag: false,
             story2:`
-            You are in Breaza 4.
+            You continue to stroll along Breaza's streets encountering several things along the way.
             `,
             choices: [
                 {
-                    choice: "breaza 2",
+                    choice: "explore Breaza",
                     destination: "breaza2",
+                },
+                {
+                    choice: "watch gate portal",
+                    destination: "breaza4",
+                    story: `
+                    There is some sort of gate leading to nowhere. That's odd...
+                    `,
+                    storyConditionMet:`
+                    There is some sort of gate leading to nowhere. That's odd...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_gate portal 1"],
+                    },
+                },
+                {
+                    choice: "use gate portal",
+                    destination: "timisoara6",
+                    story: `
+                    The portal does not work...
+                    `,
+                    storyConditionMet:`
+                    The portal teleports you directly to Timisoara... That's interesting.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_gate portal 1", "_gate portal 2"],
+                        "itemsReturned": ["_Timisoara clock started"],
+                    },
+                },
+
+                {
+                    choice: "pick chamomile flowers",
+                    destination: "breaza4",
+                    story: `
+                    You pick up a couple of chamomile flowers.
+                    `,
+                    storyConditionMet:`
+                    You have enough.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["chamomile flowers"],
+                    },
+                },
+                {
+                    choice: "pick rose",
+                    destination: "breaza4",
+                    story: `
+                    You pick up a rose and take a photo of it.
+                    `,
+                    storyConditionMet:`
+                    You already have one.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["rose flower", "rose photo"],
+                    },
                 },
             ],
             items: [
@@ -142,19 +316,51 @@ function getStoryChapter6(name) {
             
         },
 
+        //spruce tree
         breaza5: {
             image: "breaza5.jpg",
             story: `
-            You are in Breaza 5.
+            Continuing along the path you find a spruce tree.
             `,
             story2flag: false,
             story2:`
-            You are in Breaza 5.
+            You are in the spruce tree area.
             `,
             choices: [
                 {
-                    choice: "breaza 2",
+                    choice: "explore Breaza",
                     destination: "breaza2",
+                },
+                {
+                    choice: "watch bee",
+                    destination: "breaza5",
+                    story: `
+                    You watch the bee cross-fertilizing the flowers. That's interesting...
+                    `,
+                    storyConditionMet:`
+                    You watch the bee cross-fertilizing the flowers. That's interesting...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_bee watched"],
+                    },
+                },
+
+                {
+                    choice: "sit on bench",
+                    destination: "breaza5",
+                    story: `
+                    The bench looks rather old and fragile. You prefer not to...
+                    `,
+                    storyConditionMet:`
+                    The bench looks rather old and fragile. You prefer not to...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
@@ -177,7 +383,7 @@ function getStoryChapter6(name) {
                     destination: "iasi2",
                 },
                 {
-                    choice: "return to central station",
+                    choice: "return to Central Station",
                     destination: "central_train_station",
                 },
                 
@@ -274,7 +480,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["_lion encoutered"],
+                        "itemsReturned": ["_lion encountered"],
                     },
                 },
                 {
@@ -435,12 +641,13 @@ function getStoryChapter6(name) {
                     `,
                     storyConditionMet:`
                     You offer the fisherman the cherry you have picked up from Breaza. What kind of bait is this? 
-                    What kind of fish will it attract? Nevertheless the fisherman offers you his thanks.
+                    What kind of fish will it attract? Nevertheless the fisherman offers you his thanks and recommends
+                    you to visit other cities as well, like for example Azuga.
                     `,
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": ["cherry"],
-                        "itemsReturned": ["_bait offered"],
+                        "itemsReturned": ["_fisherman recommendation"],
                     },
                 },
                 {
@@ -492,7 +699,22 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["Iasi palace photo"],
+                        "itemsReturned": ["palace photo"],
+                    },
+                },
+                {
+                    choice: "watch horses",
+                    destination: "iasi6",
+                    story: `
+                    In the front of the pallace there's an adorned carriage with two mighty horses in front of it.
+                    `,
+                    storyConditionMet:`
+                    In the front of the pallace there's an adorned carriage with two mighty horses in front of it.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
                     },
                 },
             ],
@@ -529,27 +751,32 @@ function getStoryChapter6(name) {
         sinaia2: {
             image: "sinaia2.jpg",
             story: `
-            You are in Sinaia 2.
+            You have arrived to Sinaia, e nearby winter-time resort. As you walk throughout the town 
+            you notice the statue of a lady carrying some water. There is a castle as well and the views
+            are magnificent.
             `,
             story2flag: false,
             story2:`
-            You are in Sinaia 2.
+            You have arrived to Sinaia, e nearby winter-time resort. As you walk throughout the town 
+            you notice the statue of a lady carrying some water. There is a castle as well and the views
+            are magnificent.
             `,
             choices: [
                 {
                     choice: "Sinaia station",
                     destination: "sinaia",
+                    
                 },
                 {
-                    choice: "sinaia 4",
-                    destination: "sinaia4",
-                },
-                {
-                    choice: "sinaia 5",
+                    choice: "upstream",
                     destination: "sinaia5",
                 },
                 {
-                    choice: "sinaia 6",
+                    choice: "castle",
+                    destination: "sinaia4",
+                },
+                {
+                    choice: "top",
                     destination: "sinaia6",
                 },
             ],
@@ -558,19 +785,66 @@ function getStoryChapter6(name) {
             
         },
 
+        //castle
         sinaia4: {
             image: "sinaia4.jpg",
             story: `
-            You are in Sinaia 4.
+            You are in castle area.
             `,
             story2flag: false,
             story2:`
-            You are in Sinaia 4.
+            You are in castle area.
             `,
             choices: [
                 {
-                    choice: "sinaia 2",
+                    choice: "explore Sinaia",
                     destination: "sinaia2",
+                },
+
+                {
+                    choice: "watch bear statue",
+                    destination: "sinaia4",
+                    story: `
+                    You watch the statue of a bear. One of the "locals" so to speak.
+                    `,
+                    storyConditionMet:`
+                    You watch the statue of a bear. One of the "locals" so to speak.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "watch dog statue",
+                    destination: "sinaia4",
+                    story: `
+                    You watch the statue of a dog. Looks like a watch-dog.
+                    `,
+                    storyConditionMet:`
+                    You watch the statue of a dog. Looks like a watch-dog.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "watch lady statue",
+                    destination: "sinaia4",
+                    story: `
+                    You watch the statue of a lady. Her chest is uncovered. Hope she does not get a cold!
+                    `,
+                    storyConditionMet:`
+                    You watch the statue of a lady. Her chest is uncovered. Hope she does not get a cold!
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
@@ -580,35 +854,151 @@ function getStoryChapter6(name) {
         sinaia5: {
             image: "sinaia5.jpg",
             story: `
-            You are in Sinaia 5.
+            You are walking upstream. The scenery around here is impressive.
             `,
             story2flag: false,
             story2:`
-            You are in Sinaia 5.
+            You are walking upstream. The scenery around here is impressive.
             `,
             choices: [
                 {
-                    choice: "sinaia 2",
+                    choice: "explore Sinaia",
                     destination: "sinaia2",
+                },
+                {
+                    choice: "use canon",
+                    destination: "sinaia5",
+                    story: `
+                    You encounter a canon. Using it is out of the question for the time being.
+                    `,
+                    storyConditionMet:`
+                    What if? What if you shot the canon? Would that help? After you shoot the 
+                    canon, you hear a loud noise out in the distance.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_guard met"],
+                        "itemsReturned": ["_canon shot"],
+                    },
+                },
+                {
+                    choice: "watch lady statue",
+                    destination: "sinaia5",
+                    story: `
+                    You notice the statue of a lady carrying a water vase on her shoulder.
+                    `,
+                    storyConditionMet:`
+                    You notice the statue of a lady carrying a water vase on her shoulder.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "watch spring",
+                    destination: "sinaia5",
+                    story: `
+                    You get closer to a nearby spring and notice a plastic bottle of water stuck into a fallen branch.
+                    Apparently, some of the people don't see the consequence of not minimizing their plastic consumption, 
+                    and do not even consider how to properly dispose the packaging of everyday products. It's a pity! 
+                    In situations like these, it's the little things that matter. Assuming more responsibility might help.
+                    You pick up the plastic bottle and remove the bottleneck. 
+                    `,
+                    storyConditionMet:`
+                    You watch the nearby spring flowing downstream...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["plastic bottle"],
+                    },
                 },
             ],
             items: [
             ],
         },
 
+        //top
         sinaia6: {
             image: "sinaia6.jpg",
             story: `
-            You are in Sinaia 6.
+            You continue climbing upstream until you reach the top of the mountain.
             `,
             story2flag: false,
             story2:`
-            You are in Sinaia 6.
+            You are at the top of the mountain.
             `,
             choices: [
                 {
-                    choice: "sinaia 2",
+                    choice: "explore Sinaia",
                     destination: "sinaia2",
+                },
+                {
+                    choice: "talk to motorcyclist",
+                    destination: "sinaia6",
+                    story: `
+                    A black motorcycle passes by. Vuuuummmm...
+                    `,
+                    storyConditionMet:`
+                    Vuuuummmm...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "talk to guard",
+                    destination: "sinaia6",
+                    story: `
+                    Close by there's a building with some antennas on top and a sleeping guard next to it.
+                    You try to awake the guard, but fail to do so...
+                    `,
+                    storyConditionMet:`
+                    The guard is awake now. He recommends that you visit Sibiu...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_canon shot"],
+                        "itemsReturned": ["_guard recommendation"],
+                    },
+                },
+                {
+                    choice: "admire view",
+                    destination: "sinaia6",
+                    story: `
+                    The view is impressive... You can see the peaks of the nearby mountains and 
+                    down the valley, the town. Close by there is a building with some antennas on top and
+                    a person guarding its entrance.
+                    `,
+                    storyConditionMet:`
+                    The view is impressive... You can see the peaks of the nearby mountains and 
+                    down the valley, the town. Close by there is a building with some antennas on top and
+                    a person guarding its entrance.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_guard met"],
+                    },
+                },
+                {
+                    choice: "watch bee",
+                    destination: "sinaia6",
+                    story: `
+                    You watch the bee cross-fertilizing the flowers. That's interesting...
+                    `,
+                    storyConditionMet:`
+                    You watch the bee cross-fertilizing the flowers. That's interesting...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_bee2 watched"],
+                    },
                 },
             ],
             items: [
@@ -728,6 +1118,16 @@ function getStoryChapter6(name) {
                 {
                     choice: "Sibiu",
                     destination: "sibiu",
+                    story: `
+                    Too far away... Maybe later...
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_guard recommendation"],
+                        "itemsReturned": [],
+                    },
                 },
                 
             ],
@@ -868,7 +1268,7 @@ function getStoryChapter6(name) {
         sibiu: {
             image: "sibiu.jpg",
             story: `
-            You are in Sibiu.
+            The train stops this time near a mountainous area. You are in Sibiu.
             `,
             story2flag: false,
             story2:`
@@ -900,11 +1300,15 @@ function getStoryChapter6(name) {
         sibiu2: {
             image: "sibiu2.jpg",
             story: `
-            You are in Sibiu 2.
+            You have only one day to explore Sibiu. You encounter a castle and its wall fortifications. The archiecture 
+            of the city looks amazing, but the time is short and you have to rush through it.
+            Who knows, you might return some other time...  
             `,
             story2flag: false,
             story2:`
-            You are in Sibiu 2.
+            You encounter a castle and its wall fortifications. The archiecture 
+            of the city looks amazing, but the time is short and you have to rush through it.
+            Who knows, you might return some other time...
             `,
             choices: [
                 {
@@ -912,15 +1316,15 @@ function getStoryChapter6(name) {
                     destination: "sibiu",
                 },
                 {
-                    choice: "sibiu 3",
+                    choice: "entrance",
                     destination: "sibiu3",
                 },
                 {
-                    choice: "sibiu 4",
+                    choice: "center",
                     destination: "sibiu4",
                 },
                 {
-                    choice: "sibiu 5",
+                    choice: "night time",
                     destination: "sibiu5",
                 },
             ],
