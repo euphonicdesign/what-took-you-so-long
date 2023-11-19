@@ -1328,7 +1328,7 @@ function getStoryChapter6(name) {
                     choice: "take photo",
                     destination: "brasov3",
                     story: `
-                    You take a photo.
+                    You take a photo of the park.
                     `,
                     storyConditionMet:`
                     You have done that already...
