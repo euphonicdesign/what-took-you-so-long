@@ -275,7 +275,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": ["_gate portal 1", "_gate portal 2"],
-                        "itemsReturned": ["_Timisoara clock started"],
+                        "itemsReturned": ["_clock started"],
                     },
                 },
 
@@ -2032,12 +2032,19 @@ function getStoryChapter6(name) {
                     destination: "timisoara",
                 },
                 {
-                    choice: "watch princess statue",
-                    destination: "timisoara3",
-                },
-                {
                     choice: "central park",
                     destination: "timisoara4",
+                    story: `
+                    The central park seems to be covered by some sort of force field. You cannot pass.
+                    `,
+                    storyConditionMet:`
+                    The shield covering the central park seems to be down now. You can enter the park.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_shield down"],
+                        "itemsReturned": [],
+                    },
                 },
                 {
                     choice: "river",
@@ -2055,73 +2062,293 @@ function getStoryChapter6(name) {
         timisoara3: {
             image: "timisoara3.jpg",
             story: `
-            You are in Timisoara 3.
+            Looks like someone familiar... Oh no! The princess has been turned into a statue... Or maybe it is the other way around...
             `,
             story2flag: false,
             story2:`
-            You are in Timisoara 3.
+            Looks like someone familiar... Oh no! The princess has been turned into a statue... Or maybe it is the other way around...
             `,
             choices: [
                 {
-                    choice: "timisoara 2",
-                    destination: "timisoara2",
+                    choice: "return",
+                    destination: "timisoara4",
+                },
+                {
+                    choice: "take photo",
+                    destination: "timisoara3",
+                    story: `
+                    You take a photo of the princess statue.
+                    `,
+                    storyConditionMet:`
+                    You take a photo of the princess statue.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["princess statue photo"],
+                    },
                 },
             ],
             items: [
             ], 
         },
 
+        //central park
         timisoara4: {
             image: "timisoara4.jpg",
             story: `
-            You are in Timisoara 4.
+            You are in the central park of Timisoara. Several things draw your attention.
             `,
             story2flag: false,
             story2:`
-            You are in Timisoara 4.
+            You are in the central park of Timisoara. Several things draw your attention.
             `,
             choices: [
                 {
-                    choice: "timisoara 2",
+                    choice: "explore Timisoara",
                     destination: "timisoara2",
+                },
+                {
+                    choice: "wolf statue",
+                    destination: "timisoara4",
+                    story: `
+                    In the nearby area you find a statue of a wolf feeding two human babies. Maybe it is just a reference to some old legends.
+                    `,
+                    storyConditionMet:`
+                    In the nearby area you find a statue of a wolf feeding two human babies. Maybe it is just a reference to some old legends.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "pigeons",
+                    destination: "timisoara4",
+                    story: `
+                    You notice 3 pigeons.
+                    `,
+                    storyConditionMet:`
+                    You notice 3 pigeons.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "big cathedral",
+                    destination: "timisoara4",
+                    story: `
+                    The cathedral is large and beautiful.
+                    `,
+                    storyConditionMet:`
+                    The cathedral is large and beautiful.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "kite",
+                    destination: "timisoara4",
+                    story: `
+                    A child is pulling a nice kite above his head.
+                    `,
+                    storyConditionMet:`
+                    A child is pulling a nice kite above his head.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "watch statue",
+                    destination: "timisoara3",
                 },
             ],
             items: [
             ], 
         },
 
+        //river
         timisoara5: {
             image: "timisoara5.jpg",
             story: `
-            You are in Timisoara 5.
+            You are walking along the river.
             `,
             story2flag: false,
             story2:`
-            You are in Timisoara 5.
+            You are walking along the river.
             `,
             choices: [
                 {
-                    choice: "timisoara 2",
+                    choice: "explore Timisoara",
                     destination: "timisoara2",
+                },
+                {
+                    choice: "use bottle",
+                    destination: "timisoara5",
+                    story: `
+                    You pick some water from the river. <em>You may need a plastic bottle and come here at the right time.</em>
+                    `,
+                    storyConditionMet:`
+                    You manage to capture the blue dragon fly that you saw earlier.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["plastic bottle", "_dragon fly flew"],
+                        "itemsReturned": ["blue dragon fly"],
+                    },
+                },
+                {
+                    choice: "grafiti",
+                    destination: "timisoara5",
+                    story: `
+                    There is a lot of brightly colorful grafiti along the bridges and paths. They remind you of comic books.
+                    `,
+                    storyConditionMet:`
+                    There is a lot of brightly colorful grafiti along the bridges and paths. They reminds you of comic books.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "watch vegetation",
+                    destination: "timisoara5",
+                    story: `
+                    You notice a big bush. You get closer and you see a blue dragon fly. The dragon fly flies away.
+                    `,
+                    storyConditionMet:`
+                    You notice a big bush. The blue dragon fly has flown away.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_dragon fly flew"],
+                    },
+                },
+                {
+                    choice: "summer theater",
+                    destination: "timisoara5",
+                    story: `
+                    You pass by the summer theater.
+                    `,
+                    storyConditionMet:`
+                    You pass by the summer theater.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
             ], 
         },
 
+        //big clock
         timisoara6: {
             image: "timisoara6.jpg",
             story: `
-            You are in Timisoara 6.
+            You are near the big clock area.
             `,
             story2flag: false,
             story2:`
-            You are in Timisoara 6.
+            You are near the big clock area.
             `,
             choices: [
                 {
-                    choice: "timisoara 2",
+                    choice: "explore Timisoara",
                     destination: "timisoara2",
+                },
+                {
+                    choice: "big clock",
+                    destination: "timisoara6",
+                    story: `
+                    You notice a big clock surrounded by grass. The clock seems to be stuck at a certain hour. 
+                    <em>You may want to do something about it...</em>
+                    `,
+                    storyConditionMet:`
+                    You try to move the clock's handle. The clock seems to be working now...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_clock started"],
+                        "itemsReturned": ["_shield down"],
+                    },
+                },
+                {
+                    choice: "university",
+                    destination: "timisoara6",
+                    story: `
+                    That's interesting... This university has the same name as the one where you have attended your classes.
+                    `,
+                    storyConditionMet:`
+                    That's interesting... This university has the same name as the one where you have attended your classes.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "university",
+                    destination: "timisoara6",
+                    story: `
+                    That's interesting... This university has the same name as the one where you have attended your classes.
+                    `,
+                    storyConditionMet:`
+                    That's interesting... This university has the same name as the one where you have attended your classes.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "puppet",
+                    destination: "timisoara6",
+                    story: `
+                    In a nearby plaza square there's a lady on a scene playing with a string puppet. 
+                    You ponder how many times have your strings been pulled.
+                    `,
+                    storyConditionMet:`
+                    In a nearby plaza square there's a lady on a scene playing with a string puppet.
+                    You ponder how many times have your strings been pulled.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "water dispenser",
+                    destination: "timisoara6",
+                    story: `
+                    A water dispenser...
+                    `,
+                    storyConditionMet:`
+                    You fill in the plastic bottle with water.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["plastic bottle"],
+                        "itemsReturned": ["filled bottle"],
+                    },
                 },
             ],
             items: [
