@@ -4,7 +4,7 @@ function getStoryChapter6(name) {
         currentScene: "central_train_station",
         currentChapter: "6",
         player: {
-            inventory: ["camera","_docile dog", "_guard recommendation", "_way forward",
+            inventory: ["camera","_docile dog", "_guard recommendation", "_way forward", "_fisherman recommendation",
             ]
         },
         lastActionStory: ``,
@@ -82,7 +82,6 @@ function getStoryChapter6(name) {
                     Not before you get a recommendation of some sort...
                     `,
                     storyConditionMet:`
-                    As you walk through the streets you find an interesting white flower.
                     `,
                     condition: {
                         "conditionMet": false,
@@ -343,7 +342,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["_bee watched"],
+                        "itemsReturned": ["_bee watched", "bee 1"],
                     },
                 },
 
@@ -973,7 +972,7 @@ function getStoryChapter6(name) {
                     story: `
                     The view is impressive... You can see the peaks of the nearby mountains and 
                     down the valley, the town. Close by there is a building with some antennas on top and
-                    a person guarding its entrance.
+                    a person guarding its entrance. You take a photo of this view.
                     `,
                     storyConditionMet:`
                     The view is impressive... You can see the peaks of the nearby mountains and 
@@ -983,7 +982,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["_guard met"],
+                        "itemsReturned": ["_guard met", "top view photo"],
                     },
                 },
                 {
@@ -998,7 +997,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["_bee2 watched"],
+                        "itemsReturned": ["_bee2 watched","bee 2"],
                     },
                 },
             ],
@@ -1009,11 +1008,11 @@ function getStoryChapter6(name) {
         azuga: {
             image: "azuga.jpg",
             story: `
-            You are in Azuga.
+            You are in Azuga at the top of the mountain.
             `,
             story2flag: false,
             story2:`
-            You are in Azuga.
+            You are in Azuga at the top of the mountain.
             `,
             choices: [
                 {
@@ -1021,7 +1020,23 @@ function getStoryChapter6(name) {
                     destination: "breaza",
                 },
                 {
-                    choice: "Moeciu",
+                    choice: "take photo",
+                    destination: "azuga",
+                    story: `
+                    A house surrounded by fences completely covered in snow. That's an interesting picture...
+                    You take your camera out and shoot a photo.
+                    `,
+                    storyConditionMet:`
+                    A house surrounded by fences completely covered in snow. That's an interesting picture...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["snow house photo"],
+                    },
+                },
+                {
+                    choice: "go to Moeciu",
                     destination: "moeciu",
                 },
             ],
@@ -1032,11 +1047,11 @@ function getStoryChapter6(name) {
         moeciu: {
             image: "moeciu.jpg",
             story: `
-            You are in Moeciu.
+            You are in Moeciu and back to the future.
             `,
             story2flag: false,
             story2:`
-            You are in Moeciu.
+            You are in Moeciu and back to the future.
             `,
             choices: [
                 {
@@ -1056,11 +1071,11 @@ function getStoryChapter6(name) {
         moeciu2: {
             image: "moeciu2.jpg",
             story: `
-            You are in Moeciu 2.
+            Sparse houses embelish the snow covered hills of Moeciu.
             `,
             story2flag: false,
             story2:`
-            You are in Moeciu 2.
+            Sparse houses embelish the snow covered hills of Moeciu.
             `,
             choices: [
                 {
@@ -1068,7 +1083,38 @@ function getStoryChapter6(name) {
                     destination: "moeciu",
                 },
                 {
-                    choice: "moeciu 3",
+                    choice: "flower vase",
+                    destination: "moeciu2",
+                    story: `
+                    A flower vase. 
+                    `,
+                    storyConditionMet:`
+                    A flower vase. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "use bees",
+                    destination: "moeciu2",
+                    story: `
+                    Doesn't make any sense... <em>Not enough bees around...</em>
+                    `,
+                    storyConditionMet:`
+                    Doesn't make any sense... You do it anyway. You release the bees and they start fertilizing the flowers in the vase.
+                    You pick one of the fertilized flowers.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["bee 1", "bee 2"],
+                        "itemsReturned": ["fertilized flower"],
+                    },
+                },
+                {
+                    choice: "go inside",
                     destination: "moeciu3",
                 },
             ],
@@ -1076,19 +1122,36 @@ function getStoryChapter6(name) {
             ], 
         },
 
+        //go inside
         moeciu3: {
             image: "moeciu3.jpg",
             story: `
-            You are in Moeciu 3.
+            You are inside your guest house in Moeciu sitting at a table.
             `,
             story2flag: false,
             story2:`
-            You are in Moeciu 3.
+            You are inside your guest house in Moeciu sitting at a table.
             `,
             choices: [
                 {
-                    choice: "moeciu 2",
+                    choice: "explore Moeciu",
                     destination: "moeciu2",
+                },
+                {
+                    choice: "take photo",
+                    destination: "moeciu3",
+                    story: `
+                    A miniature bicycle is placed on top of the table, carrying some plant pots. It is an interesting view, so you take your camera out 
+                    and shoot a photo. 
+                    `,
+                    storyConditionMet:`
+                    A miniature bicycle is placed on top of the table, carrying some plant pots.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["bicycle photo"],
+                    },
                 },
             ],
             items: [
@@ -1114,11 +1177,11 @@ function getStoryChapter6(name) {
                     destination: "predeal2",
                 },
                 {
-                    choice: "Brasov",
+                    choice: "go to Brasov",
                     destination: "brasov",
                 },
                 {
-                    choice: "Sibiu",
+                    choice: "go to Sibiu",
                     destination: "sibiu",
                     story: `
                     Too far away... Maybe later...
@@ -1227,11 +1290,11 @@ function getStoryChapter6(name) {
         brasov2: {
             image: "brasov2.jpg",
             story: `
-            You are in Brasov 2.
+            You have been here before.
             `,
             story2flag: false,
             story2:`
-            You are in Brasov 2.
+            You have been here before.
             `,
             choices: [
                 {
@@ -1239,7 +1302,7 @@ function getStoryChapter6(name) {
                     destination: "brasov",
                 },
                 {
-                    choice: "brasov 3",
+                    choice: "park",
                     destination: "brasov3",
                 },
             ],
@@ -1250,16 +1313,31 @@ function getStoryChapter6(name) {
         brasov3: {
             image: "brasov3.jpg",
             story: `
-            You are in Brasov 3.
+            You are in one of the beautiful parks of Brasov.
             `,
             story2flag: false,
             story2:`
-            You are in Brasov 3.
+            You are in one of the beautiful parks of Brasov.
             `,
             choices: [
                 {
-                    choice: "brasov 2",
+                    choice: "explore Brasov",
                     destination: "brasov2",
+                },
+                {
+                    choice: "take photo",
+                    destination: "brasov3",
+                    story: `
+                    You take a photo.
+                    `,
+                    storyConditionMet:`
+                    You have done that already...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["park photo"],
+                    },
                 },
             ],
             items: [
@@ -1285,11 +1363,11 @@ function getStoryChapter6(name) {
                     destination: "sibiu2",
                 },
                 {
-                    choice: "Cluj",
+                    choice: "go to Cluj",
                     destination: "cluj",
                 },
                 {
-                    choice: "Timisoara",
+                    choice: "go to Timisoara",
                     destination: "timisoara",
                 },
                 
@@ -1439,6 +1517,53 @@ function getStoryChapter6(name) {
                         "itemsReturned": [],
                     },
                 },
+                {
+                    choice: "watch buildings",
+                    destination: "sibiu4",
+                    story: `
+                    The buildings have multiple colors. The irony of the situation is that you are the one 
+                    watching the buildings... 
+                    `,
+                    storyConditionMet:`
+                    The buildings have multiple colors. The irony of the situation is that you are the one 
+                    watching the buildings...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "hole covering",
+                    destination: "sibiu4",
+                    story: `
+                    There's a metal street hole covering, with an emblem on it... 
+                    `,
+                    storyConditionMet:`
+                    There's a metal street hole covering, with an emblem on it...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "college",
+                    destination: "sibiu4",
+                    story: `
+                    As you stroll around you encounter a big college. 
+                    `,
+                    storyConditionMet:`
+                    As you stroll around you encounter a big college. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
             ],
             items: [
             ], 
@@ -1449,16 +1574,77 @@ function getStoryChapter6(name) {
         sibiu5: {
             image: "sibiu5.jpg",
             story: `
-            You are in Sibiu 5.
+            As you continue to stroll around the streets the night time comes.
             `,
             story2flag: false,
             story2:`
-            You are in Sibiu 5.
+            As you continue to stroll around the streets the night time comes.
             `,
             choices: [
                 {
-                    choice: "sibiu 2",
+                    choice: "explore Sibiu",
                     destination: "sibiu2",
+                },
+                {
+                    choice: "cofee places",
+                    destination: "sibiu5",
+                    story: `
+                    Several coffee places can be found here. 
+                    `,
+                    storyConditionMet:`
+                    Several coffee places can be found here. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "art gallery",
+                    destination: "sibiu5",
+                    story: `
+                    No time for it now. 
+                    `,
+                    storyConditionMet:`
+                    No time for it now. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "lookout tower",
+                    destination: "sibiu5",
+                    story: `
+                    You find a lookout tower and some wall fortifications illuminated by the street lamps.
+                    The view is impressive, so you decide to take a photo of it. 
+                    `,
+                    storyConditionMet:`
+                    You find a lookout tower and some wall fortifications illuminated by the street lamps.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["tower photo"],
+                    },
+                },
+                {
+                    choice: "night lamps",
+                    destination: "sibiu5",
+                    story: `
+                    The streets and surrounding buildings are so beautiful at night when illuminated by the street lamps.
+                    `,
+                    storyConditionMet:`
+                    The streets and surrounding buildings are so beautiful at night when illuminated by the street lamps.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
