@@ -4,7 +4,7 @@ function getStoryChapter6(name) {
         currentScene: "central_train_station",
         currentChapter: "6",
         player: {
-            inventory: ["camera","_docile dog"
+            inventory: ["camera","_docile dog", "_guard recommendation", "_way forward",
             ]
         },
         lastActionStory: ``,
@@ -21,11 +21,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "Breaza",
+                    choice: "go to Breaza",
                     destination: "breaza",
                 },
                 {
-                    choice: "Iasi",
+                    choice: "go to Iasi",
                     destination: "iasi",
                 },
                 {
@@ -72,11 +72,11 @@ function getStoryChapter6(name) {
                     destination: "breaza2",
                 },
                 {
-                    choice: "Sinaia",
+                    choice: "go to Sinaia",
                     destination: "sinaia",
                 },
                 {
-                    choice: "Azuga",
+                    choice: "go to Azuga",
                     destination: "azuga",
                     story: `
                     Not before you get a recommendation of some sort...
@@ -91,7 +91,7 @@ function getStoryChapter6(name) {
                     },
                 },
                 {
-                    choice: "Predeal",
+                    choice: "go to Predeal",
                     destination: "predeal",
                 },
                 
@@ -570,15 +570,16 @@ function getStoryChapter6(name) {
                     choice: "pigeon",
                     destination: "iasi4",
                     story: `
-                    There's a pigeon. 
+                    There's a pigeon. He follows some sort of pattern on the ground. 
                     `,
                     storyConditionMet:`
-                    There's a pigeon. 
+                    You watch the pattern that the pigeon is making on ground. You now have a better understanding of it.
+                    Seems to be indicating some sort of direction. 
                     `,
                     condition: {
                         "conditionMet": false,
-                        "itemsRequired": [],
-                        "itemsReturned": [],
+                        "itemsRequired": ["_poster watched"],
+                        "itemsReturned": ["_pigeon pattern observed"],
                     },
                 },
             ],
@@ -1322,54 +1323,129 @@ function getStoryChapter6(name) {
                 {
                     choice: "center",
                     destination: "sibiu4",
+                    story: `
+                    You are not sure how to get to the city center... 
+                    <em>The birds might help here.</em>
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_way forward"],
+                        "itemsReturned": [],
+                    },
                 },
                 {
                     choice: "night time",
                     destination: "sibiu5",
+                    story: `
+                    You are not sure how to get to proceed forward... 
+                    <em>The birds might help here.</em>
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_way forward"],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
             ], 
         },
 
+        //entrance
         sibiu3: {
             image: "sibiu3.jpg",
             story: `
-            You are in Sibiu 3.
+            You are near the entrance of Sibiu.
             `,
             story2flag: false,
             story2:`
-            You are in Sibiu 3.
+            You are near the entrance of Sibiu.
             `,
             choices: [
                 {
-                    choice: "sibiu 2",
+                    choice: "explore Sibiu",
                     destination: "sibiu2",
+                },
+                {
+                    choice: "watch poster",
+                    destination: "sibiu3",
+                    story: `
+                    Right next to the entrance in Sibiu you notice a 
+                    city sign with a poster on it. The poster states that Sibiu is the 
+                    european capital of culture. 
+                    `,
+                    storyConditionMet:`
+                    The poster states that Sibiu is the 
+                    european capital of culture. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_poster watched"],
+                    },
+                },
+                {
+                    choice: "pigeon",
+                    destination: "sibiu3",
+                    story: `
+                    You encounter a pigeon. 
+                    `,
+                    storyConditionMet:`
+                    The pigeon seems to be indicating the way forward... 
+                    You follow the path indicated by the pigeon.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_pigeon pattern observed"],
+                        "itemsReturned": ["_way forward"],
+                    },
                 },
             ],
             items: [
             ], 
         },
 
+        //center
         sibiu4: {
             image: "sibiu4.jpg",
             story: `
-            You are in Sibiu 4.
+            You are in the historical center of Sibiu. You notice an open plaza populated by people and groups of pigeons flying above. Beautiful buildings are surrounding the plaza square.
             `,
             story2flag: false,
             story2:`
-            You are in Sibiu 4.
+            You are in the historical center of Sibiu. You notice an open plaza populated by people and groups of pigeons flying above. Beautiful buildings are surrounding the plaza square.
             `,
             choices: [
                 {
-                    choice: "sibiu 2",
+                    choice: "explore Sibiu",
                     destination: "sibiu2",
+                },
+                {
+                    choice: "people",
+                    destination: "sibiu4",
+                    story: `
+                    Unfortunately, you don't have a lot of time to interact with the people in the plaza square.
+                    `,
+                    storyConditionMet:`
+                    Unfortunately, you don't have a lot of time to interact with the people in the plaza square.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
             ], 
         },
 
+
+        //night time
         sibiu5: {
             image: "sibiu5.jpg",
             story: `
