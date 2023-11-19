@@ -43,7 +43,7 @@ function getStoryChapter6(name) {
                     `,
                     condition: {
                         "conditionMet": false,
-                        "itemsRequired": ["rose photo", "palace photo"],
+                        "itemsRequired": ["rose photo", "palace photo", "_smile"],
                         "itemsReturned": [],
                     },
                 },
@@ -307,6 +307,21 @@ function getStoryChapter6(name) {
                         "conditionMet": false,
                         "itemsRequired": [],
                         "itemsReturned": ["rose flower", "rose photo"],
+                    },
+                },
+                {
+                    choice: "pick poppy flower",
+                    destination: "breaza4",
+                    story: `
+                    You pick up a poppy flower.
+                    `,
+                    storyConditionMet:`
+                    You have enough.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["poppy flower"],
                     },
                 },
             ],
@@ -621,7 +636,7 @@ function getStoryChapter6(name) {
                     choice: "water lilies",
                     destination: "iasi5",
                     story: `
-                    You watch the water lilies.
+                    You watch the water lilies. They look nice. You pick one.
                     `,
                     storyConditionMet:`
                     You watch the water lilies.
@@ -629,7 +644,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": [],
+                        "itemsReturned": ["lilie"],
                     },
                 },
                 {
@@ -1677,11 +1692,11 @@ function getStoryChapter6(name) {
         cluj2: {
             image: "cluj2.jpg",
             story: `
-            You are in Cluj 2.
+            You are in Cluj. Seems to be a beautiful city.
             `,
             story2flag: false,
             story2:`
-            You are in Cluj 2.
+            You are in Cluj. Seems to be a beautiful city.
             `,
             choices: [
                 {
@@ -1689,15 +1704,15 @@ function getStoryChapter6(name) {
                     destination: "cluj",
                 },
                 {
-                    choice: "cluj 3",
+                    choice: "park",
                     destination: "cluj3",
                 },
                 {
-                    choice: "cluj 4",
+                    choice: "downtown",
                     destination: "cluj4",
                 },
                 {
-                    choice: "cluj 5",
+                    choice: "botanical garden",
                     destination: "cluj5",
                 },
             ],
@@ -1705,57 +1720,274 @@ function getStoryChapter6(name) {
             ], 
         },
 
+        //park
         cluj3: {
             image: "cluj3.jpg",
             story: `
-            You are in Cluj 3.
+            You reach the park area.
             `,
             story2flag: false,
             story2:`
-            You are in Cluj 3.
+            You reach the park area.
             `,
             choices: [
                 {
-                    choice: "cluj 2",
+                    choice: "explore Cluj",
                     destination: "cluj2",
+                },
+                {
+                    choice: "watch plane",
+                    destination: "cluj3",
+                    story: `
+                    As you walk through the park you hear the noise of a plane and raise your head. It is a big plane. 
+                    But how does the plane work?
+                    Thinking a little bit, the principles are very similar. It's only the medium that changes, you don't 
+                    have to start all over again, from scratch...
+                    `,
+                    storyConditionMet:`
+                    But how does the plane work?
+                    Thinking a little bit, the principles are very similar. It's only the medium that changes, so you don't 
+                    have to start all over again from scratch...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "uphill",
+                    destination: "cluj3",
+                    story: `
+                    You choose to take a path going up a hill not far away from the park. You find a place where they serve icecream.
+                    Being very hot outside, you grab one. From up here, you can see the entire city. The view is breath-taking. 
+                    You wish the princess was here to see it...
+                    `,
+                    storyConditionMet:`
+                    You go up the hill to the nice view with icecream. 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["icecream"],
+                    },
+                },
+                {
+                    choice: "gate monument",
+                    destination: "cluj3",
+                    story: `
+                    As you walk throughout the park you notice some sort of suspended gate monument. You never understood what the artist wanted
+                    to say...
+                    `,
+                    storyConditionMet:`
+                    As you walk throughout the park you notice some sort of suspended gate monument. You never understood what the artist wanted
+                    to say...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_gate portal 2"],
+                    },
+                },
+                {
+                    choice: "observe statues",
+                    destination: "cluj3",
+                    story: `
+                    As you approach the end of the park you notice a construction area. Inside there are several statues resembling aquatic figures.
+                    One of them looks like a half-man, half-seahorse creature. You find that very odd. Again, the artist's decision... Nevertheless,
+                    you might return here sometime... 
+                    `,
+                    storyConditionMet:`
+                    As you approach the end of the park you notice a construction area. Inside there are several statues resembling aquatic figures.
+                    One of them looks like a half-man, half-seahorse creature. You find that very odd. Again, the artist's decision... Nevertheless,
+                    you might return here sometime... 
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
             ], 
         },
 
+        //downtown
         cluj4: {
             image: "cluj4.jpg",
             story: `
-            You are in Cluj 4.
+            You are in downtown Cluj. It is a beautiful city with beautiful people. People are walking at a different pace here.
             `,
             story2flag: false,
             story2:`
-            You are in Cluj 4.
+            You are in downtown Cluj. It is a beautiful city with beautiful people.
             `,
             choices: [
                 {
-                    choice: "cluj 2",
+                    choice: "explore Cluj",
                     destination: "cluj2",
+                },
+                {
+                    choice: "restaurant",
+                    destination: "cluj4",
+                    story: `
+                    You are not hungry now.
+                    `,
+                    storyConditionMet:`
+                    You go inside and buy some bread.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_duck observed"],
+                        "itemsReturned": ["bread"],
+                    },
+                },
+                {
+                    choice: "tea place",
+                    destination: "cluj4",
+                    story: `
+                    No time for it. You are in a hurry.
+                    `,
+                    storyConditionMet:`
+                    No time for it. You are in a hurry.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "university",
+                    destination: "cluj4",
+                    story: `
+                    Funny, among others, this university has a faculty similar to the one where you have attended classes. It is written 
+                    on the inscription.
+                    `,
+                    storyConditionMet:`
+                    Funny, among others, this university has a faculty similar to the one where you have attended classes. It is written 
+                    on the inscription.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "give flowers",
+                    destination: "cluj4",
+                    story: `
+                    You notice a cute girl. Perhaps it could be a good idea to offer her the flowers you have collected. You are still 
+                    missing a couple ones. 
+                    <em>You may need: a white flower, a fertilized flower, a tulip, a rose, chamomile, a poppy, and a lilie.</em>
+                    `,
+                    storyConditionMet:`
+                    The girl smiles and thanks you.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["fertilized flower", "white flower", "tulip flower", "rose flower", "chamomile flowers", "poppy flower", "lilie"],
+                        "itemsReturned": ["_smile"],
+                    },
+                },
+                {
+                    choice: "car",
+                    destination: "cluj4",
+                    story: `
+                    Underneath a passage you find a colorful car painted by an artist most probably. The hood has a large butterfly painted on top.
+                    `,
+                    storyConditionMet:`
+                    Underneath a passage you find a colorful car painted by an artist most probably. The hood has a large butterfly painted on top.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "check stadium",
+                    destination: "cluj4",
+                    story: `
+                    By chance you encounter a big stadium in your way. You go near the gates and look inside. Looks impressive.
+                    `,
+                    storyConditionMet:`
+                    By chance you encounter a big stadium in your way. You go near the gates and look inside. Looks impressive.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
                 },
             ],
             items: [
             ], 
         },
 
+        //botanical garden
         cluj5: {
             image: "cluj5.jpg",
             story: `
-            You are in Cluj 5.
+            You climb up until you reach the botanical garden.
             `,
             story2flag: false,
             story2:`
-            You are in Cluj 5.
+            You climb up until you reach the botanical garden.
             `,
             choices: [
                 {
-                    choice: "cluj 2",
+                    choice: "explore Cluj",
                     destination: "cluj2",
+                },
+                {
+                    choice: "pick up tulip",
+                    destination: "cluj5",
+                    story: `
+                    At the entrance of the botanical garden you notice a row of beautiful pink tulips. You go to grab one, 
+                    but the guard does not let you...
+                    `,
+                    storyConditionMet:`
+                    The guard seems to be distracted by the quacks of the duck. You manage to pick up a tulip flower.
+                    You also grab your camera and take a shot at the row of tulips.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_duck quacks"],
+                        "itemsReturned": ["tulip flower", "tulips photo"],
+                    },
+                },
+                {
+                    choice: "japanese garden",
+                    destination: "cluj5",
+                    story: `
+                    There's a japanese garden inside the botanical garden. A duck is swimming peacefully inside the pond.
+                    `,
+                    storyConditionMet:`
+                    There's a japanese garden inside the botanical garden. A duck is swimming peacefully inside the pond.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_duck observed"],
+                    },
+                },
+                {
+                    choice: "feed duck",
+                    destination: "cluj5",
+                    story: `
+                    You cannot feed the duck. You don't have any food left...
+                    `,
+                    storyConditionMet:`
+                    You feed the duck and the duck starts quacking...
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["bread"],
+                        "itemsReturned": ["_duck quacks"],
+                    },
                 },
             ],
             items: [
@@ -1788,11 +2020,11 @@ function getStoryChapter6(name) {
         timisoara2: {
             image: "timisoara2.jpg",
             story: `
-            You are in Timisoara 2.
+            You are in Timisoara. There are plenty of places to see and visit here.
             `,
             story2flag: false,
             story2:`
-            You are in Timisoara 2.
+            You are in Timisoara. There are plenty of places to see and visit here.
             `,
             choices: [
                 {
@@ -1800,19 +2032,19 @@ function getStoryChapter6(name) {
                     destination: "timisoara",
                 },
                 {
-                    choice: "timisoara 3",
+                    choice: "watch princess statue",
                     destination: "timisoara3",
                 },
                 {
-                    choice: "timisoara 4",
+                    choice: "central park",
                     destination: "timisoara4",
                 },
                 {
-                    choice: "timisoara 5",
+                    choice: "river",
                     destination: "timisoara5",
                 },
                 {
-                    choice: "timisoara 6",
+                    choice: "big clock",
                     destination: "timisoara6",
                 },
             ],
