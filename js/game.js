@@ -7,7 +7,7 @@ const content = document.querySelector("#content");
 
 startButton.addEventListener("click", function() {
     const nameInput = document.querySelector("#name-input");
-    story = getStoryChapter6(nameInput.value);
+    story = getStoryChapter1(nameInput.value);
     renderScene();
 });
 
