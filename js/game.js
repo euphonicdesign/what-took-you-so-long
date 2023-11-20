@@ -131,6 +131,7 @@ function renderScene() {
 };
 
 function getInputValue(){
+    // debugger;
     // console.log("You clicked the button");
     let inputs = document.querySelectorAll('input[type="radio"]');
     let labelInputs = document.querySelectorAll('label');

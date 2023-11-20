@@ -29,11 +29,12 @@ function getStoryChapter6(name) {
                     choice: "go to <strong>Iasi</strong>",
                     destination: "iasi",
                 },
+                
                 {
-                    choice: "return <strong>Home</strong>",
+                    choice: "return Home",
                     destination: "theend",
                     story: `
-                    You need a couple more photos and make someone smile before you return home.
+                    You need a couple more photos (10) and make someone smile before you return home.
                     `,
                     storyConditionMet:`
                     The train returns to the city with the big campus. You return to your place 
@@ -44,13 +45,41 @@ function getStoryChapter6(name) {
                     `,
                     condition: {
                         "conditionMet": false,
-                        "itemsRequired": ["rose photo", "palace photo", "_smile"],
+                        "itemsRequired": ["rose photo",
+                                        "palace photo",
+                                        "tower photo",
+                                        "top view photo",
+                                        "snow house photo",
+                                        "park photo",
+                                        "tulips photo",
+                                        "bicycle photo",
+                                        "princess statue photo",
+                                        "ski slope photo",
+                                        "_smile",
+                        ],
                         "itemsReturned": [],
                     },
                 },
             ],
             items: [
             ],
+            
+        },
+
+        theend: {
+            image: "theend.jpg",
+            story: `
+            You have reached the end of chapter 6...
+            `,
+            story2flag: false,
+            story2:`
+            `,
+            choices: [
+            ],
+            items: [
+            ],
+
+            buttonText: "Select the 7th chapter from the top"
             
         },
 
