@@ -5,6 +5,7 @@ function getStoryChapter6(name) {
         currentChapter: "6",
         player: {
             inventory: ["camera","_docile dog", "_guard recommendation", "_way forward", "_fisherman recommendation",
+                        "_shield down",
             ]
         },
         lastActionStory: ``,
@@ -21,15 +22,15 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "go to Breaza",
+                    choice: "go to <strong>Breaza</strong>",
                     destination: "breaza",
                 },
                 {
-                    choice: "go to Iasi",
+                    choice: "go to <strong>Iasi</strong>",
                     destination: "iasi",
                 },
                 {
-                    choice: "return home",
+                    choice: "return <strong>Home</strong>",
                     destination: "theend",
                     story: `
                     You need a couple more photos and make someone smile before you return home.
@@ -72,11 +73,11 @@ function getStoryChapter6(name) {
                     destination: "breaza2",
                 },
                 {
-                    choice: "go to Sinaia",
+                    choice: "go to <strong>Sinaia</strong>",
                     destination: "sinaia",
                 },
                 {
-                    choice: "go to Azuga",
+                    choice: "go to <strong>Azuga</strong>",
                     destination: "azuga",
                     story: `
                     Not before you get a recommendation of some sort...
@@ -90,7 +91,7 @@ function getStoryChapter6(name) {
                     },
                 },
                 {
-                    choice: "go to Predeal",
+                    choice: "go to <strong>Predeal</strong>",
                     destination: "predeal",
                 },
                 
@@ -470,7 +471,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["_king names"],
+                        "itemsReturned": ["_king names","_king statue"],
                     },
                 },
                 {
@@ -493,7 +494,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["_lion encountered"],
+                        "itemsReturned": ["_lion encountered","_lion statue"],
                     },
                 },
                 {
@@ -561,7 +562,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["_dragon encountered"],
+                        "itemsReturned": ["_dragon encountered","_dragon statue"],
                     },
                 },
                 {
@@ -754,6 +755,15 @@ function getStoryChapter6(name) {
                 {
                     choice: "explore Sinaia",
                     destination: "sinaia2",
+                    story: `
+                    `,
+                    storyConditionMet:`
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": ["_water lady statue"],
+                    },
                 },
                 
                 
@@ -828,7 +838,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": [],
+                        "itemsReturned": ["_bear statue"],
                     },
                 },
                 {
@@ -843,7 +853,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": [],
+                        "itemsReturned": ["_dog statue"],
                     },
                 },
                 {
@@ -858,7 +868,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": [],
+                        "itemsReturned": ["_courageous lady statue"],
                     },
                 },
             ],
@@ -1051,7 +1061,7 @@ function getStoryChapter6(name) {
                     },
                 },
                 {
-                    choice: "go to Moeciu",
+                    choice: "go to <strong>Moeciu</strong>",
                     destination: "moeciu",
                 },
             ],
@@ -1192,11 +1202,11 @@ function getStoryChapter6(name) {
                     destination: "predeal2",
                 },
                 {
-                    choice: "go to Brasov",
+                    choice: "go to <strong>Brasov</strong>",
                     destination: "brasov",
                 },
                 {
-                    choice: "go to Sibiu",
+                    choice: "go to <strong>Sibiu</strong>",
                     destination: "sibiu",
                     story: `
                     Too far away... Maybe later...
@@ -1218,11 +1228,11 @@ function getStoryChapter6(name) {
         predeal2: {
             image: "predeal2.jpg",
             story: `
-            You are in Predeal 2.
+            You are in Predeal, in your hotel room.
             `,
             story2flag: false,
             story2:`
-            You are in Predeal 2.
+            You are in Predeal, in your hotel room.
             `,
             choices: [
                 {
@@ -1230,11 +1240,56 @@ function getStoryChapter6(name) {
                     destination: "predeal",
                 },
                 {
-                    choice: "predeal 3",
+                    choice: "watch mountains",
                     destination: "predeal3",
                 },
                 {
-                    choice: "predeal 4",
+                    choice: "bed",
+                    destination: "predeal2",
+                    story: `
+                    The bed looks nice.
+                    `,
+                    storyConditionMet:`
+                    The bed looks nice.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "swimming pool",
+                    destination: "predeal2",
+                    story: `
+                    It's nice they have a swimming pool here. You dive in.
+                    `,
+                    storyConditionMet:`
+                    It's nice they have a swimming pool here. You dive in.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "glass",
+                    destination: "predeal2",
+                    story: `
+                    A glass of wine? Why not.
+                    `,
+                    storyConditionMet:`
+                    A glass of wine? Why not.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "ski slope",
                     destination: "predeal4",
                 },
             ],
@@ -1245,34 +1300,85 @@ function getStoryChapter6(name) {
         predeal3: {
             image: "predeal3.jpg",
             story: `
-            You are in Predeal 3.
+            You are in the hotel watching the mountains.
             `,
             story2flag: false,
             story2:`
-            You are in Predeal 3.
+            You are in the hotel watching the mountains.
             `,
             choices: [
                 {
-                    choice: "predeal 2",
+                    choice: "explore Predeal",
                     destination: "predeal2",
+                },
+                {
+                    choice: "piano",
+                    destination: "predeal3",
+                    story: `
+                    Downstairs there's a piano.
+                    `,
+                    storyConditionMet:`
+                    Downstairs there's a piano.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": [],
+                        "itemsReturned": [],
+                    },
+                },
+                {
+                    choice: "laptop",
+                    destination: "predeal3",
+                    story: `
+                    Upstairs, there's a laptop. You start playing a game. In this game you have to find several statue figurines: 
+                    <em>a dog, a bear, a king, a lion, a wolf, a dragon, a water lady, a courages lady, and a princess </em>.
+                    `,
+                    storyConditionMet:`
+                    You have found all the statue figurines and can now finish the game.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_dog statue","_bear statue", "_king statue", "_lion statue",
+                                          "_wolf statue", "_dragon statue", "_aquatic statue","_water lady statue", "_courageous lady statue",
+                                          "_princess statue",
+                        ],
+                        "itemsReturned": ["_game played"],
+                    },
                 },
             ],
             items: [
             ], 
         },
+
+        //ski slope
         predeal4: {
             image: "predeal4.jpg",
             story: `
-            You are in Predeal 4.
+            You are on the ski slope.
             `,
             story2flag: false,
             story2:`
-            You are in Predeal 4.
+            You are on the ski slope.
             `,
             choices: [
                 {
-                    choice: "predeal 2",
+                    choice: "explore Predeal",
                     destination: "predeal2",
+                },
+                {
+                    choice: "take photo",
+                    destination: "predeal3",
+                    story: `
+                    You haven't finished playing your game yet. No time for photos now. 
+                    `,
+                    storyConditionMet:`
+                    As you go down the slope on your skis, you fall a couple of times, and decide to take a photo.
+                    `,
+                    condition: {
+                        "conditionMet": false,
+                        "itemsRequired": ["_game played"],
+                        "itemsReturned": ["ski slope photo"],
+                    },
                 },
             ],
             items: [
@@ -1378,11 +1484,11 @@ function getStoryChapter6(name) {
                     destination: "sibiu2",
                 },
                 {
-                    choice: "go to Cluj",
+                    choice: "go to <strong>Cluj</strong>",
                     destination: "cluj",
                 },
                 {
-                    choice: "go to Timisoara",
+                    choice: "go to <strong>Timisoara</strong>",
                     destination: "timisoara",
                 },
                 
@@ -1805,7 +1911,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": [],
+                        "itemsReturned": ["_aquatic statue"],
                     },
                 },
             ],
@@ -2085,7 +2191,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": ["princess statue photo"],
+                        "itemsReturned": ["princess statue photo","_princess statue"],
                     },
                 },
             ],
@@ -2120,7 +2226,7 @@ function getStoryChapter6(name) {
                     condition: {
                         "conditionMet": false,
                         "itemsRequired": [],
-                        "itemsReturned": [],
+                        "itemsReturned": ["_wolf statue"],
                     },
                 },
                 {
