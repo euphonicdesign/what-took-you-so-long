@@ -4,9 +4,10 @@ function getStoryChapter6(name) {
         currentScene: "central_train_station",
         currentChapter: "6",
         player: {
-            inventory: ["camera","_docile dog", "_guard recommendation", "_way forward", "_fisherman recommendation",
-                        "_shield down",
-            ]
+            // inventory: ["camera","_docile dog", "_guard recommendation", "_way forward", "_fisherman recommendation",
+            //             "_shield down",
+            // ]
+            inventory: [],
         },
         lastActionStory: ``,
         conditionsAchieved: [
@@ -22,11 +23,11 @@ function getStoryChapter6(name) {
             `,
             choices: [
                 {
-                    choice: "go to <strong>Breaza</strong>",
+                    choice: "go to Breaza",
                     destination: "breaza",
                 },
                 {
-                    choice: "go to <strong>Iasi</strong>",
+                    choice: "go to Iasi",
                     destination: "iasi",
                 },
                 
@@ -34,11 +35,11 @@ function getStoryChapter6(name) {
                     choice: "return Home",
                     destination: "theend",
                     story: `
-                    You need a couple more photos (10) and make someone smile before you return home.
+                    You need a couple more photos <em>(one from each location you visit, 10 in total)</em> and make someone smile before you return home.
                     `,
                     storyConditionMet:`
                     The train returns to the city with the big campus. You return to your place 
-                    and lie down on your bed. You feel tired, but happy that You have travelled 
+                    and lie down on your bed. You feel tired, but happy that you have travelled 
                     quite a lot, seen many beautiful places, and encountered many interesting people. 
                     Then  you become pensative and get lost in your own thoughts... Still no sign 
                     from the princess...
@@ -102,11 +103,11 @@ function getStoryChapter6(name) {
                     destination: "breaza2",
                 },
                 {
-                    choice: "go to <strong>Sinaia</strong>",
+                    choice: "go to Sinaia",
                     destination: "sinaia",
                 },
                 {
-                    choice: "go to <strong>Azuga</strong>",
+                    choice: "go to Azuga",
                     destination: "azuga",
                     story: `
                     Not before you get a recommendation of some sort...
@@ -120,7 +121,7 @@ function getStoryChapter6(name) {
                     },
                 },
                 {
-                    choice: "go to <strong>Predeal</strong>",
+                    choice: "go to Predeal",
                     destination: "predeal",
                 },
                 
@@ -1090,7 +1091,7 @@ function getStoryChapter6(name) {
                     },
                 },
                 {
-                    choice: "go to <strong>Moeciu</strong>",
+                    choice: "go to Moeciu",
                     destination: "moeciu",
                 },
             ],
@@ -1231,11 +1232,11 @@ function getStoryChapter6(name) {
                     destination: "predeal2",
                 },
                 {
-                    choice: "go to <strong>Brasov</strong>",
+                    choice: "go to Brasov",
                     destination: "brasov",
                 },
                 {
-                    choice: "go to <strong>Sibiu</strong>",
+                    choice: "go to Sibiu",
                     destination: "sibiu",
                     story: `
                     Too far away... Maybe later...
@@ -1360,7 +1361,7 @@ function getStoryChapter6(name) {
                     destination: "predeal3",
                     story: `
                     Upstairs, there's a laptop. You start playing a game. In this game you have to find several statue figurines: 
-                    <em>a dog, a bear, a king, a lion, a wolf, a dragon, a water lady, a courages lady, and a princess </em>.
+                    <em>a dog, a bear, a king, a lion, a wolf, a dragon, a water lady, a courageous lady, and a princess </em>.
                     `,
                     storyConditionMet:`
                     You have found all the statue figurines and can now finish the game.
@@ -1396,7 +1397,7 @@ function getStoryChapter6(name) {
                 },
                 {
                     choice: "take photo",
-                    destination: "predeal3",
+                    destination: "predeal4",
                     story: `
                     You haven't finished playing your game yet. No time for photos now. 
                     `,
@@ -1513,11 +1514,11 @@ function getStoryChapter6(name) {
                     destination: "sibiu2",
                 },
                 {
-                    choice: "go to <strong>Cluj</strong>",
+                    choice: "go to Cluj",
                     destination: "cluj",
                 },
                 {
-                    choice: "go to <strong>Timisoara</strong>",
+                    choice: "go to Timisoara",
                     destination: "timisoara",
                 },
                 
@@ -2421,21 +2422,6 @@ function getStoryChapter6(name) {
                         "conditionMet": false,
                         "itemsRequired": ["_clock started"],
                         "itemsReturned": ["_shield down"],
-                    },
-                },
-                {
-                    choice: "university",
-                    destination: "timisoara6",
-                    story: `
-                    That's interesting... This university has the same name as the one where you have attended your classes.
-                    `,
-                    storyConditionMet:`
-                    That's interesting... This university has the same name as the one where you have attended your classes.
-                    `,
-                    condition: {
-                        "conditionMet": false,
-                        "itemsRequired": [],
-                        "itemsReturned": [],
                     },
                 },
                 {
