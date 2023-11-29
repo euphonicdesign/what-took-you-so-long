@@ -99,14 +99,20 @@ function renderScene() {
     text = story[story.currentScene].buttonText;
   }
   content.innerHTML = `
-        <button id="chapter1-button" class="chapter-buttons">Chapter 1</button>
-        <button id="chapter2-button" class="chapter-buttons">Chapter 2</button>
-        <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
-        <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
-        <button id="chapter5-button" class="chapter-buttons">Chapter 5</button>
-        <button id="chapter6-button" class="chapter-buttons">Chapter 6</button>
-        <button id="save-button">Save</button>
-        <button id="load-button">Load</button>
+        <div class="buttons-container">  
+          <div class="chapter-buttons-container">
+            <button id="chapter1-button" class="chapter-buttons">Chapter 1</button>
+            <button id="chapter2-button" class="chapter-buttons">Chapter 2</button>
+            <button id="chapter3-button" class="chapter-buttons">Chapter 3</button>
+            <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
+            <button id="chapter5-button" class="chapter-buttons">Chapter 5</button>
+            <button id="chapter6-button" class="chapter-buttons">Chapter 6</button>
+          </div>
+          <div class="save-load-buttons">  
+            <button id="save-button">Save</button>
+            <button id="load-button">Load</button>
+          </div>
+        </div>
         <br>
         <h1>Chapter ${story.currentChapter}</h1>
         <p>${displayLastActionText()}</p>
