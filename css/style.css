@@ -60,6 +60,7 @@ img {
 .buttons-container {
   /* background-color: lightblue; */
   display: flex;
+  justify-content: space-between;
 }
 .chapter-buttons-container {
   /* background-color: lightpink; */
