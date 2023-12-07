@@ -118,7 +118,6 @@ function renderScene() {
         <p>${displayLastActionText()}</p>
         <p>${displayStoryText()}</p>
         <div class="scene-image">${image}</div>
-        <br>
         <p>
             ${getConditionsAchieved()}<br>
             Inventory: ${getInventory()} <br>
