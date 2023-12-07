@@ -117,7 +117,8 @@ function renderScene() {
         <h1>Chapter ${story.currentChapter}</h1>
         <p>${displayLastActionText()}</p>
         <p>${displayStoryText()}</p>
-        ${image}<br>
+        <div class="scene-image">${image}</div>
+        <br>
         <p>
             ${getConditionsAchieved()}<br>
             Inventory: ${getInventory()} <br>
