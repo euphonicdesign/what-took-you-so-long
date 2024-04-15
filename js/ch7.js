@@ -237,7 +237,7 @@ function getStoryChapter7(name) {
           choice: "pull strings",
           destination: "piano",
           story: `
-                You pull some strings, but the sound coming out of them does not seem right...
+                You pull some strings, but the sound coming out of them does not seem to be right...
                 `,
           storyConditionMet: `
                 The piano seems to be tuned now.
@@ -343,7 +343,121 @@ function getStoryChapter7(name) {
       choices: [
         {
           choice: "continue",
-          destination: "theend",
+          destination: "part2",
+        },
+      ],
+      items: [],
+    },
+
+    part2: {
+      image: "part2.jpg",
+      story: `
+                      `,
+      story2flag: false,
+      story2: `
+                      `,
+      choices: [
+        {
+          choice: "part 2",
+          destination: "home",
+        },
+      ],
+      items: [],
+    },
+
+    home: {
+      image: "home.jpg",
+      story: `
+        You are now home.
+                        `,
+      story2flag: false,
+      story2: `
+        You are now home.
+                        `,
+      choices: [
+        {
+          choice: "office",
+          destination: "home",
+          story: `
+                  Having your education completed by now, you are working side by side with the people you have encountered before...
+                  Being the 1st day in the office, you go to the reception and meet there a young lady. It is her 1st day in the office as well.
+                  You know her from high-school. 
+                  `,
+          storyConditionMet: `
+                  Having your education completed by now, you are working side by side with the people you have encountered before...
+                  `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_office visited"],
+          },
+        },
+        {
+          choice: "travel",
+          destination: "airport",
+          story: `
+                    There are other matters to attend first.
+                    `,
+          storyConditionMet: `
+                    It is still early morning. Your taxi driver has come to pick you up to the ariport and is waiting outside your room. It's time to depart on your first
+            flight adventure.
+                    `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["_office visited"],
+            itemsReturned: [],
+          },
+        },
+      ],
+      items: [],
+    },
+
+    airport: {
+      image: "airport.jpg",
+      story: `
+                      `,
+      story2flag: false,
+      story2: `
+                      `,
+      choices: [
+        {
+          choice: "depart",
+          destination: "in_air_1",
+        },
+      ],
+      items: [],
+    },
+
+    in_air_1: {
+      image: "airport.jpg",
+      story: `
+        As the plane departs you start feeling the acceleration pressure building up in your chest. In no time you are in the air.
+                      `,
+      story2flag: false,
+      story2: `
+        You are in the air now.
+                      `,
+      choices: [
+        {
+          choice: "look outside",
+          destination: "look_outside_1",
+        },
+      ],
+      items: [],
+    },
+
+    look_outside_1: {
+      image: "look_outside_1.jpg",
+      story: `
+          You look outside the plane window. The weather is nice and sunny...
+                        `,
+      story2flag: false,
+      story2: `
+                        `,
+      choices: [
+        {
+          choice: "return to your seat",
+          destination: "in_air_1",
         },
       ],
       items: [],
