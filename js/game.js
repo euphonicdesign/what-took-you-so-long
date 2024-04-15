@@ -1,14 +1,16 @@
 console.log("The javascript file has been loaded.");
 
 let story;
-const NUMBER_OF_CHAPTERS = 6;
+const NUMBER_OF_CHAPTERS = 7;
 
 const startButton = document.querySelector("#start-button");
 const content = document.querySelector("#content");
 
+let nameInput;
+
 startButton.addEventListener("click", function () {
-  const nameInput = document.querySelector("#name-input");
-  story = getStoryChapter1(nameInput.value);
+  nameInput = document.querySelector("#name-input");
+  story = getStoryChapter7(nameInput.value);
   renderScene();
 });
 
@@ -107,6 +109,7 @@ function renderScene() {
             <button id="chapter4-button" class="chapter-buttons">Chapter 4</button>
             <button id="chapter5-button" class="chapter-buttons">Chapter 5</button>
             <button id="chapter6-button" class="chapter-buttons">Chapter 6</button>
+            <button id="chapter7-button" class="chapter-buttons">Chapter 7</button>
           </div>
           <div class="save-load-buttons">  
             <button id="save-button">Save</button>
@@ -406,22 +409,25 @@ function setChapterButtonsLogic() {
     chapterButton.addEventListener("click", () => {
       switch (i) {
         case 1:
-          story = getStoryChapter1("");
+          story = getStoryChapter1(nameInput.value);
           break;
         case 2:
-          story = getStoryChapter2("");
+          story = getStoryChapter2(nameInput.value);
           break;
         case 3:
-          story = getStoryChapter3("");
+          story = getStoryChapter3(nameInput.value);
           break;
         case 4:
-          story = getStoryChapter4("");
+          story = getStoryChapter4(nameInput.value);
           break;
         case 5:
-          story = getStoryChapter5("");
+          story = getStoryChapter5(nameInput.value);
           break;
         case 6:
-          story = getStoryChapter6("");
+          story = getStoryChapter6(nameInput.value);
+          break;
+        case 7:
+          story = getStoryChapter7(nameInput.value);
           break;
       }
       renderScene();
