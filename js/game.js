@@ -10,7 +10,8 @@ let nameInput;
 
 startButton.addEventListener("click", function () {
   nameInput = document.querySelector("#name-input");
-  story = getStoryChapter7(nameInput.value);
+  // story = getStoryChapter7(nameInput.value);
+  story = getStoryChapter1(nameInput.value);
   renderScene();
 });
 

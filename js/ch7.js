@@ -1088,7 +1088,7 @@ function getStoryChapter7(name) {
 
     home_airport: {
       image: "home_airport.jpg",
-      story: `You are once again back home. It's been exciting!
+      story: `You are once again back home. It's been quite exciting!
                                     `,
       story2flag: false,
       story2: `
