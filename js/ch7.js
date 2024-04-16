@@ -358,7 +358,7 @@ function getStoryChapter7(name) {
                       `,
       choices: [
         {
-          choice: "part 2",
+          choice: "Part 2",
           destination: "home",
         },
       ],
@@ -597,7 +597,7 @@ function getStoryChapter7(name) {
           story: `Not before you take a couple of photos...
                               `,
           storyConditionMet: `
-              It's time to move on to you next destination. You pick up a train and travel to the hotel location. By now, it is night outside and the snow has turned into heavy rain...
+              It's time to move on to your next destination. You pick up a train and travel to the hotel location. By now, it is night outside and the snow has turned into heavy rain...
                               `,
           condition: {
             conditionMet: false,
@@ -796,8 +796,315 @@ function getStoryChapter7(name) {
       items: [],
     },
 
+    hotel: {
+      image: "hotel.jpg",
+      story: `Finally at the hotel. The warmth emanated by the fireplace is constrasting with the terrible weather outside. 
+        Feels good to be inside.
+                                `,
+      story2flag: false,
+      story2: `
+        Feels good to be inside.
+                                `,
+      choices: [
+        {
+          choice: "room",
+          destination: "hotel_room",
+        },
+        {
+          choice: "golf course",
+          destination: "golf_course",
+          story: `The door leading outside seems to be locked...
+                                    `,
+          storyConditionMet: `
+                  The door leading outside is now opened.
+                                    `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["door and window opened"],
+            itemsReturned: [],
+          },
+        },
+
+        {
+          choice: "watch window",
+          destination: "window_view",
+          story: `The window shutters seem to be closed...
+                                      `,
+          storyConditionMet: `
+                    The window shutters are now opened.
+                                      `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["door and window opened"],
+            itemsReturned: [],
+          },
+        },
+        {
+          choice: "watch fireplace",
+          destination: "fireplace",
+        },
+        {
+          choice: "atrium",
+          destination: "atrium",
+        },
+        {
+          choice: "watch paintings",
+          destination: "paintings",
+        },
+      ],
+      items: [],
+    },
+
+    hotel_room: {
+      image: "hotel_room.jpg",
+      story: `You are in your hotel room. Everything looks clean and tidy.
+                                  `,
+      story2flag: false,
+      story2: `
+        You are in your hotel room. Everything looks clean and tidy.
+                                  `,
+      choices: [
+        {
+          choice: "return",
+          destination: "hotel",
+        },
+        {
+          choice: "check bed",
+          destination: "hotel_room",
+          story: `The bed looks nice and comfy.
+                                  `,
+          storyConditionMet: `
+                The bed looks nice and comfy.
+                                  `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: [],
+          },
+        },
+        {
+          choice: "check pillows",
+          destination: "hotel_room",
+          story: `Underneath the pillows, you find a secret key.
+                                  `,
+          storyConditionMet: `
+                  The pillows are arranged neatly.
+                                  `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["secret key"],
+          },
+        },
+      ],
+      items: [],
+    },
+    golf_course: {
+      image: "golf_course.jpg",
+      story: `You go for a walk outside in the early morning. Not far away from the golf course which is covered by snow, you 
+      see the shores of the sea.
+                                  `,
+      story2flag: false,
+      story2: `
+      Not far away from the golf course which is covered by snow, you 
+      see the shores of the sea.
+                                  `,
+      choices: [
+        {
+          choice: "return",
+          destination: "hotel",
+        },
+        {
+          choice: "admire sea",
+          destination: "golf_course",
+          story: `It is the first time you see the sea in winter time...
+                                      `,
+          storyConditionMet: `
+                      Behind the paintings there seems to be a secret key lock.
+                                      `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_winter sea"],
+          },
+        },
+      ],
+      items: [],
+    },
+    paintings: {
+      image: "paintings.jpg",
+      story: `You watch the paintings on a nearby wall. One of them contains the inscription "Constant Hope".
+                                  `,
+      story2flag: false,
+      story2: `
+      You watch the paintings on a nearby wall. One of them contains the inscription "Constant Hope".
+                                  `,
+      choices: [
+        {
+          choice: "return",
+          destination: "hotel",
+        },
+        {
+          choice: "move paintings",
+          destination: "paintings",
+          story: `Behind the paintings there seems to be a secret key lock.
+                                    `,
+          storyConditionMet: `
+                    Behind the paintings there seems to be a secret key lock.
+                                    `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_key lock"],
+          },
+        },
+        {
+          choice: "use key",
+          destination: "paintings",
+          story: `You need a key and something to unlock...
+                                      `,
+          storyConditionMet: `
+                      You use your secret key to unlock the secret lock. All of a sudden you start hearing some noise.
+                                      `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["secret key", "_key lock"],
+            itemsReturned: ["door and window opened"],
+          },
+        },
+      ],
+      items: [],
+    },
+    window_view: {
+      image: "window_view.jpg",
+      story: `You watch the window outside. All the surroundings are covered by snow.
+                                  `,
+      story2flag: false,
+      story2: `
+      You watch the window outside. All the surroundings are covered by snow.
+                                  `,
+      choices: [
+        {
+          choice: "return",
+          destination: "hotel",
+        },
+        {
+          choice: "contemplate departure",
+          destination: "window_view",
+          story: `It has stopped snowing, perhaps now you will be able to reach the airport...
+                                `,
+          storyConditionMet: `
+            It has stopped snowing, perhaps now you will be able to reach the airport...
+                                `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_departure ready"],
+          },
+        },
+      ],
+      items: [],
+    },
+    fireplace: {
+      image: "fireplace.jpg",
+      story: `You watch the fireplace.
+                                  `,
+      story2flag: false,
+      story2: `
+      You watch the fireplace.
+                                  `,
+      choices: [
+        {
+          choice: "return",
+          destination: "hotel",
+        },
+      ],
+      items: [],
+    },
+    atrium: {
+      image: "atrium.jpg",
+      story: `The atrium looks nice.
+                                  `,
+      story2flag: false,
+      story2: `
+      The atrium looks nice.
+                                  `,
+      choices: [
+        {
+          choice: "return",
+          destination: "hotel",
+        },
+        {
+          choice: "depart",
+          destination: "airport_screen",
+          story: `(Un)fortunately you cannot depart yet. All the airports in the region are closed...
+                                `,
+          storyConditionMet: `
+                The snow has stopped. You are able to reach the airport.
+                                `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["_departure ready", "_winter sea"],
+            itemsReturned: [],
+          },
+        },
+      ],
+      items: [],
+    },
+
+    airport_screen: {
+      image: "airport_screen.jpg",
+      story: `You check your flight departure on the screen.
+                                    `,
+      story2flag: false,
+      story2: `
+        You check your flight departure on the screen.
+                                    `,
+      choices: [
+        {
+          choice: "depart",
+          destination: "hotel2",
+        },
+      ],
+      items: [],
+    },
+
+    hotel2: {
+      image: "hotel2.jpg",
+      story: `Once you reach your connection, due to the weather conditions you are not able to continue your journey. You have to spend your night at the airport's hotel.
+                                    `,
+      story2flag: false,
+      story2: `
+      Once you reach your connection, due to the weather conditions you are not able to continue your journey. You have to spend your night at the airport's hotel.
+                                    `,
+      choices: [
+        {
+          choice: "depart",
+          destination: "home_airport",
+        },
+      ],
+      items: [],
+    },
+
+    home_airport: {
+      image: "home_airport.jpg",
+      story: `You are once again back home. It's been exciting!
+                                    `,
+      story2flag: false,
+      story2: `
+      You are once again back home. It's been quite exciting!
+                                    `,
+      choices: [
+        {
+          choice: "return",
+          destination: "theend",
+        },
+      ],
+      items: [],
+    },
+
     theend: {
-      image: "final_performance.jpg",
+      image: "home_airport.jpg",
       story: `
         You have reached the end of chapter 7... 
         `,
