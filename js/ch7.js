@@ -399,7 +399,7 @@ function getStoryChapter7(name) {
                     There are other matters to attend first.
                     `,
           storyConditionMet: `
-                    It is still early morning. Your taxi driver has come to pick you up to the ariport and is waiting outside your room. It's time to depart on your first
+                    It is still early morning. Your taxi driver has come to pick you up for the airport and is waiting outside your room. It's time to depart on your first
             flight adventure.
                     `,
           condition: {
@@ -441,6 +441,28 @@ function getStoryChapter7(name) {
         {
           choice: "look outside",
           destination: "look_outside_1",
+          story: `
+                      `,
+          storyConditionMet: `
+                      `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_looked outside 1"],
+          },
+        },
+        {
+          choice: "fly",
+          destination: "connection",
+          story: `
+                        `,
+          storyConditionMet: `
+                        `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["_looked outside 1"],
+            itemsReturned: [],
+          },
         },
       ],
       items: [],
@@ -458,6 +480,317 @@ function getStoryChapter7(name) {
         {
           choice: "return to your seat",
           destination: "in_air_1",
+        },
+      ],
+      items: [],
+    },
+
+    connection: {
+      image: "connection.jpg",
+      story: `
+          You continue flying until you reach your connection to your final destination. Once the airplance touches down, somewhere near luggage area you notice a girl with beautiful blue eyes and nice features. She kindof looks like the princess. It ends up she's one of your new colleagues.
+                        `,
+      story2flag: false,
+      story2: `
+          You are at your flight connection airport.
+                        `,
+      choices: [
+        {
+          choice: "depart",
+          destination: "in_air_2",
+        },
+      ],
+      items: [],
+    },
+
+    in_air_2: {
+      image: "airport.jpg",
+      story: `
+          Once again you are in the air.
+                        `,
+      story2flag: false,
+      story2: `
+          Once again you are in the air.
+                        `,
+      choices: [
+        {
+          choice: "attempt landing",
+          destination: "final_destination",
+          story: `Unfortunately, the plane cannot land, due to the snowstorm outside...
+                            `,
+          storyConditionMet: `
+            After half an hour of moving in circles up in the air, the pilot announces that he will atempt to land the plane. The landing is rough due to the snow that has built up on the runway. The plane comes to a complete halt. After 5 minutes of tension, the captain announces that due to poor visibility, we are stuck on the runway. After 15 more minutes the plane starts moving again and we are able to dock at the terminal. 
+                            `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["_holding pattern", "_plane chat"],
+            itemsReturned: [],
+          },
+        },
+        {
+          choice: "look outside",
+          destination: "look_outside_2",
+        },
+        {
+          choice: "chat",
+          destination: "in_air_2",
+          story: `One of your colleagues approaches you. She's being friendly and you have a nice conversation. It is the first time you are communicating with someone in a foreign language. 
+                              `,
+          storyConditionMet: `
+            It is the first time you are communicating with someone in a foreign language. 
+                              `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_plane chat"],
+          },
+        },
+      ],
+      items: [],
+    },
+
+    look_outside_2: {
+      image: "look_outside_2.jpg",
+      story: `
+            You look outside the plane window. Everything is covered with snow...
+                          `,
+      story2flag: false,
+      story2: `
+            You look outside the plane window. Everything is covered with snow...
+                          `,
+      choices: [
+        {
+          choice: "return to your seat",
+          destination: "in_air_2",
+        },
+        {
+          choice: "start worrying",
+          destination: "look_outside_2",
+          story: `Once you reach your final destination, the captain announces that the plane cannot land due to the snowstorm. Being up in the air at such a high altitude you start worrying. The plane is moving in circles, flying a holding pattern.
+                          `,
+          storyConditionMet: `
+          Once you reach your final destination, the captain announces that the plane cannot land due to the snowstorm. Being up in the air at such a high altitude you start worrying. The plane is moving in circles, flying a holding pattern.
+                          `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_holding pattern"],
+          },
+        },
+      ],
+      items: [],
+    },
+
+    final_destination: {
+      image: "final_destination.jpg",
+      story: `
+            
+                          `,
+      story2flag: false,
+      story2: `
+            You are at your final destination. It is snowing heavily.
+                          `,
+      choices: [
+        {
+          choice: "train travel",
+          destination: "heavy_rain",
+          story: `Not before you take a couple of photos...
+                              `,
+          storyConditionMet: `
+              It's time to move on to you next destination. You pick up a train and travel to the hotel location. By now, it is night outside and the snow has turned into heavy rain...
+                              `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [
+              "gothic building photo",
+              "signpost photo",
+              "castle photo",
+              "stairs photo",
+            ],
+            itemsReturned: [],
+          },
+        },
+        {
+          choice: "gothic building",
+          destination: "gothic_building",
+        },
+        {
+          choice: "castle",
+          destination: "castle",
+          story: `You don't know how to reach there...
+                              `,
+          storyConditionMet: `
+              You are on your way to the castle.
+                              `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: ["_castle direction"],
+            itemsReturned: [],
+          },
+        },
+        {
+          choice: "signpost",
+          destination: "signpost",
+        },
+        {
+          choice: "stairs",
+          destination: "stairs",
+        },
+      ],
+      items: [],
+    },
+
+    gothic_building: {
+      image: "gothic_building.jpg",
+      story: `
+              As you explore the surroundings you reach a tall gothic style building.
+                            `,
+      story2flag: false,
+      story2: `
+              You are near a tall gothic style building.
+                            `,
+      choices: [
+        {
+          choice: "return",
+          destination: "final_destination",
+        },
+        {
+          choice: "take photo",
+          destination: "gothic_building",
+          story: `You pull up your camera, and take a photo of the building.
+                            `,
+          storyConditionMet: `
+            You already have one.
+                            `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["gothic building photo"],
+          },
+        },
+      ],
+      items: [],
+    },
+    signpost: {
+      image: "signpost.jpg",
+      story: `
+              You have reached a signpost showing the way to the castle.
+                            `,
+      story2flag: false,
+      story2: `
+              You are near a tall gothic style building.
+                            `,
+      choices: [
+        {
+          choice: "return",
+          destination: "final_destination",
+        },
+        {
+          choice: "observe",
+          destination: "signpost",
+          story: `You observe the direction indicated by the signpost.
+                            `,
+          storyConditionMet: `
+            You observe the direction indicated by the signpost.
+                            `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["_castle direction"],
+          },
+        },
+        {
+          choice: "take photo",
+          destination: "signpost",
+          story: `You pull up your camera, and take a photo of the signpost.
+                            `,
+          storyConditionMet: `
+            You already have one.
+                            `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["signpost photo"],
+          },
+        },
+      ],
+      items: [],
+    },
+
+    castle: {
+      image: "castle.jpg",
+      story: `
+                              `,
+      story2flag: false,
+      story2: `
+                You are near the castle area.
+                              `,
+      choices: [
+        {
+          choice: "return",
+          destination: "final_destination",
+        },
+        {
+          choice: "take photo",
+          destination: "castle",
+          story: `You pull up your camera, and take a photo of the castle.
+                              `,
+          storyConditionMet: `
+              You already have one.
+                              `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["castle photo"],
+          },
+        },
+      ],
+      items: [],
+    },
+
+    stairs: {
+      image: "stairs.jpg",
+      story: `You climb up a couple of stairs to get a better view of the surroundings.
+                              `,
+      story2flag: false,
+      story2: `
+      You climb up a couple of stairs to get a better view of the surroundings.
+                              `,
+      choices: [
+        {
+          choice: "return",
+          destination: "final_destination",
+        },
+        {
+          choice: "take photo",
+          destination: "stairs",
+          story: `You pull up your camera, and take a photo of the surroundings.
+                              `,
+          storyConditionMet: `
+              You already have one.
+                              `,
+          condition: {
+            conditionMet: false,
+            itemsRequired: [],
+            itemsReturned: ["stairs photo"],
+          },
+        },
+      ],
+      items: [],
+    },
+
+    heavy_rain: {
+      image: "heavy_rain.jpg",
+      story: `
+                              `,
+      story2flag: false,
+      story2: `
+                You have reached your final destination. It is raining heavily outside and it is cold.
+                              `,
+      choices: [
+        {
+          choice: "hotel",
+          destination: "hotel",
         },
       ],
       items: [],
